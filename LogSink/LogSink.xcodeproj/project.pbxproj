@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		798738351E55B9FF00482C35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798738341E55B9FF00482C35 /* AppDelegate.swift */; };
+		798738371E55B9FF00482C35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798738361E55B9FF00482C35 /* ViewController.swift */; };
+		7987383A1E55BA0000482C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798738381E55BA0000482C35 /* Main.storyboard */; };
+		7987383C1E55BA0000482C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7987383B1E55BA0000482C35 /* Assets.xcassets */; };
+		7987383F1E55BA0000482C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7987383D1E55BA0000482C35 /* LaunchScreen.storyboard */; };
+		7987384A1E55BA0000482C35 /* LogSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798738491E55BA0000482C35 /* LogSinkTests.swift */; };
+		798738561E55BA6400482C35 /* LSLogUtill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798738551E55BA6400482C35 /* LSLogUtill.swift */; };
+		798738581E55BB4D00482C35 /* LSLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798738571E55BB4D00482C35 /* LSLogManager.swift */; };
+		7987385A1E55BDAC00482C35 /* LSConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798738591E55BDAC00482C35 /* LSConsole.swift */; };
+		7987385C1E55BDBE00482C35 /* LSDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987385B1E55BDBE00482C35 /* LSDataBase.swift */; };
+		7987385E1E55BDD600482C35 /* LSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987385D1E55BDD600482C35 /* LSFile.swift */; };
+		798738601E55CE1900482C35 /* LSLogBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987385F1E55CE1900482C35 /* LSLogBase.swift */; };
+		798738621E55D68900482C35 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 798738611E55D68900482C35 /* Config.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		798738461E55BA0000482C35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 798738291E55B9FF00482C35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 798738301E55B9FF00482C35;
+			remoteInfo = LogSink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		798738311E55B9FF00482C35 /* LogSink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogSink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		798738341E55B9FF00482C35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		798738361E55B9FF00482C35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		798738391E55BA0000482C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7987383B1E55BA0000482C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7987383E1E55BA0000482C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		798738401E55BA0000482C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		798738451E55BA0000482C35 /* LogSinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogSinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		798738491E55BA0000482C35 /* LogSinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSinkTests.swift; sourceTree = "<group>"; };
+		7987384B1E55BA0000482C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		798738551E55BA6400482C35 /* LSLogUtill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLogUtill.swift; sourceTree = "<group>"; };
+		798738571E55BB4D00482C35 /* LSLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLogManager.swift; sourceTree = "<group>"; };
+		798738591E55BDAC00482C35 /* LSConsole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSConsole.swift; sourceTree = "<group>"; };
+		7987385B1E55BDBE00482C35 /* LSDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSDataBase.swift; sourceTree = "<group>"; };
+		7987385D1E55BDD600482C35 /* LSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSFile.swift; sourceTree = "<group>"; };
+		7987385F1E55CE1900482C35 /* LSLogBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLogBase.swift; sourceTree = "<group>"; };
+		798738611E55D68900482C35 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7987382E1E55B9FF00482C35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		798738421E55BA0000482C35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		798738281E55B9FF00482C35 = {
+			isa = PBXGroup;
+			children = (
+				798738331E55B9FF00482C35 /* LogSink */,
+				798738481E55BA0000482C35 /* LogSinkTests */,
+				798738321E55B9FF00482C35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		798738321E55B9FF00482C35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				798738311E55B9FF00482C35 /* LogSink.app */,
+				798738451E55BA0000482C35 /* LogSinkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		798738331E55B9FF00482C35 /* LogSink */ = {
+			isa = PBXGroup;
+			children = (
+				798738541E55BA2000482C35 /* Common Folder */,
+				798738611E55D68900482C35 /* Config.plist */,
+				798738361E55B9FF00482C35 /* ViewController.swift */,
+				798738551E55BA6400482C35 /* LSLogUtill.swift */,
+				798738571E55BB4D00482C35 /* LSLogManager.swift */,
+				798738591E55BDAC00482C35 /* LSConsole.swift */,
+				7987385B1E55BDBE00482C35 /* LSDataBase.swift */,
+				7987385D1E55BDD600482C35 /* LSFile.swift */,
+				7987385F1E55CE1900482C35 /* LSLogBase.swift */,
+			);
+			path = LogSink;
+			sourceTree = "<group>";
+		};
+		798738481E55BA0000482C35 /* LogSinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				798738491E55BA0000482C35 /* LogSinkTests.swift */,
+				7987384B1E55BA0000482C35 /* Info.plist */,
+			);
+			path = LogSinkTests;
+			sourceTree = "<group>";
+		};
+		798738541E55BA2000482C35 /* Common Folder */ = {
+			isa = PBXGroup;
+			children = (
+				798738341E55B9FF00482C35 /* AppDelegate.swift */,
+				798738381E55BA0000482C35 /* Main.storyboard */,
+				7987383B1E55BA0000482C35 /* Assets.xcassets */,
+				7987383D1E55BA0000482C35 /* LaunchScreen.storyboard */,
+				798738401E55BA0000482C35 /* Info.plist */,
+			);
+			name = "Common Folder";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		798738301E55B9FF00482C35 /* LogSink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7987384E1E55BA0000482C35 /* Build configuration list for PBXNativeTarget "LogSink" */;
+			buildPhases = (
+				7987382D1E55B9FF00482C35 /* Sources */,
+				7987382E1E55B9FF00482C35 /* Frameworks */,
+				7987382F1E55B9FF00482C35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LogSink;
+			productName = LogSink;
+			productReference = 798738311E55B9FF00482C35 /* LogSink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		798738441E55BA0000482C35 /* LogSinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 798738511E55BA0000482C35 /* Build configuration list for PBXNativeTarget "LogSinkTests" */;
+			buildPhases = (
+				798738411E55BA0000482C35 /* Sources */,
+				798738421E55BA0000482C35 /* Frameworks */,
+				798738431E55BA0000482C35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				798738471E55BA0000482C35 /* PBXTargetDependency */,
+			);
+			name = LogSinkTests;
+			productName = LogSinkTests;
+			productReference = 798738451E55BA0000482C35 /* LogSinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		798738291E55B9FF00482C35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Bhabani;
+				TargetAttributes = {
+					798738301E55B9FF00482C35 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+					};
+					798738441E55BA0000482C35 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 798738301E55B9FF00482C35;
+					};
+				};
+			};
+			buildConfigurationList = 7987382C1E55B9FF00482C35 /* Build configuration list for PBXProject "LogSink" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 798738281E55B9FF00482C35;
+			productRefGroup = 798738321E55B9FF00482C35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				798738301E55B9FF00482C35 /* LogSink */,
+				798738441E55BA0000482C35 /* LogSinkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7987382F1E55B9FF00482C35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				798738621E55D68900482C35 /* Config.plist in Resources */,
+				7987383F1E55BA0000482C35 /* LaunchScreen.storyboard in Resources */,
+				7987383C1E55BA0000482C35 /* Assets.xcassets in Resources */,
+				7987383A1E55BA0000482C35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		798738431E55BA0000482C35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7987382D1E55B9FF00482C35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				798738561E55BA6400482C35 /* LSLogUtill.swift in Sources */,
+				798738581E55BB4D00482C35 /* LSLogManager.swift in Sources */,
+				7987385E1E55BDD600482C35 /* LSFile.swift in Sources */,
+				798738371E55B9FF00482C35 /* ViewController.swift in Sources */,
+				7987385C1E55BDBE00482C35 /* LSDataBase.swift in Sources */,
+				798738351E55B9FF00482C35 /* AppDelegate.swift in Sources */,
+				798738601E55CE1900482C35 /* LSLogBase.swift in Sources */,
+				7987385A1E55BDAC00482C35 /* LSConsole.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		798738411E55BA0000482C35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7987384A1E55BA0000482C35 /* LogSinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		798738471E55BA0000482C35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 798738301E55B9FF00482C35 /* LogSink */;
+			targetProxy = 798738461E55BA0000482C35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		798738381E55BA0000482C35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				798738391E55BA0000482C35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7987383D1E55BA0000482C35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7987383E1E55BA0000482C35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7987384C1E55BA0000482C35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7987384D1E55BA0000482C35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7987384F1E55BA0000482C35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = LogSink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.LogSink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		798738501E55BA0000482C35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = LogSink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.LogSink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		798738521E55BA0000482C35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = LogSinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.LogSinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogSink.app/LogSink";
+			};
+			name = Debug;
+		};
+		798738531E55BA0000482C35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = LogSinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.LogSinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogSink.app/LogSink";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7987382C1E55B9FF00482C35 /* Build configuration list for PBXProject "LogSink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7987384C1E55BA0000482C35 /* Debug */,
+				7987384D1E55BA0000482C35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7987384E1E55BA0000482C35 /* Build configuration list for PBXNativeTarget "LogSink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7987384F1E55BA0000482C35 /* Debug */,
+				798738501E55BA0000482C35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		798738511E55BA0000482C35 /* Build configuration list for PBXNativeTarget "LogSinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				798738521E55BA0000482C35 /* Debug */,
+				798738531E55BA0000482C35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 798738291E55B9FF00482C35 /* Project object */;
+}
