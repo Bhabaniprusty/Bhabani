@@ -1,0 +1,816 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25ECAC4C426AD73EE0ECBCDF /* Pods_MyntraGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFB434AA3F336E0F919B96 /* Pods_MyntraGameTests.framework */; };
+		793452BC1E4C25CA0078272D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793452BB1E4C25CA0078272D /* AppDelegate.swift */; };
+		793452C11E4C25CA0078272D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793452BF1E4C25CA0078272D /* Main.storyboard */; };
+		793452C41E4C25CA0078272D /* MyntraGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 793452C21E4C25CA0078272D /* MyntraGame.xcdatamodeld */; };
+		793452C61E4C25CA0078272D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793452C51E4C25CA0078272D /* Assets.xcassets */; };
+		793452C91E4C25CA0078272D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793452C71E4C25CA0078272D /* LaunchScreen.storyboard */; };
+		793452D41E4C25CB0078272D /* MyntraGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793452D31E4C25CB0078272D /* MyntraGameTests.swift */; };
+		793452DF1E4C25CB0078272D /* MyntraGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793452DE1E4C25CB0078272D /* MyntraGameUITests.swift */; };
+		793453411E4DB9F50078272D /* MGGameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453361E4DB9F50078272D /* MGGameEngine.swift */; };
+		793453421E4DB9F50078272D /* MGLeaderBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453371E4DB9F50078272D /* MGLeaderBoard.swift */; };
+		793453431E4DB9F50078272D /* MGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453391E4DB9F50078272D /* MGNetworkManager.swift */; };
+		793453441E4DB9F50078272D /* MGPlayGroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934533B1E4DB9F50078272D /* MGPlayGroundViewController.swift */; };
+		793453451E4DB9F50078272D /* MGRandomSequenceNumberProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934533D1E4DB9F50078272D /* MGRandomSequenceNumberProvider.swift */; };
+		793453461E4DB9F50078272D /* MGUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934533E1E4DB9F50078272D /* MGUtility.swift */; };
+		793453471E4DB9F50078272D /* MGCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453401E4DB9F50078272D /* MGCardCollectionViewCell.swift */; };
+		95D53671AAD8A32CF4050FD4 /* Pods_MyntraGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AFB69B6C3F1B975F6ECC05 /* Pods_MyntraGameUITests.framework */; };
+		D693D861510396298B20E390 /* Pods_MyntraGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6477E3BD3316E5E781277AF7 /* Pods_MyntraGame.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		793452D01E4C25CA0078272D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 793452B01E4C25CA0078272D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 793452B71E4C25CA0078272D;
+			remoteInfo = MyntraGame;
+		};
+		793452DB1E4C25CB0078272D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 793452B01E4C25CA0078272D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 793452B71E4C25CA0078272D;
+			remoteInfo = MyntraGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		61435C4E55E3DA1D24CEA836 /* Pods-MyntraGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntraGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyntraGameTests/Pods-MyntraGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6477E3BD3316E5E781277AF7 /* Pods_MyntraGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntraGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		793452B81E4C25CA0078272D /* MyntraGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyntraGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		793452BB1E4C25CA0078272D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		793452C01E4C25CA0078272D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		793452C31E4C25CA0078272D /* MyntraGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyntraGame.xcdatamodel; sourceTree = "<group>"; };
+		793452C51E4C25CA0078272D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		793452C81E4C25CA0078272D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		793452CA1E4C25CA0078272D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		793452CF1E4C25CA0078272D /* MyntraGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyntraGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		793452D31E4C25CB0078272D /* MyntraGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyntraGameTests.swift; sourceTree = "<group>"; };
+		793452D51E4C25CB0078272D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		793452DA1E4C25CB0078272D /* MyntraGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyntraGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		793452DE1E4C25CB0078272D /* MyntraGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyntraGameUITests.swift; sourceTree = "<group>"; };
+		793452E01E4C25CB0078272D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		793453361E4DB9F50078272D /* MGGameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGGameEngine.swift; sourceTree = "<group>"; };
+		793453371E4DB9F50078272D /* MGLeaderBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGLeaderBoard.swift; sourceTree = "<group>"; };
+		793453391E4DB9F50078272D /* MGNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGNetworkManager.swift; sourceTree = "<group>"; };
+		7934533B1E4DB9F50078272D /* MGPlayGroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGPlayGroundViewController.swift; sourceTree = "<group>"; };
+		7934533D1E4DB9F50078272D /* MGRandomSequenceNumberProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGRandomSequenceNumberProvider.swift; sourceTree = "<group>"; };
+		7934533E1E4DB9F50078272D /* MGUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGUtility.swift; sourceTree = "<group>"; };
+		793453401E4DB9F50078272D /* MGCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		95AFB69B6C3F1B975F6ECC05 /* Pods_MyntraGameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntraGameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A052AC594A3BD930CD22E4A2 /* Pods-MyntraGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntraGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyntraGameTests/Pods-MyntraGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		B0267750CA8FD1C1F60B740A /* Pods-MyntraGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntraGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyntraGame/Pods-MyntraGame.release.xcconfig"; sourceTree = "<group>"; };
+		B93847338E1B8D62FEBD0AFA /* Pods-MyntraGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntraGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyntraGameUITests/Pods-MyntraGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8D7E0243F518F372F1F3C4F /* Pods-MyntraGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntraGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyntraGameUITests/Pods-MyntraGameUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DBBFB434AA3F336E0F919B96 /* Pods_MyntraGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntraGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F793F4670C366976C8F0FEF1 /* Pods-MyntraGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntraGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyntraGame/Pods-MyntraGame.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		793452B51E4C25CA0078272D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D693D861510396298B20E390 /* Pods_MyntraGame.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793452CC1E4C25CA0078272D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25ECAC4C426AD73EE0ECBCDF /* Pods_MyntraGameTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793452D71E4C25CB0078272D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95D53671AAD8A32CF4050FD4 /* Pods_MyntraGameUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6918E0759B39E8E5FE273348 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6477E3BD3316E5E781277AF7 /* Pods_MyntraGame.framework */,
+				DBBFB434AA3F336E0F919B96 /* Pods_MyntraGameTests.framework */,
+				95AFB69B6C3F1B975F6ECC05 /* Pods_MyntraGameUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		793452AF1E4C25CA0078272D = {
+			isa = PBXGroup;
+			children = (
+				793452BA1E4C25CA0078272D /* MyntraGame */,
+				793452D21E4C25CA0078272D /* MyntraGameTests */,
+				793452DD1E4C25CB0078272D /* MyntraGameUITests */,
+				793452B91E4C25CA0078272D /* Products */,
+				EDDA419D3DC483DF93AF5943 /* Pods */,
+				6918E0759B39E8E5FE273348 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		793452B91E4C25CA0078272D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				793452B81E4C25CA0078272D /* MyntraGame.app */,
+				793452CF1E4C25CA0078272D /* MyntraGameTests.xctest */,
+				793452DA1E4C25CB0078272D /* MyntraGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		793452BA1E4C25CA0078272D /* MyntraGame */ = {
+			isa = PBXGroup;
+			children = (
+				793453351E4DB9F50078272D /* Model */,
+				7934533A1E4DB9F50078272D /* Presenter */,
+				7934533F1E4DB9F50078272D /* View */,
+				7934533C1E4DB9F50078272D /* Utility */,
+				793453381E4DB9F50078272D /* Network */,
+				793452BB1E4C25CA0078272D /* AppDelegate.swift */,
+				793452BF1E4C25CA0078272D /* Main.storyboard */,
+				793452C51E4C25CA0078272D /* Assets.xcassets */,
+				793452C71E4C25CA0078272D /* LaunchScreen.storyboard */,
+				793452CA1E4C25CA0078272D /* Info.plist */,
+				793452C21E4C25CA0078272D /* MyntraGame.xcdatamodeld */,
+			);
+			path = MyntraGame;
+			sourceTree = "<group>";
+		};
+		793452D21E4C25CA0078272D /* MyntraGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				793452D31E4C25CB0078272D /* MyntraGameTests.swift */,
+				793452D51E4C25CB0078272D /* Info.plist */,
+			);
+			path = MyntraGameTests;
+			sourceTree = "<group>";
+		};
+		793452DD1E4C25CB0078272D /* MyntraGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				793452DE1E4C25CB0078272D /* MyntraGameUITests.swift */,
+				793452E01E4C25CB0078272D /* Info.plist */,
+			);
+			path = MyntraGameUITests;
+			sourceTree = "<group>";
+		};
+		793453351E4DB9F50078272D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				793453361E4DB9F50078272D /* MGGameEngine.swift */,
+				793453371E4DB9F50078272D /* MGLeaderBoard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		793453381E4DB9F50078272D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				793453391E4DB9F50078272D /* MGNetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7934533A1E4DB9F50078272D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7934533B1E4DB9F50078272D /* MGPlayGroundViewController.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7934533C1E4DB9F50078272D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7934533D1E4DB9F50078272D /* MGRandomSequenceNumberProvider.swift */,
+				7934533E1E4DB9F50078272D /* MGUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7934533F1E4DB9F50078272D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				793453401E4DB9F50078272D /* MGCardCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDDA419D3DC483DF93AF5943 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F793F4670C366976C8F0FEF1 /* Pods-MyntraGame.debug.xcconfig */,
+				B0267750CA8FD1C1F60B740A /* Pods-MyntraGame.release.xcconfig */,
+				61435C4E55E3DA1D24CEA836 /* Pods-MyntraGameTests.debug.xcconfig */,
+				A052AC594A3BD930CD22E4A2 /* Pods-MyntraGameTests.release.xcconfig */,
+				B93847338E1B8D62FEBD0AFA /* Pods-MyntraGameUITests.debug.xcconfig */,
+				D8D7E0243F518F372F1F3C4F /* Pods-MyntraGameUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		793452B71E4C25CA0078272D /* MyntraGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 793452E31E4C25CB0078272D /* Build configuration list for PBXNativeTarget "MyntraGame" */;
+			buildPhases = (
+				DF1D063D7A1924A9EF821FE0 /* [CP] Check Pods Manifest.lock */,
+				793452B41E4C25CA0078272D /* Sources */,
+				793452B51E4C25CA0078272D /* Frameworks */,
+				793452B61E4C25CA0078272D /* Resources */,
+				6C7AB45E01F58784DABB3711 /* [CP] Embed Pods Frameworks */,
+				82BF80D426B140C54F056446 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyntraGame;
+			productName = MyntraGame;
+			productReference = 793452B81E4C25CA0078272D /* MyntraGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		793452CE1E4C25CA0078272D /* MyntraGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 793452E61E4C25CB0078272D /* Build configuration list for PBXNativeTarget "MyntraGameTests" */;
+			buildPhases = (
+				4A86A0B893BE80C495B0D8E1 /* [CP] Check Pods Manifest.lock */,
+				793452CB1E4C25CA0078272D /* Sources */,
+				793452CC1E4C25CA0078272D /* Frameworks */,
+				793452CD1E4C25CA0078272D /* Resources */,
+				F8B20892EFBAF72C39C7E088 /* [CP] Embed Pods Frameworks */,
+				08CD4DA416C98EBFF182A036 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				793452D11E4C25CA0078272D /* PBXTargetDependency */,
+			);
+			name = MyntraGameTests;
+			productName = MyntraGameTests;
+			productReference = 793452CF1E4C25CA0078272D /* MyntraGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		793452D91E4C25CB0078272D /* MyntraGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 793452E91E4C25CB0078272D /* Build configuration list for PBXNativeTarget "MyntraGameUITests" */;
+			buildPhases = (
+				2E19CE1E9EE478FC9BF514F2 /* [CP] Check Pods Manifest.lock */,
+				793452D61E4C25CB0078272D /* Sources */,
+				793452D71E4C25CB0078272D /* Frameworks */,
+				793452D81E4C25CB0078272D /* Resources */,
+				9F76DD2DFC2F41D1536DAE46 /* [CP] Embed Pods Frameworks */,
+				0F4B32DEBE935AC2F6E5237B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				793452DC1E4C25CB0078272D /* PBXTargetDependency */,
+			);
+			name = MyntraGameUITests;
+			productName = MyntraGameUITests;
+			productReference = 793452DA1E4C25CB0078272D /* MyntraGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		793452B01E4C25CA0078272D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Bhabani;
+				TargetAttributes = {
+					793452B71E4C25CA0078272D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+					};
+					793452CE1E4C25CA0078272D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 793452B71E4C25CA0078272D;
+					};
+					793452D91E4C25CB0078272D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 793452B71E4C25CA0078272D;
+					};
+				};
+			};
+			buildConfigurationList = 793452B31E4C25CA0078272D /* Build configuration list for PBXProject "MyntraGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 793452AF1E4C25CA0078272D;
+			productRefGroup = 793452B91E4C25CA0078272D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				793452B71E4C25CA0078272D /* MyntraGame */,
+				793452CE1E4C25CA0078272D /* MyntraGameTests */,
+				793452D91E4C25CB0078272D /* MyntraGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		793452B61E4C25CA0078272D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793452C91E4C25CA0078272D /* LaunchScreen.storyboard in Resources */,
+				793452C61E4C25CA0078272D /* Assets.xcassets in Resources */,
+				793452C11E4C25CA0078272D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793452CD1E4C25CA0078272D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793452D81E4C25CB0078272D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08CD4DA416C98EBFF182A036 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyntraGameTests/Pods-MyntraGameTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F4B32DEBE935AC2F6E5237B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyntraGameUITests/Pods-MyntraGameUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E19CE1E9EE478FC9BF514F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A86A0B893BE80C495B0D8E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6C7AB45E01F58784DABB3711 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyntraGame/Pods-MyntraGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82BF80D426B140C54F056446 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyntraGame/Pods-MyntraGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F76DD2DFC2F41D1536DAE46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyntraGameUITests/Pods-MyntraGameUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF1D063D7A1924A9EF821FE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8B20892EFBAF72C39C7E088 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyntraGameTests/Pods-MyntraGameTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		793452B41E4C25CA0078272D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793453471E4DB9F50078272D /* MGCardCollectionViewCell.swift in Sources */,
+				793452C41E4C25CA0078272D /* MyntraGame.xcdatamodeld in Sources */,
+				793453431E4DB9F50078272D /* MGNetworkManager.swift in Sources */,
+				793453461E4DB9F50078272D /* MGUtility.swift in Sources */,
+				793453451E4DB9F50078272D /* MGRandomSequenceNumberProvider.swift in Sources */,
+				793453441E4DB9F50078272D /* MGPlayGroundViewController.swift in Sources */,
+				793452BC1E4C25CA0078272D /* AppDelegate.swift in Sources */,
+				793453411E4DB9F50078272D /* MGGameEngine.swift in Sources */,
+				793453421E4DB9F50078272D /* MGLeaderBoard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793452CB1E4C25CA0078272D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793452D41E4C25CB0078272D /* MyntraGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793452D61E4C25CB0078272D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793452DF1E4C25CB0078272D /* MyntraGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		793452D11E4C25CA0078272D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 793452B71E4C25CA0078272D /* MyntraGame */;
+			targetProxy = 793452D01E4C25CA0078272D /* PBXContainerItemProxy */;
+		};
+		793452DC1E4C25CB0078272D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 793452B71E4C25CA0078272D /* MyntraGame */;
+			targetProxy = 793452DB1E4C25CB0078272D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		793452BF1E4C25CA0078272D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				793452C01E4C25CA0078272D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		793452C71E4C25CA0078272D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				793452C81E4C25CA0078272D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		793452E11E4C25CB0078272D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		793452E21E4C25CB0078272D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		793452E41E4C25CB0078272D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F793F4670C366976C8F0FEF1 /* Pods-MyntraGame.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = MyntraGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.MyntraGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		793452E51E4C25CB0078272D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0267750CA8FD1C1F60B740A /* Pods-MyntraGame.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = MyntraGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.MyntraGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		793452E71E4C25CB0078272D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61435C4E55E3DA1D24CEA836 /* Pods-MyntraGameTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = MyntraGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.MyntraGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyntraGame.app/MyntraGame";
+			};
+			name = Debug;
+		};
+		793452E81E4C25CB0078272D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A052AC594A3BD930CD22E4A2 /* Pods-MyntraGameTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = MyntraGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.MyntraGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyntraGame.app/MyntraGame";
+			};
+			name = Release;
+		};
+		793452EA1E4C25CB0078272D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B93847338E1B8D62FEBD0AFA /* Pods-MyntraGameUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = MyntraGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.MyntraGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MyntraGame;
+			};
+			name = Debug;
+		};
+		793452EB1E4C25CB0078272D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8D7E0243F518F372F1F3C4F /* Pods-MyntraGameUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = MyntraGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.MyntraGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MyntraGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		793452B31E4C25CA0078272D /* Build configuration list for PBXProject "MyntraGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793452E11E4C25CB0078272D /* Debug */,
+				793452E21E4C25CB0078272D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		793452E31E4C25CB0078272D /* Build configuration list for PBXNativeTarget "MyntraGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793452E41E4C25CB0078272D /* Debug */,
+				793452E51E4C25CB0078272D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		793452E61E4C25CB0078272D /* Build configuration list for PBXNativeTarget "MyntraGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793452E71E4C25CB0078272D /* Debug */,
+				793452E81E4C25CB0078272D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		793452E91E4C25CB0078272D /* Build configuration list for PBXNativeTarget "MyntraGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793452EA1E4C25CB0078272D /* Debug */,
+				793452EB1E4C25CB0078272D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		793452C21E4C25CA0078272D /* MyntraGame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				793452C31E4C25CA0078272D /* MyntraGame.xcdatamodel */,
+			);
+			currentVersion = 793452C31E4C25CA0078272D /* MyntraGame.xcdatamodel */;
+			path = MyntraGame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 793452B01E4C25CA0078272D /* Project object */;
+}
