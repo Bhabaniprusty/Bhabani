@@ -20,6 +20,7 @@
 		7987385E1E55BDD600482C35 /* LSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987385D1E55BDD600482C35 /* LSFile.swift */; };
 		798738601E55CE1900482C35 /* LSLogBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987385F1E55CE1900482C35 /* LSLogBase.swift */; };
 		798738621E55D68900482C35 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 798738611E55D68900482C35 /* Config.plist */; };
+		798738661E5698DB00482C35 /* LSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798738651E5698DB00482C35 /* LSConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		7987385D1E55BDD600482C35 /* LSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSFile.swift; sourceTree = "<group>"; };
 		7987385F1E55CE1900482C35 /* LSLogBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLogBase.swift; sourceTree = "<group>"; };
 		798738611E55D68900482C35 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		798738651E5698DB00482C35 /* LSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				798738611E55D68900482C35 /* Config.plist */,
 				798738361E55B9FF00482C35 /* ViewController.swift */,
 				798738551E55BA6400482C35 /* LSLogUtill.swift */,
+				798738651E5698DB00482C35 /* LSConfiguration.swift */,
 				798738571E55BB4D00482C35 /* LSLogManager.swift */,
 				798738591E55BDAC00482C35 /* LSConsole.swift */,
 				7987385B1E55BDBE00482C35 /* LSDataBase.swift */,
@@ -236,6 +239,7 @@
 				7987385E1E55BDD600482C35 /* LSFile.swift in Sources */,
 				798738371E55B9FF00482C35 /* ViewController.swift in Sources */,
 				7987385C1E55BDBE00482C35 /* LSDataBase.swift in Sources */,
+				798738661E5698DB00482C35 /* LSConfiguration.swift in Sources */,
 				798738351E55B9FF00482C35 /* AppDelegate.swift in Sources */,
 				798738601E55CE1900482C35 /* LSLogBase.swift in Sources */,
 				7987385A1E55BDAC00482C35 /* LSConsole.swift in Sources */,
@@ -448,6 +452,7 @@
 				798738501E55BA0000482C35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		798738511E55BA0000482C35 /* Build configuration list for PBXNativeTarget "LogSinkTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +461,7 @@
 				798738531E55BA0000482C35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
