@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ProductCatalog" representedClassName="ProductCatalog" syncable="YES" codeGenerationType="class">
+        <attribute name="price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="productId" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="productImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="unit" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="cart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingCart" inverseName="product" inverseEntity="ShoppingCart" syncable="YES"/>
+        <relationship name="productCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProductCategory" inverseName="products" inverseEntity="ProductCategory" syncable="YES"/>
+        <relationship name="storage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Storage" inverseName="product" inverseEntity="Storage" syncable="YES"/>
+    </entity>
+    <entity name="ProductCategory" representedClassName="ProductCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryName" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProductCatalog" inverseName="productCategory" inverseEntity="ProductCatalog" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingCart" representedClassName="ShoppingCart" syncable="YES" codeGenerationType="class">
+        <attribute name="isAvailable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quantity" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProductCatalog" inverseName="cart" inverseEntity="ProductCatalog" syncable="YES"/>
+    </entity>
+    <entity name="Storage" representedClassName="Storage" syncable="YES" codeGenerationType="class">
+        <attribute name="availableQuantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cartOrderQuantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="product" maxCount="1" deletionRule="Nullify" destinationEntity="ProductCatalog" inverseName="storage" inverseEntity="ProductCatalog" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ProductCatalog" positionX="-54" positionY="-9" width="128" height="195"/>
+        <element name="ProductCategory" positionX="-27" positionY="63" width="128" height="75"/>
+        <element name="ShoppingCart" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Storage" positionX="-9" positionY="81" width="128" height="105"/>
+    </elements>
+</model>
