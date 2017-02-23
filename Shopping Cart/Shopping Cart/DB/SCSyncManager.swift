@@ -61,7 +61,7 @@ class SCSyncManager{
         
     }
     
-    private func stopSync() {
+    func stopSync() {
         syncTimer?.invalidate()
     }
     

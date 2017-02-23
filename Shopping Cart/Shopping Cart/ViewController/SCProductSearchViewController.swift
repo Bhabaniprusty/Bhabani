@@ -14,14 +14,12 @@ import SDWebImage
 class SCProductSearchViewController: UITableViewController {
     
     // MARK: - Properties
-    var detailViewController: SCProductDetailViewController? = nil
-    
     var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: nil, scope: nil) {didSet {fetchResultController.delegate = self}}
     
     var searchController = UISearchController(searchResultsController: nil)
     
     
-    
+
     
     // MARK: - View Setup
     override func viewDidLoad() {
@@ -32,23 +30,11 @@ class SCProductSearchViewController: UITableViewController {
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
-        
-        // Setup the Scope Bar, Need to fetch 4 imprtant categories
-        searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
         tableView.tableHeaderView = searchController.searchBar
-        
-        
-        if let splitViewController = splitViewController {
-            let controllers = splitViewController.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? SCProductDetailViewController
-        }
     }
     
     @IBAction func CancelAction(_ sender: UIBarButtonItem) {
-        //searchController.removeFromParentViewController()
-        
         dismiss(animated: true, completion: nil)
-        //self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
@@ -122,9 +108,7 @@ extension SCProductSearchViewController: UISearchBarDelegate {
 extension SCProductSearchViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
 
@@ -160,5 +144,19 @@ extension SCProductSearchViewController: NSFetchedResultsControllerDelegate{
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
     }
+}
+
+extension SCProductSearchViewController: UISplitViewControllerDelegate{
+
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? SCProductDetailViewController else { return false }
+        if topAsDetailController.catalog == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
+        return false
+    }
+
 }
 

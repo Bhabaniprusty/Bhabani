@@ -165,14 +165,13 @@
             </objects>
             <point key="canvasLocation" x="-791.20000000000005" y="-247.82608695652175"/>
         </scene>
-        <!--Master-->
+        <!--Product search-->
         <scene sceneID="hhe-4k-XkO">
             <objects>
-                <navigationController title="Master" id="HcH-yG-cgK" sceneMemberID="viewController">
+                <navigationController title="Product search" id="HcH-yG-cgK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="v2s-UV-eLS">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -206,7 +205,7 @@
                                             <constraint firstAttribute="height" constant="200" id="ig8-K3-gr5"/>
                                         </constraints>
                                     </imageView>
-                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail Text" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-AB-2tm">
+                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text=" " textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-AB-2tm">
                                         <rect key="frame" x="4" y="250" width="335" height="24"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -255,7 +254,7 @@
         <!--Split View Controller-->
         <scene sceneID="yDd-bf-Qja">
             <objects>
-                <splitViewController id="7rg-Ix-J5o" sceneMemberID="viewController">
+                <splitViewController id="7rg-Ix-J5o" customClass="SCSplitViewController" customModule="Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
                         <segue destination="HcH-yG-cgK" kind="relationship" relationship="masterViewController" id="ikt-4r-Ybl"/>
@@ -360,10 +359,9 @@
         <scene sceneID="uv2-Hk-vaa">
             <objects>
                 <navigationController id="7da-Pf-uJQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TWw-IE-vmp">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="TWw-IE-vmp">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -396,6 +394,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sNw-8f-ts4"/>
+        <segue reference="SLh-Pc-O1z"/>
     </inferredMetricsTieBreakers>
 </document>

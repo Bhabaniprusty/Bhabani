@@ -74,14 +74,10 @@ class SCUtility{
             NSLocalizedDescriptionKey: localisedString])
     }
     
-}
-
-extension String{
-    
-    func dateValue() -> NSDate? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        return dateFormatter.date(from: self) as NSDate?
+    class func invalidateStorage() {
+        SCSyncManager.sharedInstance.stopSync()
+        SCDBManager.sharedInstance.removeAllEnityData(entityName: "Storage")
+        SCSyncManager.sharedInstance.startSync()
     }
     
 }

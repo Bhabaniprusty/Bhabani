@@ -19,6 +19,7 @@
     <entity name="ShoppingCart" representedClassName="ShoppingCart" syncable="YES" codeGenerationType="class">
         <attribute name="isAvailable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantity" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProductCatalog" inverseName="cart" inverseEntity="ProductCatalog" syncable="YES"/>
     </entity>
     <entity name="Storage" representedClassName="Storage" syncable="YES" codeGenerationType="class">
@@ -30,7 +31,7 @@
     <elements>
         <element name="ProductCatalog" positionX="-54" positionY="-9" width="128" height="195"/>
         <element name="ProductCategory" positionX="-27" positionY="63" width="128" height="75"/>
-        <element name="ShoppingCart" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="ShoppingCart" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Storage" positionX="-9" positionY="81" width="128" height="105"/>
     </elements>
 </model>

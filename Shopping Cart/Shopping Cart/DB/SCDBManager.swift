@@ -156,6 +156,7 @@ class SCDBManager: NSObject{
             cartItem.quantity += quantity
             product.storage?.cartOrderQuantity = cartItem.quantity
             cartItem.isAvailable = cartItem.quantity <= (product.storage?.availableQuantity ?? 0)
+            cartItem.updatedAt = Date() as NSDate?
             
             try? moc.save()
         }
