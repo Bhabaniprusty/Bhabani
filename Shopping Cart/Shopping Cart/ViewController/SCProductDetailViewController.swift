@@ -23,21 +23,21 @@ class SCProductDetailViewController: SCDetailViewController {
     
     func configureView() {
         if let catalog = catalog {
-            addtoCartButton.isHidden = false
-            detailDescriptionLabel.text = catalog.productDescription
+            addtoCartButton?.isHidden = false
+            detailDescriptionLabel?.text = catalog.productDescription
             title = catalog.productName
             
             if let imageUrl = catalog.productImageUrl, let url =  URL(string: imageUrl) {
-                catalogImageView.sd_setImage(with: url, placeholderImage: nil)
+                catalogImageView?.sd_setImage(with: url, placeholderImage: nil)
             }
         }else {
-            addtoCartButton.isHidden = true
+            addtoCartButton?.isHidden = true
         }
     }
     
     @IBAction func AddToCart(_ sender: UIButton) {
-        if let catalog = catalog {
-            SCDBManager.sharedInstance.addToCart(product: catalog, quantity: 1)
+        if let productId = catalog?.productId {
+            SCDBManager.sharedInstance.addToCart(productId: productId, quantity: 1)
         }
     }
     override func viewDidLoad() {

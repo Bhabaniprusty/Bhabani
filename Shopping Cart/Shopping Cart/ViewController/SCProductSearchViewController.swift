@@ -60,13 +60,11 @@ class SCProductSearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         let sectionInfo = fetchResultController.sections![section]
         return sectionInfo.numberOfObjects
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Static.catalogCellIdentifier, for: indexPath)
         let catalog = fetchResultController.object(at: indexPath)
         configureCell(cell, withCataLog: catalog, indexPath: indexPath)

@@ -50,39 +50,42 @@ class SCDBManager: NSObject{
         
         persistentContainer.performBackgroundTask { (moc) in
             for catalog in catalogs{
-                let productId = catalog["productId"].string
-                
-                var productCatalog: ProductCatalog!
-                
-                let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
-                catalogFetchRequest.predicate = NSPredicate(format: "productId == \(productId)")
-                if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog {
-                    productCatalog = existingCatalog
-                }else{
-                    productCatalog = ProductCatalog(context: moc)
-                }
-                
-                productCatalog.price = catalog["price"].float ?? 0.0
-                productCatalog.productDescription = catalog["productDescription"].string
-                productCatalog.productImageUrl = catalog["productImageUrl"].string
-                productCatalog.productName = catalog["productName"].string
-                productCatalog.unit = catalog["unit"].string
-                productCatalog.updatedAt = catalog["updatedAt"].string?.dateValue()
-                
-                var category: ProductCategory!
-                let productCategoryName = catalog["category"].string
-                
-                //Product catalog's category can be changed. update every time is good option
-                if productCatalog.productCategory?.categoryName != productCategoryName {
-                    let categoryFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCategory)
-                    catalogFetchRequest.predicate = NSPredicate(format: "categoryName == \(productCategoryName)")
-                    if let  existingCategory = (try? moc.fetch(categoryFetchRequest))?.first as? ProductCategory{
-                        category = existingCategory
+                if let productId = catalog["productId"].string{
+                    var productCatalog: ProductCatalog!
+                    
+                    let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+                    catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
+                    
+                    if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog {
+                        productCatalog = existingCatalog
                     }else{
-                        category = ProductCategory(context: moc)
+                        productCatalog = ProductCatalog(context: moc)
+                        productCatalog.productId = productId
                     }
                     
-                    productCatalog.productCategory = category
+                    productCatalog.price = catalog["price"].float ?? 0.0
+                    productCatalog.productDescription = catalog["productDescription"].string
+                    productCatalog.productImageUrl = catalog["productImageUrl"].string
+                    productCatalog.productName = catalog["productName"].string
+                    productCatalog.unit = catalog["unit"].string
+                    productCatalog.updatedAt = catalog["updatedAt"].string?.dateValue()
+                    
+                    var category: ProductCategory!
+                    if let productCategoryName = catalog["productCategory"].string{
+                        //Product catalog's category can be changed. update every time is good option
+                        if productCatalog.productCategory?.categoryName != productCategoryName {
+                            let categoryFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCategory)
+                            catalogFetchRequest.predicate = NSPredicate(format: "categoryName == %@",productCategoryName)
+                            if let  existingCategory = (try? moc.fetch(categoryFetchRequest))?.first as? ProductCategory{
+                                category = existingCategory
+                            }else{
+                                category = ProductCategory(context: moc)
+                                category.categoryName = productCategoryName
+                            }
+                            
+                            productCatalog.productCategory = category
+                        }
+                    }
                 }
             }
             
@@ -93,27 +96,28 @@ class SCDBManager: NSObject{
     func saveProductCatalogsStorage(catalogStorages : [JSON]) {
         persistentContainer.performBackgroundTask { (moc) in
             for catalogStorage in catalogStorages{
-                let productId = catalogStorage["productId"].string
-                let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
-                catalogFetchRequest.predicate = NSPredicate(format: "productId == \(productId)")
-                
-                //Will update if catalog is locally available
-                if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
-                    var storage: Storage!
-                    if let existingStorage = existingCatalog.storage{
-                        storage = existingStorage
-                    }else{
-                        storage = Storage(context: moc)
-                        existingCatalog.storage = storage
-                    }
+                if let productId = catalogStorage["productId"].string{
+                    let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+                    catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
                     
-                    storage.availableQuantity = catalogStorage["availableQuantity"].double ?? 0
-                    storage.cartOrderQuantity = 0 // will be updated when synced with Cart
-                    
-                    // If product added to cart, then update cart and storage
-                    if let cartItem = existingCatalog.cart{
-                        cartItem.isAvailable = cartItem.quantity <= storage.availableQuantity
-                        storage.cartOrderQuantity = cartItem.quantity
+                    //Will update if catalog is locally available
+                    if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
+                        var storage: Storage!
+                        if let existingStorage = existingCatalog.storage{
+                            storage = existingStorage
+                        }else{
+                            storage = Storage(context: moc)
+                            existingCatalog.storage = storage
+                        }
+                        
+                        storage.availableQuantity = catalogStorage["availableQuantity"].double ?? 0
+                        storage.cartOrderQuantity = 0 // will be updated when synced with Cart
+                        
+                        // If product added to cart, then update cart and storage
+                        if let cartItem = existingCatalog.cart{
+                            cartItem.isAvailable = cartItem.quantity <= storage.availableQuantity
+                            storage.cartOrderQuantity = cartItem.quantity
+                        }
                     }
                 }
             }
@@ -122,23 +126,31 @@ class SCDBManager: NSObject{
         }
     }
     
-    func addToCart(product: ProductCatalog, quantity: Double) {
+    func addToCart(productId: String, quantity: Double) {
         persistentContainer.performBackgroundTask { (moc) in
-            var cartItem: ShoppingCart!
             
-            if product.cart == nil{
-                cartItem = ShoppingCart(context: moc)
-                product.cart = cartItem
-            }else{
-                cartItem = product.cart
+            let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+            catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
+            
+            //Will update if catalog is locally available
+            if let  product = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
+                var cartItem: ShoppingCart!
+                
+                if product.cart == nil{
+                    cartItem = ShoppingCart(context: moc)
+                    cartItem.product = product
+                    //                product.cart = cartItem
+                }else{
+                    cartItem = product.cart
+                }
+                
+                cartItem.quantity += quantity
+                product.storage?.cartOrderQuantity = cartItem.quantity
+                cartItem.isAvailable = cartItem.quantity <= (product.storage?.availableQuantity ?? 0)
+                cartItem.updatedAt = Date() as NSDate?
+                
+                try? moc.save()
             }
-            
-            cartItem.quantity += quantity
-            product.storage?.cartOrderQuantity = cartItem.quantity
-            cartItem.isAvailable = cartItem.quantity <= (product.storage?.availableQuantity ?? 0)
-            cartItem.updatedAt = Date() as NSDate?
-            
-            try? moc.save()
         }
     }
     
@@ -221,7 +233,6 @@ class SCDBManager: NSObject{
                                                     managedObjectContext: persistentContainer.viewContext,
                                                     sectionNameKeyPath: nil,
                                                     cacheName: nil)
-        
         
         do {
             try catalogFRC.performFetch()

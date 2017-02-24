@@ -67,7 +67,7 @@ extension SCCartViewController: UITableViewDataSource {
             cartCell.titleLabel.text = cartItem.product?.productName
             cartCell.subTitleLabel.text = cartItem.product?.productName
             cartCell.quantityLabel.text = String(cartItem.quantity)
-            cartCell.priceLabel.text = String(describing: cartItem.product?.price)  // Need to use currency formatter
+            cartCell.priceLabel.text = cartItem.product?.price.asLocaleCurrency
             
             cartCell.availabilityIndicatorImageView.backgroundColor = cartItem.isAvailable ? UIColor.green : UIColor.orange
             if let imageUrl = cartItem.product?.productImageUrl, let url =  URL(string: imageUrl){

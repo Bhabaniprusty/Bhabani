@@ -11,7 +11,7 @@ import Foundation
 class SCUtility{
     
     struct Static {
-        static let pageSize = 100
+        static let pageSize = 10
         static let invalidedDuratopn = 5.0
     }
     
@@ -40,7 +40,7 @@ class SCUtility{
             
             // dump jsonArr in DB
             if let catalogs = jsonArr{
-                SCDBManager.sharedInstance.saveProductCatalogsStorage(catalogStorages: catalogs)
+                SCDBManager.sharedInstance.saveProductCatalogs(catalogs: catalogs)
             }
             completion((jsonArr?.count == Static.pageSize))
         }

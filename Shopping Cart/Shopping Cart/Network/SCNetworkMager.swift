@@ -13,7 +13,7 @@ class SCNetworkMager{
     
     struct Static {
         static let networkErrorDomain = "com.sc.error"
-        static let shoppingCartUrl = "<storageUrl>"
+        static let shoppingCartUrl = "http://dawn-shadow-1986.getsandbox.com/"
         static let invalidUrl = "Invalid url"
         static let invalidJSON = "error trying to convert data to JSON"
         static let invalidParameters = "Parameters are not available as specified"
@@ -34,8 +34,9 @@ class SCNetworkMager{
                               completion: @escaping (_ catalogs: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
-        let allContactsEndpoint = Static.shoppingCartUrl + "<Additional path to catalog fetch>"
-        guard let url = URL(string: allContactsEndpoint) else {
+        let catalogsEndpoint = Static.shoppingCartUrl + "catalogs?start=\(pageIndex*pageSize)&end=\(pageIndex*pageSize + pageSize)"
+
+        guard let url = URL(string: catalogsEndpoint) else {
             let error = SCUtility.prepareError(domain: Static.networkErrorDomain, localisedString: Static.invalidUrl)
             completion(nil, error)
             
@@ -69,8 +70,8 @@ class SCNetworkMager{
                               completion: @escaping (_ storages: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
-        let allContactsEndpoint = Static.shoppingCartUrl + "<Additional path to product storagefetch>"
-        guard let url = URL(string: allContactsEndpoint) else {
+        let storagesEndpoint = Static.shoppingCartUrl + "storages?start=\(pageIndex*pageSize)&end=\(pageIndex*pageSize + pageSize)"
+        guard let url = URL(string: storagesEndpoint) else {
             let error = SCUtility.prepareError(domain: Static.networkErrorDomain, localisedString: Static.invalidUrl)
             completion(nil, error)
             
