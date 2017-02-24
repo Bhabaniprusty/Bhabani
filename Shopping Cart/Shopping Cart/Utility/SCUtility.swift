@@ -13,6 +13,7 @@ class SCUtility{
     
     struct Static {
         static let pageSize = 100
+        static let invalidedDuratopn = 5.0
     }
     
     
@@ -77,7 +78,9 @@ class SCUtility{
     class func invalidateStorage() {
         SCSyncManager.sharedInstance.stopSync()
         SCDBManager.sharedInstance.removeAllEnityData(entityName: "Storage")
-        SCSyncManager.sharedInstance.startSync()
+        DispatchQueue.main.asyncAfter(deadline: .now() + Static.invalidedDuratopn) {
+            SCSyncManager.sharedInstance.startSync()
+        }
     }
     
 }
