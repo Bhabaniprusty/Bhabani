@@ -23,7 +23,7 @@ class SCDBManager: NSObject{
     private override init() { }
     
     // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Shopping_Cart")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -142,7 +142,6 @@ class SCDBManager: NSObject{
         }
     }
     
-    
     func fetchLastStorageUpdatedDate() -> Date? {
         let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityStorage)
         catalogFetchRequest.fetchLimit = 1
@@ -163,7 +162,6 @@ class SCDBManager: NSObject{
         
         return ((try? self.persistentContainer.viewContext.fetch(catalogFetchRequest))?.first as? ProductCatalog)?.updatedAt as Date?
     }
-    
     
     private func removeAllEnityData(entityName: String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)

@@ -16,24 +16,16 @@ class SCCartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
         //Initiate sync operation from last settings
         SCSyncManager.sharedInstance.startSync()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func closeSearchScreen(sender: UIStoryboardSegue){
         
     }
     
     @IBAction func showSettingOptions(_ sender: UIBarButtonItem) {
-        
         let alert = UIAlertController(message: "Auto Sync")
         alert.modalPresentationStyle = .popover
         let ppc = alert.popoverPresentationController
@@ -65,12 +57,10 @@ extension SCCartViewController: UITableViewDataSource {
     
     func configureCell(_ cell: UITableViewCell, withCartItem cartItem: ShoppingCart, indexPath: IndexPath) {
         if let cartCell = cell as? SCCartCell{
-            
             cartCell.titleLabel.text = cartItem.product?.productName
             cartCell.subTitleLabel.text = cartItem.product?.productName
             cartCell.quantityLabel.text = String(cartItem.quantity)
             cartCell.priceLabel.text = String(describing: cartItem.product?.price)  // Need to use currency formatter
-            
             
             cartCell.availabilityIndicatorImageView.backgroundColor = cartItem.isAvailable ? UIColor.green : UIColor.orange
             if let imageUrl = cartItem.product?.productImageUrl, let url =  URL(string: imageUrl){

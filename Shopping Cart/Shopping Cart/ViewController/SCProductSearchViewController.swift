@@ -23,9 +23,8 @@ class SCProductSearchViewController: UITableViewController {
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
+        
     }
-    
-    
     
     // MARK: - Table View
     override func numberOfSections(in tableView: UITableView) -> Int {

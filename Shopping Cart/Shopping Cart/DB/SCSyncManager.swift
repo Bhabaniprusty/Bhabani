@@ -13,7 +13,7 @@ typealias evalFunc = ()->TimeInterval
 
 class SCSyncManager {
     
-    struct Static {
+    private struct Static {
         static let syncIntervalKey = "syncIntervalKey"
     }
     
@@ -24,7 +24,7 @@ class SCSyncManager {
     }
 
 
-    enum SCSyncAction {
+    private enum SCSyncAction {
         case Start(evalFunc)
         case Stop
     }
@@ -59,7 +59,6 @@ class SCSyncManager {
         syncTimer?.invalidate()
         syncTimer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(self.syncStorage), userInfo: nil, repeats: true);
         syncTimer?.fire()
-        
     }
     
     func stopSync() {
