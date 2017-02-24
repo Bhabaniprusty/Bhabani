@@ -16,7 +16,11 @@ class SCCartViewController: UIViewController {
     }
 
     @IBOutlet weak var cartTableView: UITableView!
-    var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController() {didSet {cartFetchResultController.delegate = self}}
+    var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController() {
+        didSet {
+            cartFetchResultController.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +34,8 @@ class SCCartViewController: UIViewController {
     }
     
     @IBAction func showSettingOptions(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(message: "Auto Sync")
+        let alert = UIAlertController(message: NSLocalizedString("Auto Sync",
+                                                                 comment: "Auto Sync functionality title"))
         alert.modalPresentationStyle = .popover
         let ppc = alert.popoverPresentationController
         ppc?.barButtonItem = sender
@@ -42,18 +47,18 @@ class SCCartViewController: UIViewController {
 extension SCCartViewController: UITableViewDataSource {
     // MARK: - Table View
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.cartFetchResultController.sections?.count ?? 0
+        return cartFetchResultController.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.cartFetchResultController.sections![section]
+        let sectionInfo = cartFetchResultController.sections![section]
         return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Static.cartCellIdentifier, for: indexPath)
-        let cartItem = self.cartFetchResultController.object(at: indexPath)
-        self.configureCell(cell, withCartItem: cartItem, indexPath: indexPath)
+        let cartItem = cartFetchResultController.object(at: indexPath)
+        configureCell(cell, withCartItem: cartItem, indexPath: indexPath)
         return cell
     }
     
@@ -74,34 +79,43 @@ extension SCCartViewController: UITableViewDataSource {
 
 extension SCCartViewController: NSFetchedResultsControllerDelegate{
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.cartTableView.beginUpdates()
+        cartTableView.beginUpdates()
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
         switch type {
         case .insert:
-            self.cartTableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+            cartTableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
         case .delete:
-            self.cartTableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
+            cartTableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
         default:
             return
         }
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             cartTableView.insertRows(at: [newIndexPath!], with: .fade)
         case .delete:
             cartTableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            self.configureCell(cartTableView.cellForRow(at: indexPath!)!, withCartItem: anObject as! ShoppingCart, indexPath: indexPath!)
+            configureCell(cartTableView.cellForRow(at: indexPath!)!,
+                               withCartItem: anObject as! ShoppingCart,
+                               indexPath: indexPath!)
         case .move:
             cartTableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.cartTableView.endUpdates()
+        cartTableView.endUpdates()
     }
 }

@@ -18,7 +18,12 @@ class SCProductSearchViewController: UITableViewController {
         static let detailSegIdentifier = "showDetail"
     }
 
-    var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: nil, scope: nil) {didSet {fetchResultController.delegate = self}}
+    var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText:
+        nil, scope: nil) {
+        didSet {
+            fetchResultController.delegate = self
+        }
+    }
     
     var searchController = UISearchController(searchResultsController: nil) {
         didSet {
@@ -37,8 +42,11 @@ class SCProductSearchViewController: UITableViewController {
     
     
     func updateRefreshControl() {
-        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl?.addTarget(self, action: #selector(SCProductSearchViewController.refreshContent), for: UIControlEvents.valueChanged)
+        refreshControl?.attributedTitle = NSAttributedString(string: NSLocalizedString("Pull to refresh",
+                                                                                       comment: "User to pull to refresh content"))
+        refreshControl?.addTarget(self,
+                                  action: #selector(SCProductSearchViewController.refreshContent),
+                                  for: UIControlEvents.valueChanged)
     }
     
     func refreshContent(){
@@ -48,20 +56,20 @@ class SCProductSearchViewController: UITableViewController {
     
     // MARK: - Table View
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.fetchResultController.sections?.count ?? 0
+        return fetchResultController.sections?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let sectionInfo = self.fetchResultController.sections![section]
+        let sectionInfo = fetchResultController.sections![section]
         return sectionInfo.numberOfObjects
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Static.catalogCellIdentifier, for: indexPath)
-        let catalog = self.fetchResultController.object(at: indexPath)
-        self.configureCell(cell, withCataLog: catalog, indexPath: indexPath)
+        let catalog = fetchResultController.object(at: indexPath)
+        configureCell(cell, withCataLog: catalog, indexPath: indexPath)
         return cell
     }
     
@@ -77,7 +85,8 @@ class SCProductSearchViewController: UITableViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: searchText, scope: nil)
+        fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: searchText,
+                                                                                        scope: nil)
         tableView.reloadData()
     }
     
@@ -112,34 +121,42 @@ extension SCProductSearchViewController: UISearchResultsUpdating {
 
 extension SCProductSearchViewController: NSFetchedResultsControllerDelegate{
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView.beginUpdates()
+        tableView.beginUpdates()
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
         switch type {
         case .insert:
-            self.tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+            tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
         case .delete:
-            self.tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
+            tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
         default:
             return
         }
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any, at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: .fade)
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            self.configureCell(tableView.cellForRow(at: indexPath!)!, withCataLog: anObject as! ProductCatalog, indexPath: indexPath!)
+            configureCell(tableView.cellForRow(at: indexPath!)!,
+                               withCataLog: anObject as! ProductCatalog,
+                               indexPath: indexPath!)
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView.endUpdates()
+        tableView.endUpdates()
     }
 }

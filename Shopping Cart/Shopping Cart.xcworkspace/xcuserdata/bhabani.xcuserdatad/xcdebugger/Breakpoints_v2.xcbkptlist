@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/Utility/SCSplitViewController.swift"
-            timestampString = "509624563.84981"
+            timestampString = "509634498.225243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "splitViewController(_:collapseSecondary:onto:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/Utility/SCSplitViewController.swift"
-            timestampString = "509624563.84981"
+            timestampString = "509634498.225243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "willTransition(to:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/Network/SCNetworkMager.swift"
-            timestampString = "509633307.931994"
+            timestampString = "509634449.295958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "fetchProductCatalogs(updatedAfterDate:pageIndex:pageSize:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/Network/SCNetworkMager.swift"
-            timestampString = "509633307.931994"
+            timestampString = "509634449.295958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "fetchProductStorages(updatedAfterDate:pageIndex:pageSize:completion:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -28,7 +28,10 @@ class SCNetworkMager{
     }
     
     // Login, Signup, session management is not in this scope
-    func fetchProductCatalogs(updatedAfterDate updatedAfter: Date?, pageIndex: Int, pageSize: Int, completion: @escaping (_ catalogs: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
+    func fetchProductCatalogs(updatedAfterDate updatedAfter: Date?,
+                              pageIndex: Int,
+                              pageSize: Int,
+                              completion: @escaping (_ catalogs: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
         let allContactsEndpoint = Static.shoppingCartUrl + "<Additional path to catalog fetch>"
@@ -45,7 +48,8 @@ class SCNetworkMager{
         let task = session.dataTask(with: urlRequest, completionHandler: {(data, response, error)  in
             if response?.url == url{
                 
-                guard let dataFromNetworking = data, let catalogs = JSON(data: dataFromNetworking)[Static.keyPathForCatalog].array else{
+                guard let dataFromNetworking = data,
+                    let catalogs = JSON(data: dataFromNetworking)[Static.keyPathForCatalog].array else {
                     completion(nil, error)
                     return
                 }
@@ -59,7 +63,10 @@ class SCNetworkMager{
         return task
     }
     
-    func fetchProductStorages(updatedAfterDate updatedAfter: Date?, pageIndex: Int, pageSize: Int, completion: @escaping (_ storages: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
+    func fetchProductStorages(updatedAfterDate updatedAfter: Date?,
+                              pageIndex: Int,
+                              pageSize: Int,
+                              completion: @escaping (_ storages: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
         let allContactsEndpoint = Static.shoppingCartUrl + "<Additional path to product storagefetch>"
@@ -73,7 +80,8 @@ class SCNetworkMager{
         //Prepare proper URLRequest with provided paramaters
         let urlRequest = URLRequest(url: url)
         
-        let task = session.dataTask(with: urlRequest, completionHandler: {(data, response, error)  in
+        let task = session.dataTask(with: urlRequest,
+                                    completionHandler: {(data, response, error)  in
             if response?.url == url{
                 
                 guard let dataFromNetworking = data, let storages = JSON(data: dataFromNetworking)[Static.kayPathForStorage].array else{

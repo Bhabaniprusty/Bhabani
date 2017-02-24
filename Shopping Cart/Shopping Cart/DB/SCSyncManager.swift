@@ -57,7 +57,11 @@ class SCSyncManager {
 
     private func startSync(timeInterval: TimeInterval) {
         syncTimer?.invalidate()
-        syncTimer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(self.syncStorage), userInfo: nil, repeats: true);
+        syncTimer = Timer.scheduledTimer(timeInterval: timeInterval,
+                                         target: self,
+                                         selector: #selector(self.syncStorage),
+                                         userInfo: nil,
+                                         repeats: true);
         syncTimer?.fire()
     }
     

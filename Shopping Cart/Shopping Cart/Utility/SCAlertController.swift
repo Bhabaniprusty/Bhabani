@@ -11,21 +11,36 @@ import UIKit
 extension UIAlertController {
     convenience init(message: String?) {
         
-        self.init(title: "Auto Sync", message: "Application will check avaibility of cart Items", preferredStyle: .actionSheet)
         
-        self.addAction(UIAlertAction(title: "Frequently", style: .default, handler: { (action) in
+        
+        
+        self.init(title: NSLocalizedString("Auto Sync",
+                                           comment: "Auto Sync functionality title"),
+                  message: NSLocalizedString("Application will check avaibility of cart Items",
+                                             comment: "Auto Sync functionality description"),
+                  preferredStyle: .actionSheet)
+        
+        addAction(UIAlertAction(title: NSLocalizedString("Frequently",
+                                                         comment: "Auto Sync will work frequently"),
+                                style: .default, handler: { (action) in
             SCSyncManager.sharedInstance.perFormSyncCommand(action: "👍")
         }))
         
-        self.addAction(UIAlertAction(title: "Hourly", style: .default, handler: { (action) in
+        addAction(UIAlertAction(title: NSLocalizedString("Hourly",
+                                                         comment: "Auto Sync will work Hourly"),
+                                style: .default, handler: { (action) in
             SCSyncManager.sharedInstance.perFormSyncCommand(action: "👊")
         }))
         
-        self.addAction(UIAlertAction(title: "Do not Sync", style: .destructive, handler: { (action) in
+        addAction(UIAlertAction(title: NSLocalizedString("Do not Sync",
+                                                         comment: "Auto Sync will be stooped"),
+                                style: .destructive, handler: { (action) in
             SCSyncManager.sharedInstance.perFormSyncCommand(action: "👎")
         }))
         
-        self.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+        addAction(UIAlertAction(title: NSLocalizedString("Cancel",
+                                                         comment: "Cancel the wizard"),
+                                style: .cancel, handler: { (action) in
             
         }))
     }

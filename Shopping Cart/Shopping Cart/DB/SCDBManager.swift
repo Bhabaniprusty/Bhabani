@@ -48,7 +48,7 @@ class SCDBManager: NSObject{
     
     func saveProductCatalogs(catalogs : [JSON]) {
         
-        self.persistentContainer.performBackgroundTask { (moc) in
+        persistentContainer.performBackgroundTask { (moc) in
             for catalog in catalogs{
                 let productId = catalog["productId"].string
                 
@@ -91,7 +91,7 @@ class SCDBManager: NSObject{
     }
     
     func saveProductCatalogsStorage(catalogStorages : [JSON]) {
-        self.persistentContainer.performBackgroundTask { (moc) in
+        persistentContainer.performBackgroundTask { (moc) in
             for catalogStorage in catalogStorages{
                 let productId = catalogStorage["productId"].string
                 let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
@@ -123,7 +123,7 @@ class SCDBManager: NSObject{
     }
     
     func addToCart(product: ProductCatalog, quantity: Double) {
-        self.persistentContainer.performBackgroundTask { (moc) in
+        persistentContainer.performBackgroundTask { (moc) in
             var cartItem: ShoppingCart!
             
             if product.cart == nil{
@@ -148,9 +148,7 @@ class SCDBManager: NSObject{
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: true)
         catalogFetchRequest.sortDescriptors = [sortDescriptor]
         
-        
-        return ((try? self.persistentContainer.viewContext.fetch(catalogFetchRequest))?.first as? ProductCatalog)?.updatedAt as Date?
-        
+        return ((try? persistentContainer.viewContext.fetch(catalogFetchRequest))?.first as? ProductCatalog)?.updatedAt as Date?
     }
     
     func fetchLastCatalogUpdatedDate() -> Date? {
@@ -160,7 +158,7 @@ class SCDBManager: NSObject{
         catalogFetchRequest.sortDescriptors = [sortDescriptor]
         
         
-        return ((try? self.persistentContainer.viewContext.fetch(catalogFetchRequest))?.first as? ProductCatalog)?.updatedAt as Date?
+        return ((try? persistentContainer.viewContext.fetch(catalogFetchRequest))?.first as? ProductCatalog)?.updatedAt as Date?
     }
     
     private func removeAllEnityData(entityName: String) {
@@ -168,7 +166,7 @@ class SCDBManager: NSObject{
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         
-        self.persistentContainer.performBackgroundTask { (moc) in
+        persistentContainer.performBackgroundTask { (moc) in
             do {
                 try self.persistentContainer.persistentStoreCoordinator.execute(deleteRequest, with: moc)
             } catch let error as NSError {
@@ -179,7 +177,7 @@ class SCDBManager: NSObject{
     }
     
     func invalidStorageData() {
-        self.removeAllEnityData(entityName: Static.entityStorage)
+        removeAllEnityData(entityName: Static.entityStorage)
     }
     
     func catalogFetchResultController(searchText: String?, scope: String?) -> NSFetchedResultsController<ProductCatalog> {
@@ -191,11 +189,15 @@ class SCDBManager: NSObject{
         fetchRequest.fetchBatchSize = 20
         
         if let searchText = searchText {
-            let predicate = NSPredicate(format: "productName contains[c] %@ AND productDescription contains[c] %@", argumentArray: [searchText, searchText])
+            let predicate = NSPredicate(format: "productName contains[c] %@ AND productDescription contains[c] %@",
+                                        argumentArray: [searchText, searchText])
             fetchRequest.predicate = predicate
         }
         
-        let storageFRC = NSFetchedResultsController(fetchRequest: fetchRequest as! NSFetchRequest<ProductCatalog>, managedObjectContext: self.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let storageFRC = NSFetchedResultsController(fetchRequest: fetchRequest as! NSFetchRequest<ProductCatalog>,
+                                                    managedObjectContext: persistentContainer.viewContext,
+                                                    sectionNameKeyPath: nil,
+                                                    cacheName: nil)
         
         do {
             try storageFRC.performFetch()
@@ -215,7 +217,10 @@ class SCDBManager: NSObject{
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20
         
-        let catalogFRC = NSFetchedResultsController(fetchRequest: fetchRequest as! NSFetchRequest<ShoppingCart>, managedObjectContext: self.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let catalogFRC = NSFetchedResultsController(fetchRequest: fetchRequest as! NSFetchRequest<ShoppingCart>,
+                                                    managedObjectContext: persistentContainer.viewContext,
+                                                    sectionNameKeyPath: nil,
+                                                    cacheName: nil)
         
         
         do {
