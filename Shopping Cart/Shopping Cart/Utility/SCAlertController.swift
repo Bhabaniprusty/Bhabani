@@ -11,7 +11,6 @@ import UIKit
 extension UIAlertController {
     convenience init(message: String?) {
         
-        
         self.init(title: "Auto Sync", message: "Application will check avaibility of cart Items", preferredStyle: .actionSheet)
         
         self.addAction(UIAlertAction(title: "Frequently", style: .default, handler: { (action) in

@@ -12,20 +12,12 @@ import SDWebImage
 
 
 class SCProductSearchViewController: UITableViewController {
-    
-    // MARK: - Properties
-    var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: nil, scope: nil) {didSet {fetchResultController.delegate = self}}
-    
-    var searchController = UISearchController(searchResultsController: nil)
-    
-    
 
-    
-    // MARK: - View Setup
+    var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: nil, scope: nil) {didSet {fetchResultController.delegate = self}}
+    var searchController = UISearchController(searchResultsController: nil)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         definesPresentationContext = true
@@ -33,17 +25,7 @@ class SCProductSearchViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
     }
     
-    @IBAction func CancelAction(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
-        super.viewWillAppear(animated)
-    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     // MARK: - Table View
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,7 +36,6 @@ class SCProductSearchViewController: UITableViewController {
         
         let sectionInfo = self.fetchResultController.sections![section]
         return sectionInfo.numberOfObjects
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,12 +44,11 @@ class SCProductSearchViewController: UITableViewController {
         let catalog = self.fetchResultController.object(at: indexPath)
         self.configureCell(cell, withCataLog: catalog, indexPath: indexPath)
         return cell
-        
     }
     
     func configureCell(_ cell: UITableViewCell, withCataLog catalog: ProductCatalog, indexPath: IndexPath) {
+        
         if let catalogCell = cell as? SCCatalogTableViewCell{
-            
             catalogCell.titleLabel.text = catalog.productName
             catalogCell.subTitleLabel.text = catalog.productDescription
             if let imageUrl = catalog.productImageUrl, let url =  URL(string: imageUrl){
@@ -95,7 +75,6 @@ class SCProductSearchViewController: UITableViewController {
             }
         }
     }
-    
 }
 
 extension SCProductSearchViewController: UISearchBarDelegate {
@@ -145,18 +124,3 @@ extension SCProductSearchViewController: NSFetchedResultsControllerDelegate{
         self.tableView.endUpdates()
     }
 }
-
-extension SCProductSearchViewController: UISplitViewControllerDelegate{
-
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
-        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? SCProductDetailViewController else { return false }
-        if topAsDetailController.catalog == nil {
-            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-            return true
-        }
-        return false
-    }
-
-}
-

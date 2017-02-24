@@ -25,9 +25,8 @@ class SCNetworkMager{
         session = URLSession(configuration: URLSessionConfiguration.default)
     }
     
-    
     // Login, Signup, session management is not in this scope
-    func fetchProductCatalogs(updatedAfterDate updatedAfter: Date?, pageIndex: Int, pageSize: Int, completion: @escaping (_ catalogs: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask?{
+    func fetchProductCatalogs(updatedAfterDate updatedAfter: Date?, pageIndex: Int, pageSize: Int, completion: @escaping (_ catalogs: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
         let allContactsEndpoint = Static.shoppingCartUrl + "<Additional path to catalog fetch>"
@@ -58,7 +57,7 @@ class SCNetworkMager{
         return task
     }
     
-    func fetchProductStorages(updatedAfterDate updatedAfter: Date?, pageIndex: Int, pageSize: Int, completion: @escaping (_ storages: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask?{
+    func fetchProductStorages(updatedAfterDate updatedAfter: Date?, pageIndex: Int, pageSize: Int, completion: @escaping (_ storages: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
         let allContactsEndpoint = Static.shoppingCartUrl + "<Additional path to product storagefetch>"
@@ -88,5 +87,4 @@ class SCNetworkMager{
         
         return task
     }
-
 }

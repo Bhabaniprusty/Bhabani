@@ -26,11 +26,10 @@ class SCProductDetailViewController: UIViewController {
             detailDescriptionLabel.text = catalog.productDescription
             title = catalog.productName
             
-            if let imageUrl = catalog.productImageUrl, let url =  URL(string: imageUrl){
-                
+            if let imageUrl = catalog.productImageUrl, let url =  URL(string: imageUrl) {
                 catalogImageView.sd_setImage(with: url, placeholderImage: nil)
             }
-        }else{
+        }else {
             addtoCartButton.isHidden = true
         }
     }
@@ -48,5 +47,4 @@ class SCProductDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }

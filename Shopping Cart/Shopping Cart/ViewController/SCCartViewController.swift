@@ -53,7 +53,6 @@ extension SCCartViewController: UITableViewDataSource {
         
         let sectionInfo = self.cartFetchResultController.sections![section]
         return sectionInfo.numberOfObjects
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,7 +61,6 @@ extension SCCartViewController: UITableViewDataSource {
         let cartItem = self.cartFetchResultController.object(at: indexPath)
         self.configureCell(cell, withCartItem: cartItem, indexPath: indexPath)
         return cell
-        
     }
     
     func configureCell(_ cell: UITableViewCell, withCartItem cartItem: ShoppingCart, indexPath: IndexPath) {
@@ -76,12 +74,10 @@ extension SCCartViewController: UITableViewDataSource {
             
             cartCell.availabilityIndicatorImageView.backgroundColor = cartItem.isAvailable ? UIColor.green : UIColor.orange
             if let imageUrl = cartItem.product?.productImageUrl, let url =  URL(string: imageUrl){
-                
                 cartCell.catalogImageView.sd_setImage(with: url, placeholderImage: nil)
             }
         }
     }
-    
 }
 
 extension SCCartViewController: NSFetchedResultsControllerDelegate{

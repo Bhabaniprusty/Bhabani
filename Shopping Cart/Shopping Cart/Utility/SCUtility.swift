@@ -8,14 +8,12 @@
 
 import Foundation
 
-
 class SCUtility{
     
     struct Static {
         static let pageSize = 100
         static let invalidedDuratopn = 5.0
     }
-    
     
     class func fetchUpdatedProductCatalogs() {
         let lastUpdatedDate = SCDBManager.sharedInstance.fetchLastCatalogUpdatedDate()
@@ -53,7 +51,6 @@ class SCUtility{
             if moreStoragesAvailable {   // fetch the next page
                 SCUtility.fetchProductStorages(updatedAfterDate: updatedAfterDate, pageIndex: pageIndex + 1)
             }
-            
         }
     }
     
@@ -82,5 +79,4 @@ class SCUtility{
             SCSyncManager.sharedInstance.startSync()
         }
     }
-    
 }

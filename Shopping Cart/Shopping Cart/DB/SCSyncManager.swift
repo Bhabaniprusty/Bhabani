@@ -11,11 +11,12 @@ import Foundation
 
 typealias evalFunc = ()->TimeInterval
 
-class SCSyncManager{
+class SCSyncManager {
     
     struct Static {
         static let syncIntervalKey = "syncIntervalKey"
     }
+    
     private var syncTimer: Timer?
     static let sharedInstance = SCSyncManager()
     
@@ -37,7 +38,7 @@ class SCSyncManager{
     ]
 
     func perFormSyncCommand(action: String) {
-        if let evaluation =  operation[action]{
+        if let evaluation =  operation[action] {
             switch evaluation {
             case .Start(let funnction):
                 startSync(timeInterval: funnction())

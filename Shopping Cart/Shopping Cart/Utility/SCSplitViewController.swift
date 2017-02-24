@@ -24,7 +24,4 @@ class SCSplitViewController: UISplitViewController, UISplitViewControllerDelegat
         }
         return false
     }
-
-    
-
 }
