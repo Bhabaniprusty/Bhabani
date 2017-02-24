@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Shopping Cart/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body/>
+  </file>
+  <file original="Shopping Cart/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="Aet-oe-jhp.text">
+        <source>0</source>
+        <note>Class = "UILabel"; text = "0"; ObjectID = "Aet-oe-jhp";</note>
+      </trans-unit>
+      <trans-unit id="BYZ-38-t0r.title">
+        <source>Cart</source>
+        <note>Class = "UIViewController"; title = "Cart"; ObjectID = "BYZ-38-t0r";</note>
+      </trans-unit>
+      <trans-unit id="Bh8-AB-2tm.text">
+        <source> </source>
+        <note>Class = "UILabel"; text = " "; ObjectID = "Bh8-AB-2tm";</note>
+      </trans-unit>
+      <trans-unit id="ByL-RJ-MMR.title">
+        <source>Detail</source>
+        <note>Class = "UINavigationItem"; title = "Detail"; ObjectID = "ByL-RJ-MMR";</note>
+      </trans-unit>
+      <trans-unit id="HcH-yG-cgK.title">
+        <source>Product search</source>
+        <note>Class = "UINavigationController"; title = "Product search"; ObjectID = "HcH-yG-cgK";</note>
+      </trans-unit>
+      <trans-unit id="Lr3-tq-WsL.text">
+        <source>Title</source>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "Lr3-tq-WsL";</note>
+      </trans-unit>
+      <trans-unit id="SHB-A8-4P5.text">
+        <source>0</source>
+        <note>Class = "UILabel"; text = "0"; ObjectID = "SHB-A8-4P5";</note>
+      </trans-unit>
+      <trans-unit id="TDk-88-lMz.title">
+        <source>Product search</source>
+        <note>Class = "UITableViewController"; title = "Product search"; ObjectID = "TDk-88-lMz";</note>
+      </trans-unit>
+      <trans-unit id="ZFk-Kq-1ZS.text">
+        <source>Price</source>
+        <note>Class = "UILabel"; text = "Price"; ObjectID = "ZFk-Kq-1ZS";</note>
+      </trans-unit>
+      <trans-unit id="fS0-jH-IAu.normalTitle">
+        <source>Add to Cart</source>
+        <note>Class = "UIButton"; normalTitle = "Add to Cart"; ObjectID = "fS0-jH-IAu";</note>
+      </trans-unit>
+      <trans-unit id="hqP-PI-9p8.text">
+        <source>SubTitle</source>
+        <note>Class = "UILabel"; text = "SubTitle"; ObjectID = "hqP-PI-9p8";</note>
+      </trans-unit>
+      <trans-unit id="syl-2Q-uKW.title">
+        <source> </source>
+        <note>Class = "UIBarButtonItem"; title = " "; ObjectID = "syl-2Q-uKW";</note>
+      </trans-unit>
+      <trans-unit id="tbj-fS-2RL.text">
+        <source>SubTitle</source>
+        <note>Class = "UILabel"; text = "SubTitle"; ObjectID = "tbj-fS-2RL";</note>
+      </trans-unit>
+      <trans-unit id="tqg-tb-ZUd.title">
+        <source>Cancel</source>
+        <note>Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "tqg-tb-ZUd";</note>
+      </trans-unit>
+      <trans-unit id="wJU-Qf-O8x.title">
+        <source>Detail</source>
+        <note>Class = "UIViewController"; title = "Detail"; ObjectID = "wJU-Qf-O8x";</note>
+      </trans-unit>
+      <trans-unit id="xTN-AD-eSf.text">
+        <source>Title</source>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "xTN-AD-eSf";</note>
+      </trans-unit>
+      <trans-unit id="xqh-Ce-uAE.text">
+        <source>Quantity</source>
+        <note>Class = "UILabel"; text = "Quantity"; ObjectID = "xqh-Ce-uAE";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Shopping Cart/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Shopping Cart/Localizable.strings" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="Application will check avaibility of cart Items">
+        <source>Application will check avaibility of cart Items</source>
+        <note>Auto Sync functionality description</note>
+      </trans-unit>
+      <trans-unit id="Auto Sync">
+        <source>Auto Sync</source>
+        <note>Auto Sync functionality title</note>
+      </trans-unit>
+      <trans-unit id="Cancel">
+        <source>Cancel</source>
+        <note>Cancel the wizard</note>
+      </trans-unit>
+      <trans-unit id="Do not Sync">
+        <source>Do not Sync</source>
+        <note>Auto Sync will be stooped</note>
+      </trans-unit>
+      <trans-unit id="Frequently">
+        <source>Frequently</source>
+        <note>Auto Sync will work frequently</note>
+      </trans-unit>
+      <trans-unit id="Hourly">
+        <source>Hourly</source>
+        <note>Auto Sync will work Hourly</note>
+      </trans-unit>
+      <trans-unit id="Pull to refresh">
+        <source>Pull to refresh</source>
+        <note>User to pull to refresh content</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Shopping CartTests/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Shopping CartUITests/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
