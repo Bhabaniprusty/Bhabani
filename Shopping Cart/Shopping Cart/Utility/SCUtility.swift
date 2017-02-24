@@ -77,7 +77,7 @@ class SCUtility{
     
     class func invalidateStorage() {
         SCSyncManager.sharedInstance.stopSync()
-        SCDBManager.sharedInstance.removeAllEnityData(entityName: "Storage")
+        SCDBManager.sharedInstance.invalidStorageData()
         DispatchQueue.main.asyncAfter(deadline: .now() + Static.invalidedDuratopn) {
             SCSyncManager.sharedInstance.startSync()
         }

@@ -34,29 +34,11 @@ class SCCartViewController: UIViewController {
     
     @IBAction func showSettingOptions(_ sender: UIBarButtonItem) {
         
-        let alert = UIAlertController(title: "Auto Sync", message: "Application will check avaibility of cart Items", preferredStyle: .actionSheet)
-
-        alert.addAction(UIAlertAction(title: "Frequently", style: .default, handler: { (action) in
-            SCSyncManager.sharedInstance.perFormSyncCommand(action: "👍")
-        }))
-
-        alert.addAction(UIAlertAction(title: "Hourly", style: .default, handler: { (action) in
-            SCSyncManager.sharedInstance.perFormSyncCommand(action: "👊")
-        }))
-
-        alert.addAction(UIAlertAction(title: "Do not Sync", style: .destructive, handler: { (action) in
-            SCSyncManager.sharedInstance.perFormSyncCommand(action: "👎")
-        }))
-
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
-
-        }))
-
+        let alert = UIAlertController(message: "Auto Sync")
         alert.modalPresentationStyle = .popover
         let ppc = alert.popoverPresentationController
         ppc?.barButtonItem = sender
         present(alert, animated: true, completion: nil)
-
     }
 }
 

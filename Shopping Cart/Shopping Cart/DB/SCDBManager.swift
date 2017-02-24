@@ -12,6 +12,13 @@ import SwiftyJSON
 
 class SCDBManager: NSObject{
     
+    struct Static {
+        static let entityShoppingCart = "ShoppingCart"
+        static let entityProductCatalog = "ProductCatalog"
+        static let entityProductCategory = "ProductCategory"
+        static let entityStorage = "Storage"
+    }
+
     static let sharedInstance = SCDBManager()
     
     private override init() { }
@@ -69,7 +76,7 @@ class SCDBManager: NSObject{
                 
                 var productCatalog: ProductCatalog!
                 
-                let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductCatalog")
+                let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
                 catalogFetchRequest.predicate = NSPredicate(format: "productId == \(productId)")
                 if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
                     productCatalog = existingCatalog
@@ -89,7 +96,7 @@ class SCDBManager: NSObject{
                 
                 //Product catalog's category can be changed. update every time is good option
                 if productCatalog.productCategory?.categoryName != productCategoryName {
-                    let categoryFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductCategory")
+                    let categoryFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCategory)
                     catalogFetchRequest.predicate = NSPredicate(format: "categoryName == \(productCategoryName)")
                     if let  existingCategory = (try? moc.fetch(categoryFetchRequest))?.first as? ProductCategory{
                         category = existingCategory
@@ -112,7 +119,7 @@ class SCDBManager: NSObject{
             for catalogStorage in catalogStorages{
                 let productId = catalogStorage["productId"].string
                 
-                let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductCatalog")
+                let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
                 catalogFetchRequest.predicate = NSPredicate(format: "productId == \(productId)")
                 
                 //Will update if catalog is locally available
@@ -164,7 +171,7 @@ class SCDBManager: NSObject{
     
     
     func fetchLastStorageUpdatedDate() -> Date? {
-        let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Storage")
+        let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityStorage)
         catalogFetchRequest.fetchLimit = 1
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: true)
         catalogFetchRequest.sortDescriptors = [sortDescriptor]
@@ -175,7 +182,7 @@ class SCDBManager: NSObject{
     }
     
     func fetchLastCatalogUpdatedDate() -> Date? {
-        let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductCatalog")
+        let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
         catalogFetchRequest.fetchLimit = 1
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: true)
         catalogFetchRequest.sortDescriptors = [sortDescriptor]
@@ -185,7 +192,7 @@ class SCDBManager: NSObject{
     }
     
     
-    func removeAllEnityData(entityName: String) {
+    private func removeAllEnityData(entityName: String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
@@ -200,8 +207,12 @@ class SCDBManager: NSObject{
         }
     }
     
+    func invalidStorageData() {
+        self.removeAllEnityData(entityName: Static.entityStorage)
+    }
+    
     func catalogFetchResultController(searchText: String?, scope: String?) -> NSFetchedResultsController<ProductCatalog> {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductCatalog")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
         
         // Add Sort Descriptors
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: true)
@@ -234,7 +245,7 @@ class SCDBManager: NSObject{
     }
     
     func cartFetchResultController() -> NSFetchedResultsController<ShoppingCart> {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ShoppingCart")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityShoppingCart)
         
         // Add Sort Descriptors
         let sortDescriptor = NSSortDescriptor(key: "isAvailable", ascending: true)
