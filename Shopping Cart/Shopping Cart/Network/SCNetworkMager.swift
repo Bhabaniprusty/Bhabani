@@ -12,11 +12,11 @@ import SwiftyJSON
 class SCNetworkMager{
     
     struct Static {
-        static var networkErrorDomain = "com.sc.error"
-        static var shoppingCartUrl = "<storageUrl>"
-        static var invalidUrl = "Invalid url"
-        static var invalidJSON = "error trying to convert data to JSON"
-        static var invalidParameters = "Parameters are not available as specified"
+        static let networkErrorDomain = "com.sc.error"
+        static let shoppingCartUrl = "<storageUrl>"
+        static let invalidUrl = "Invalid url"
+        static let invalidJSON = "error trying to convert data to JSON"
+        static let invalidParameters = "Parameters are not available as specified"
     }
     
     static let sharedInstancer = SCNetworkMager()

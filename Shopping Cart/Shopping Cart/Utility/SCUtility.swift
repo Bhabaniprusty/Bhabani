@@ -12,7 +12,7 @@ import Foundation
 class SCUtility{
     
     struct Static {
-        static var pageSize = 100
+        static let pageSize = 100
     }
     
     

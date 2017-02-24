@@ -212,9 +212,18 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS0-jH-IAu">
+                                        <rect key="frame" x="260" y="-19" width="79" height="30"/>
+                                        <state key="normal" title="Add to Cart"/>
+                                        <connections>
+                                            <action selector="AddToCart:" destination="wJU-Qf-O8x" eventType="touchUpInside" id="ymq-Fk-BLx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Bh8-AB-2tm" firstAttribute="centerX" secondItem="E71-rc-1ab" secondAttribute="centerX" id="0M4-a0-rD3"/>
+                                    <constraint firstItem="fS0-jH-IAu" firstAttribute="top" secondItem="soD-7n-O8c" secondAttribute="top" constant="-19" id="3jL-al-Sq0"/>
+                                    <constraint firstAttribute="trailing" secondItem="fS0-jH-IAu" secondAttribute="trailing" constant="8" id="bAP-cP-zhM"/>
                                     <constraint firstItem="Bh8-AB-2tm" firstAttribute="top" secondItem="E71-rc-1ab" secondAttribute="bottom" constant="30" id="dYf-WF-mIi"/>
                                     <constraint firstItem="E71-rc-1ab" firstAttribute="top" secondItem="soD-7n-O8c" secondAttribute="top" constant="20" id="fG5-I9-mhy"/>
                                     <constraint firstItem="Bh8-AB-2tm" firstAttribute="width" secondItem="E71-rc-1ab" secondAttribute="width" id="gbe-dp-gSI"/>
@@ -242,6 +251,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addtoCartButton" destination="fS0-jH-IAu" id="0mZ-qH-vMF"/>
                         <outlet property="catalogImageView" destination="E71-rc-1ab" id="Spc-jb-zKi"/>
                         <outlet property="detailDescriptionLabel" destination="Bh8-AB-2tm" id="hht-A0-No2"/>
                     </connections>
@@ -278,7 +288,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dsj-gg-q5P" id="meX-bT-sCI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTN-AD-eSf">
@@ -359,7 +369,7 @@
         <scene sceneID="uv2-Hk-vaa">
             <objects>
                 <navigationController id="7da-Pf-uJQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="TWw-IE-vmp">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TWw-IE-vmp">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

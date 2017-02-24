@@ -10,6 +10,7 @@ import UIKit
 
 class SCProductDetailViewController: UIViewController {
     
+    @IBOutlet weak var addtoCartButton: UIButton!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var catalogImageView: UIImageView!
     
@@ -21,6 +22,7 @@ class SCProductDetailViewController: UIViewController {
     
     func configureView() {
         if let catalog = catalog {
+            addtoCartButton.isHidden = false
             detailDescriptionLabel.text = catalog.productDescription
             title = catalog.productName
             
@@ -28,9 +30,16 @@ class SCProductDetailViewController: UIViewController {
                 
                 catalogImageView.sd_setImage(with: url, placeholderImage: nil)
             }
+        }else{
+            addtoCartButton.isHidden = true
         }
     }
     
+    @IBAction func AddToCart(_ sender: UIButton) {
+        if let catalog = catalog {
+            SCDBManager.sharedInstance.addToCart(product: catalog, quantity: 1)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()

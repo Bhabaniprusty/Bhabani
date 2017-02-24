@@ -14,7 +14,7 @@ typealias evalFunc = ()->TimeInterval
 class SCSyncManager{
     
     struct Static {
-        static var syncIntervalKey = "syncIntervalKey"
+        static let syncIntervalKey = "syncIntervalKey"
     }
     private var syncTimer: Timer?
     static let sharedInstance = SCSyncManager()
