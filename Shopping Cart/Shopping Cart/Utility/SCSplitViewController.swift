@@ -18,10 +18,11 @@ class SCSplitViewController: UISplitViewController, UISplitViewControllerDelegat
     
      public func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool{
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? SCProductDetailViewController else { return false }
-        if topAsDetailController.catalog == nil {
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? SCDetailViewController else { return false }
+        if !topAsDetailController.detailContentAvailable {
             return true
         }
+        
         return false
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SCProductDetailViewController: UIViewController {
+class SCProductDetailViewController: SCDetailViewController {
     
     @IBOutlet weak var addtoCartButton: UIButton!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
@@ -16,6 +16,7 @@ class SCProductDetailViewController: UIViewController {
     
     var catalog: ProductCatalog? {
         didSet {
+            detailContentAvailable = (catalog != nil)
             configureView()
         }
     }
