@@ -12,18 +12,38 @@ import SDWebImage
 
 
 class SCProductSearchViewController: UITableViewController {
+    
+    private struct Static {
+        static let catalogCellIdentifier = "CatalogCell"
+        static let detailSegIdentifier = "showDetail"
+    }
 
     var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: nil, scope: nil) {didSet {fetchResultController.delegate = self}}
-    var searchController = UISearchController(searchResultsController: nil)
+    
+    var searchController = UISearchController(searchResultsController: nil) {
+        didSet {
+            searchController.dimsBackgroundDuringPresentation = false
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        definesPresentationContext = true
-        searchController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
-        
+        refreshContent()
+    }
+    
+    
+    func updateRefreshControl() {
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(SCProductSearchViewController.refreshContent), for: UIControlEvents.valueChanged)
+    }
+    
+    func refreshContent(){
+        SCUtility.fetchUpdatedProductCatalogs()
+        refreshControl?.endRefreshing()
     }
     
     // MARK: - Table View
@@ -39,7 +59,7 @@ class SCProductSearchViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CatalogCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Static.catalogCellIdentifier, for: indexPath)
         let catalog = self.fetchResultController.object(at: indexPath)
         self.configureCell(cell, withCataLog: catalog, indexPath: indexPath)
         return cell
@@ -63,7 +83,7 @@ class SCProductSearchViewController: UITableViewController {
     
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == Static.detailSegIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
                 
                 

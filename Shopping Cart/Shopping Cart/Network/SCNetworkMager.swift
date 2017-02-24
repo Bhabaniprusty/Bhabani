@@ -17,6 +17,8 @@ class SCNetworkMager{
         static let invalidUrl = "Invalid url"
         static let invalidJSON = "error trying to convert data to JSON"
         static let invalidParameters = "Parameters are not available as specified"
+        static let kayPathForStorage = "storages"
+        static let keyPathForCatalog = ["catalogs"]
     }
     
     static let sharedInstancer = SCNetworkMager()
@@ -43,7 +45,7 @@ class SCNetworkMager{
         let task = session.dataTask(with: urlRequest, completionHandler: {(data, response, error)  in
             if response?.url == url{
                 
-                guard let dataFromNetworking = data, let catalogs = JSON(data: dataFromNetworking)["catalogs"].array else{
+                guard let dataFromNetworking = data, let catalogs = JSON(data: dataFromNetworking)[Static.keyPathForCatalog].array else{
                     completion(nil, error)
                     return
                 }
@@ -74,7 +76,7 @@ class SCNetworkMager{
         let task = session.dataTask(with: urlRequest, completionHandler: {(data, response, error)  in
             if response?.url == url{
                 
-                guard let dataFromNetworking = data, let storages = JSON(data: dataFromNetworking)["storages"].array else{
+                guard let dataFromNetworking = data, let storages = JSON(data: dataFromNetworking)[Static.kayPathForStorage].array else{
                     completion(nil, error)
                     return
                 }

@@ -66,7 +66,7 @@ class SCSyncManager {
     }
     
     @objc private func syncStorage() {
-        SCUtility.fetchUpdatedProductCatalogs()
+        SCUtility.fetchUpdatedProductStorates()
     }
     
     deinit {

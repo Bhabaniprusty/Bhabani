@@ -11,6 +11,10 @@ import CoreData
 
 class SCCartViewController: UIViewController {
     
+    fileprivate struct Static {
+        static let cartCellIdentifier = "CartCell"
+    }
+
     @IBOutlet weak var cartTableView: UITableView!
     var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController() {didSet {cartFetchResultController.delegate = self}}
     
@@ -42,14 +46,12 @@ extension SCCartViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         let sectionInfo = self.cartFetchResultController.sections![section]
         return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Static.cartCellIdentifier, for: indexPath)
         let cartItem = self.cartFetchResultController.object(at: indexPath)
         self.configureCell(cell, withCartItem: cartItem, indexPath: indexPath)
         return cell
