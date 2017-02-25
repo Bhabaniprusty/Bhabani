@@ -182,7 +182,8 @@ class SCDBManager: NSObject{
         
         persistentContainer.performBackgroundTask { (moc) in
             do {
-                try self.persistentContainer.persistentStoreCoordinator.execute(deleteRequest, with: moc)
+                try self.persistentContainer.persistentStoreCoordinator.execute(deleteRequest,
+                                                                                with: moc)
             } catch let error as NSError {
                 // TODO: handle the error
                 print("Error : Coredata Remove error =\(error)")
@@ -194,11 +195,13 @@ class SCDBManager: NSObject{
         removeAllEnityData(entityName: Static.entityStorage)
     }
     
-    func catalogFetchResultController(searchText: String?, scope: String?) -> NSFetchedResultsController<ProductCatalog> {
+    func catalogFetchResultController(searchText: String?,
+                                      scope: String?) -> NSFetchedResultsController<ProductCatalog> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
         
         // Added Sort Descriptors
-        let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "updatedAt",
+                                              ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20
         
@@ -227,7 +230,8 @@ class SCDBManager: NSObject{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityShoppingCart)
         
         // Added Sort Descriptors
-        let sortDescriptor = NSSortDescriptor(key: "isAvailable", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "isAvailable",
+                                              ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20
         

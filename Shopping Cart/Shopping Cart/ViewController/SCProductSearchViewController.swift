@@ -67,24 +67,29 @@ class SCProductSearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Static.catalogCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Static.catalogCellIdentifier,
+                                                 for: indexPath)
         let catalog = fetchResultController.object(at: indexPath)
         configureCell(cell, withCataLog: catalog, indexPath: indexPath)
         return cell
     }
     
-    func configureCell(_ cell: UITableViewCell, withCataLog catalog: ProductCatalog, indexPath: IndexPath) {
+    func configureCell(_ cell: UITableViewCell,
+                       withCataLog catalog: ProductCatalog,
+                       indexPath: IndexPath) {
         
         if let catalogCell = cell as? SCCatalogTableViewCell{
             catalogCell.titleLabel.text = catalog.productName
             catalogCell.subTitleLabel.text = catalog.productDescription
-            if let imageUrl = catalog.productImageUrl, let url =  URL(string: imageUrl){
+            if let imageUrl = catalog.productImageUrl,
+                let url =  URL(string: imageUrl){
                 catalogCell.catalogImageView.sd_setImage(with: url, placeholderImage: nil)
             }
         }
     }
     
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+    func filterContentForSearchText(_ searchText: String,
+                                    scope: String = "All") {
         fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: searchText,
                                                                                         scope: nil)
         fetchResultController.delegate = self
@@ -108,7 +113,8 @@ class SCProductSearchViewController: UITableViewController {
 extension SCProductSearchViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+        filterContentForSearchText(searchBar.text!,
+                                   scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }
 

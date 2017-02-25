@@ -45,7 +45,8 @@ class SCSyncManager {
             }
         }
         
-        UserDefaults.standard.set(action, forKey: Static.syncIntervalKey)
+        UserDefaults.standard.set(action,
+                                  forKey: Static.syncIntervalKey)
     }
     
     func startSync() {

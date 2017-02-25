@@ -87,7 +87,8 @@ extension SCCartViewController: UITableViewDataSource {
             cartCell.priceLabel.text = cartItem.product?.price.asLocaleCurrency
             
             cartCell.availabilityIndicatorImageView.backgroundColor = cartItem.isAvailable ? UIColor.green : UIColor.orange
-            if let imageUrl = cartItem.product?.productImageUrl, let url =  URL(string: imageUrl){
+            if let imageUrl = cartItem.product?.productImageUrl,
+                let url =  URL(string: imageUrl) {
                 cartCell.catalogImageView.sd_setImage(with: url, placeholderImage: nil)
             }
         }

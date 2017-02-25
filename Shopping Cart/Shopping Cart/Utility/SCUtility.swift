@@ -27,12 +27,15 @@ class SCUtility{
     
     class func fetchUpdatedProductCatalogs(progress: @escaping PageProgress) {
         let lastUpdatedDate = SCDBManager.sharedInstance.fetchLastCatalogUpdatedDate()
-        fetchProductCatalogs(updatedAfterDate: lastUpdatedDate, pageIndex: 0, progress: progress)
+        fetchProductCatalogs(updatedAfterDate: lastUpdatedDate,
+                             pageIndex: 0,
+                             progress: progress)
     }
     
     // updatedAfterDate : Last local ProductCatalog.updatedAt, nil if no record available
     private class func fetchProductCatalogs(updatedAfterDate: Date?,
-                                            pageIndex: Int, progress: @escaping PageProgress){
+                                            pageIndex: Int,
+                                            progress: @escaping PageProgress){
         progress(pageIndex, .Started)
         SCUtility.fetchBatchProductCatalogs(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreCatalogsAvailable) in
@@ -66,10 +69,13 @@ class SCUtility{
     
     class func fetchUpdatedProductStorages(progress: @escaping PageProgress) {
         let lastUpdatedDate = SCDBManager.sharedInstance.fetchLastStorageUpdatedDate()
-        fetchProductStorages(updatedAfterDate: lastUpdatedDate, pageIndex: 0, progress: progress)
+        fetchProductStorages(updatedAfterDate: lastUpdatedDate,
+                             pageIndex: 0, progress: progress)
     }
     
-    private class func fetchProductStorages(updatedAfterDate: Date?, pageIndex: Int, progress: @escaping PageProgress){
+    private class func fetchProductStorages(updatedAfterDate: Date?,
+                                            pageIndex: Int,
+                                            progress: @escaping PageProgress){
         progress(pageIndex, .Started)
         SCUtility.fetchBatchProductStorages(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreStoragesAvailable) in
@@ -78,7 +84,8 @@ class SCUtility{
 
                                                 if moreStoragesAvailable {   // fetch the next page
                                                     SCUtility.fetchProductStorages(updatedAfterDate: updatedAfterDate,
-                                                                                   pageIndex: pageIndex + 1, progress: progress)
+                                                                                   pageIndex: pageIndex + 1,
+                                                                                   progress: progress)
                                                 }else{
                                                     progress(pageIndex, .Completed)
                                                 }
