@@ -13,7 +13,7 @@ class SCNetworkMager{
     
     struct Static {
         static let networkErrorDomain = "com.sc.error"
-        static let shoppingCartUrl = "http://dawn-shadow-1986.getsandbox.com/"
+        static let shoppingCartUrl = "http://shoppingcart.getsandbox.com/"
         static let invalidUrl = "Invalid url"
         static let invalidJSON = "error trying to convert data to JSON"
         static let invalidParameters = "Parameters are not available as specified"
