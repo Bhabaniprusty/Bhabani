@@ -16,19 +16,15 @@ class SCCartViewController: UIViewController {
     }
 
     @IBOutlet weak var cartTableView: UITableView!
-    var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController() {
-        didSet {
-            cartFetchResultController.delegate = self
-        }
-    }
+    var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cartFetchResultController.delegate = self
         //Initiate sync operation from last settings
         SCSyncManager.sharedInstance.startSync()
     }
-    
-    
+        
     @IBAction func closeSearchScreen(sender: UIStoryboardSegue){
         
     }

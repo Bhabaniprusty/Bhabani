@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509653831.365757"
+            timestampString = "509662860.019416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "saveProductCatalogs(catalogs:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509658443.511583"
+            timestampString = "509662860.019416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "saveProductCatalogs(catalogs:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509658443.511583"
+            timestampString = "509662860.019416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "saveProductCatalogs(catalogs:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,11 +132,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509658443.511583"
+            timestampString = "509662860.019416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopping Cart/DB/SCDBManager.swift"
+            timestampString = "509662860.019416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopping Cart/DB/SCDBManager.swift"
+            timestampString = "509662860.019416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopping Cart/DB/SCDBManager.swift"
+            timestampString = "509662860.019416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopping Cart/DB/SCDBManager.swift"
+            timestampString = "509662860.019416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "saveProductCatalogs(catalogs:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -147,61 +211,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509658443.511583"
+            filePath = "Shopping Cart/ViewController/SCProductSearchViewController.swift"
+            timestampString = "509663741.19336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509658443.511583"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509658443.511583"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shopping Cart/DB/SCDBManager.swift"
-            timestampString = "509658443.511583"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "saveProductCatalogsStorage(catalogStorages:)"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "filterContentForSearchText(_:scope:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

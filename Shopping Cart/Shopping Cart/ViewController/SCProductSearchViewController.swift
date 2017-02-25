@@ -19,11 +19,7 @@ class SCProductSearchViewController: UITableViewController {
     }
 
     var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText:
-        nil, scope: nil) {
-        didSet {
-            fetchResultController.delegate = self
-        }
-    }
+        nil, scope: nil)
     
     var searchController = UISearchController(searchResultsController: nil) {
         didSet {
@@ -37,6 +33,7 @@ class SCProductSearchViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         tableView.tableHeaderView = searchController.searchBar
+        fetchResultController.delegate = self
         refreshContent()
     }
     
@@ -85,6 +82,7 @@ class SCProductSearchViewController: UITableViewController {
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText: searchText,
                                                                                         scope: nil)
+        fetchResultController.delegate = self
         tableView.reloadData()
     }
     
@@ -92,8 +90,6 @@ class SCProductSearchViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Static.detailSegIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
-                
-                
                 let controller = (segue.destination as! UINavigationController).topViewController as! SCProductDetailViewController
                 controller.catalog = fetchResultController.object(at: indexPath)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem

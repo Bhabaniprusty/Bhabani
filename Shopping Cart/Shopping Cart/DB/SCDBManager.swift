@@ -25,6 +25,8 @@ class SCDBManager: NSObject{
     // MARK: - Core Data stack
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Shopping_Cart")
+        container.viewContext.automaticallyMergesChangesFromParent = true
+
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -200,8 +202,8 @@ class SCDBManager: NSObject{
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20
         
-        if let searchText = searchText {
-            let predicate = NSPredicate(format: "productName contains[c] %@ AND productDescription contains[c] %@",
+        if let searchText = searchText, !searchText.isEmpty{
+            let predicate = NSPredicate(format: "productName contains[c] %@ OR productDescription contains[c] %@",
                                         argumentArray: [searchText, searchText])
             fetchRequest.predicate = predicate
         }

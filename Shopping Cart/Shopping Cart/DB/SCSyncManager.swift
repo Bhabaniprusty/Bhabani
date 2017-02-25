@@ -23,12 +23,10 @@ class SCSyncManager {
     private init() {
     }
 
-
     private enum SCSyncAction {
         case Start(evalFunc)
         case Stop
     }
-    
     
     //This can be fetch from anywhere- bundle file, network etc
     private var operation: Dictionary<String, SCSyncAction> = [
