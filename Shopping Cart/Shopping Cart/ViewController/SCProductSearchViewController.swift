@@ -35,25 +35,31 @@ class SCProductSearchViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         fetchResultController.delegate = self
         refreshContent()
+        updateRefreshControl()
     }
     
     
     func updateRefreshControl() {
-        refreshControl?.attributedTitle = NSAttributedString(string: NSLocalizedString("Pull to refresh",
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("Pull to refresh",
                                                                                        comment: "User to pull to refresh content"))
-        refreshControl?.addTarget(self,
+        refreshControl.addTarget(self,
                                   action: #selector(SCProductSearchViewController.refreshContent),
                                   for: UIControlEvents.valueChanged)
+        
+        self.refreshControl = refreshControl
     }
     
     func refreshContent(){
+        refreshControl?.beginRefreshing()
         print("refreshContent catalog process started")
 
-        SCUtility.fetchUpdatedProductCatalogs { (pageIndex, state) in
+        SCUtility.fetchUpdatedProductCatalogs {(pageIndex, state) in
+            if state == .Completed {
+                self.refreshControl?.endRefreshing()
+            }
             print("refreshContent process page index = \(pageIndex) state = \(state)")
         }
-        
-        refreshControl?.endRefreshing()
     }
     
     // MARK: - Table View

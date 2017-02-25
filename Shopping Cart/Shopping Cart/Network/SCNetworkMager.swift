@@ -46,7 +46,7 @@ class SCNetworkMager{
         //Prepare proper URLRequest with provided paramaters
         let urlRequest = URLRequest(url: url)
         
-        let task = session.dataTask(with: urlRequest, completionHandler: {(data, response, error)  in
+        let task = dataTask(with: urlRequest, completionHandler: {(data, response, error)  in
             if response?.url == url{
                 
                 guard let dataFromNetworking = data,
@@ -81,7 +81,7 @@ class SCNetworkMager{
         //Prepare proper URLRequest with provided paramaters
         let urlRequest = URLRequest(url: url)
         
-        let task = session.dataTask(with: urlRequest,
+        let task = dataTask(with: urlRequest,
                                     completionHandler: {(data, response, error)  in
             if response?.url == url{
                 
@@ -97,5 +97,13 @@ class SCNetworkMager{
         task.resume()
         
         return task
+    }
+    
+    private func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask{
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        return session.dataTask(with: request, completionHandler: { (data, response, error) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            completionHandler(data, response, error)
+        })
     }
 }
