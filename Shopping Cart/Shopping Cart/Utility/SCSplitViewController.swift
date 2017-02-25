@@ -21,7 +21,7 @@ class SCSplitViewController: UISplitViewController {
     }
     
     private func updateUI(traitCollection: UITraitCollection){
-        let rightBarButtonItem = (viewControllers.first as? UINavigationController)?.topViewController?.navigationItem.rightBarButtonItem
+        let rightBarButtonItem = viewControllers.first?.contentViewController?.navigationItem.rightBarButtonItem
         if (traitCollection.horizontalSizeClass == .regular){
             rightBarButtonItem?.tintColor = UIColor.clear
             rightBarButtonItem?.isEnabled = false

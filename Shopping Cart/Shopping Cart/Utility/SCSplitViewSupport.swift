@@ -32,21 +32,6 @@ extension UISplitViewController: UISplitViewControllerDelegate {
         return backBarButtonItem
     }
     
-//    func willTransition(to newCollection: UITraitCollection,
-//                                 with coordinator: UIViewControllerTransitionCoordinator) {
-//        let rightBarButtonItem = (viewControllers.first as? UINavigationController)?.topViewController?.navigationItem.rightBarButtonItem
-//        if (newCollection.horizontalSizeClass == .regular){
-//            rightBarButtonItem?.tintColor = UIColor.clear
-//            rightBarButtonItem?.isEnabled = false
-//        }else{
-//            rightBarButtonItem?.tintColor = view.tintColor
-//            
-//            rightBarButtonItem?.isEnabled = true
-//        }
-//        super.willTransition(to: newCollection, with: coordinator)
-//    }
-
-    
     public func splitViewController(_ svc: UISplitViewController, willShow aViewController: UIViewController, invalidating barButtonItem: UIBarButtonItem) {
         if (!svc.responds(to: #selector(getter: UISplitViewController.displayModeButtonItem))) {
             if let detailView = svc.viewControllers.last as? UINavigationController {
@@ -58,10 +43,9 @@ extension UISplitViewController: UISplitViewControllerDelegate {
     
     // MARK: - Show detail if it is selected from list
     public func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        if let navController = secondaryViewController as? UINavigationController {
-            if let controller = navController.topViewController as? SCDetailViewController {
-                return !controller.detailContentAvailable
-            }
+        
+        if let controller = secondaryViewController.contentViewController as? SCDetailViewController {
+            return !controller.detailContentAvailable
         }
         
         return true

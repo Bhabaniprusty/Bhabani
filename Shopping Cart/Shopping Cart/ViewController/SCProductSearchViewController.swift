@@ -90,7 +90,8 @@ class SCProductSearchViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Static.detailSegIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let controller = (segue.destination as! UINavigationController).topViewController as! SCProductDetailViewController
+                
+                let controller = segue.destination.contentViewController as! SCProductDetailViewController
                 controller.catalog = fetchResultController.object(at: indexPath)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

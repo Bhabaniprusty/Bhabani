@@ -42,9 +42,9 @@ class SCCartViewController: UIViewController {
         
         if segue.identifier == "showCatalogSelection" {
             if let splitViewController = segue.destination as? UISplitViewController {
-                let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-                navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-                navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
+                let contentVc = splitViewController.viewControllers.last?.contentViewController
+                contentVc?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+                contentVc?.navigationItem.leftItemsSupplementBackButton = true
                 splitViewController.delegate = splitViewController
                 
                 if (traitCollection.userInterfaceIdiom == .pad){
