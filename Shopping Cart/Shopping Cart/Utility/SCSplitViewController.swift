@@ -8,46 +8,26 @@
 
 import UIKit
 
-class SCSplitViewController: UISplitViewController, UISplitViewControllerDelegate {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        delegate = self
-    }
+class SCSplitViewController: UISplitViewController {
     
     override func viewWillAppear(_ animated: Bool) {
-        if (traitCollection.userInterfaceIdiom == .pad){
-            (viewControllers.first as? UINavigationController)?.topViewController?.navigationItem.rightBarButtonItem = nil
-            preferredDisplayMode = .allVisible
-        }
-
         super.viewWillAppear(animated)
+        updateUI(traitCollection: self.traitCollection)
     }
-    
     override func willTransition(to newCollection: UITraitCollection,
                                  with coordinator: UIViewControllerTransitionCoordinator) {
+        updateUI(traitCollection: newCollection)
+        super.willTransition(to: newCollection, with: coordinator)
+    }
+    
+    private func updateUI(traitCollection: UITraitCollection){
         let rightBarButtonItem = (viewControllers.first as? UINavigationController)?.topViewController?.navigationItem.rightBarButtonItem
-        if (newCollection.horizontalSizeClass == .regular){
+        if (traitCollection.horizontalSizeClass == .regular){
             rightBarButtonItem?.tintColor = UIColor.clear
             rightBarButtonItem?.isEnabled = false
         }else{
             rightBarButtonItem?.tintColor = view.tintColor
-
             rightBarButtonItem?.isEnabled = true
         }
-        super.willTransition(to: newCollection, with: coordinator)
-    }
-
-    
-    func splitViewController(_ splitViewController: UISplitViewController,
-                             collapseSecondary secondaryViewController: UIViewController,
-                             onto primaryViewController: UIViewController) -> Bool {
-        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? SCDetailViewController else { return false }
-        if !topAsDetailController.detailContentAvailable {
-            return true
-        }
-        
-        return false
     }
 }
