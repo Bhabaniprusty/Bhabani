@@ -8,6 +8,16 @@
 
 import Foundation
 
+
+enum SCPageFetchState {
+    case Started
+    case Stoped
+    case Completed
+}
+
+typealias PageProgress = (_ currentPage: Int,_ state: SCPageFetchState)->Void
+
+
 class SCUtility{
     
     struct Static {
@@ -15,19 +25,26 @@ class SCUtility{
         static let invalidedDuratopn = 5.0
     }
     
-    class func fetchUpdatedProductCatalogs() {
+    class func fetchUpdatedProductCatalogs(progress: @escaping PageProgress) {
         let lastUpdatedDate = SCDBManager.sharedInstance.fetchLastCatalogUpdatedDate()
-        fetchProductCatalogs(updatedAfterDate: lastUpdatedDate, pageIndex: 0)
+        fetchProductCatalogs(updatedAfterDate: lastUpdatedDate, pageIndex: 0, progress: progress)
     }
     
     // updatedAfterDate : Last local ProductCatalog.updatedAt, nil if no record available
     private class func fetchProductCatalogs(updatedAfterDate: Date?,
-                                            pageIndex: Int){
+                                            pageIndex: Int, progress: @escaping PageProgress){
+        progress(pageIndex, .Started)
         SCUtility.fetchBatchProductCatalogs(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreCatalogsAvailable) in
-            if moreCatalogsAvailable {  // fetch the next page
-                SCUtility.fetchProductCatalogs(updatedAfterDate: updatedAfterDate, pageIndex: pageIndex + 1)
-            }
+                                                
+                                                progress(pageIndex, .Stoped)
+                                                if moreCatalogsAvailable {  // fetch the next page
+                                                    SCUtility.fetchProductCatalogs(updatedAfterDate: updatedAfterDate,
+                                                                                   pageIndex: pageIndex + 1,
+                                                                                   progress: progress)
+                                                }else{
+                                                    progress(pageIndex, .Completed)
+                                                }
         }
     }
     
@@ -37,28 +54,34 @@ class SCUtility{
         _ = SCNetworkMager.sharedInstancer.fetchProductCatalogs(updatedAfterDate: updatedAfterDate,
                                                                 pageIndex: pageIndex,
                                                                 pageSize: Static.pageSize) { (jsonArr, error) in
-            
-            // dump jsonArr in DB
-            if let catalogs = jsonArr{
-                SCDBManager.sharedInstance.saveProductCatalogs(catalogs: catalogs)
-            }
-            completion((jsonArr?.count == Static.pageSize))
+                                                                    
+                                                                    // dump jsonArr in DB
+                                                                    if let catalogs = jsonArr{
+                                                                        SCDBManager.sharedInstance.saveProductCatalogs(catalogs: catalogs)
+                                                                    }
+                                                                    completion((jsonArr?.count == Static.pageSize))
         }
     }
     
     
-    class func fetchUpdatedProductStorates() {
+    class func fetchUpdatedProductStorages(progress: @escaping PageProgress) {
         let lastUpdatedDate = SCDBManager.sharedInstance.fetchLastStorageUpdatedDate()
-        fetchProductStorages(updatedAfterDate: lastUpdatedDate, pageIndex: 0)
+        fetchProductStorages(updatedAfterDate: lastUpdatedDate, pageIndex: 0, progress: progress)
     }
     
-    private class func fetchProductStorages(updatedAfterDate: Date?, pageIndex: Int){
+    private class func fetchProductStorages(updatedAfterDate: Date?, pageIndex: Int, progress: @escaping PageProgress){
+        progress(pageIndex, .Started)
         SCUtility.fetchBatchProductStorages(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreStoragesAvailable) in
-            if moreStoragesAvailable {   // fetch the next page
-                SCUtility.fetchProductStorages(updatedAfterDate: updatedAfterDate,
-                                               pageIndex: pageIndex + 1)
-            }
+                                                
+                                                progress(pageIndex, .Stoped)
+
+                                                if moreStoragesAvailable {   // fetch the next page
+                                                    SCUtility.fetchProductStorages(updatedAfterDate: updatedAfterDate,
+                                                                                   pageIndex: pageIndex + 1, progress: progress)
+                                                }else{
+                                                    progress(pageIndex, .Completed)
+                                                }
         }
     }
     
@@ -70,13 +93,13 @@ class SCUtility{
                                                                 pageIndex: pageIndex,
                                                                 pageSize: Static.pageSize,
                                                                 completion: { (jsonArr, error) in
-            
-            //Dump to DB
-            if let storages = jsonArr{
-                SCDBManager.sharedInstance.saveProductCatalogsStorage(catalogStorages: storages)
-            }
-            
-            completion((jsonArr?.count == Static.pageSize))
+                                                                    
+                                                                    //Dump to DB
+                                                                    if let storages = jsonArr{
+                                                                        SCDBManager.sharedInstance.saveProductCatalogsStorage(catalogStorages: storages)
+                                                                    }
+                                                                    
+                                                                    completion((jsonArr?.count == Static.pageSize))
         })
     }
     

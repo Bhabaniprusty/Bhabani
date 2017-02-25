@@ -68,7 +68,10 @@ class SCSyncManager {
     }
     
     @objc private func syncStorage() {
-        SCUtility.fetchUpdatedProductStorates()
+        print("syncStorage process started")
+        SCUtility.fetchUpdatedProductStorages { (pageIndex, state) in
+            print("syncStorage process page index = \(pageIndex) state = \(state)")
+        }
     }
     
     deinit {
