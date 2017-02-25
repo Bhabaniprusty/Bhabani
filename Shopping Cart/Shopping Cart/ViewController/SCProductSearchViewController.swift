@@ -56,7 +56,9 @@ class SCProductSearchViewController: UITableViewController {
 
         SCUtility.fetchUpdatedProductCatalogs {(pageIndex, state) in
             if state == .Completed {
-                self.refreshControl?.endRefreshing()
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                }
             }
             print("refreshContent process page index = \(pageIndex) state = \(state)")
         }

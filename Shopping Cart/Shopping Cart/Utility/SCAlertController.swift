@@ -22,26 +22,26 @@ extension UIAlertController {
         
         addAction(UIAlertAction(title: NSLocalizedString("Frequently",
                                                          comment: "Auto Sync will work frequently"),
-                                style: .default, handler: { (action) in
+                                style: .default) { (action) in
             SCSyncManager.sharedInstance.perFormSyncCommand(action: "👍")
-        }))
+        })
         
         addAction(UIAlertAction(title: NSLocalizedString("Hourly",
                                                          comment: "Auto Sync will work Hourly"),
-                                style: .default, handler: { (action) in
+                                style: .default) { (action) in
             SCSyncManager.sharedInstance.perFormSyncCommand(action: "👊")
-        }))
+        })
         
         addAction(UIAlertAction(title: NSLocalizedString("Do not Sync",
                                                          comment: "Auto Sync will be stooped"),
-                                style: .destructive, handler: { (action) in
+                                style: .destructive) { (action) in
             SCSyncManager.sharedInstance.perFormSyncCommand(action: "👎")
-        }))
+        })
         
         addAction(UIAlertAction(title: NSLocalizedString("Cancel",
                                                          comment: "Cancel the wizard"),
-                                style: .cancel, handler: { (action) in
+                                style: .cancel) { (action) in
             
-        }))
+        })
     }
 }

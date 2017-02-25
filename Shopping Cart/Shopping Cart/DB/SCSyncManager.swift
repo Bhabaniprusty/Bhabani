@@ -78,5 +78,4 @@ class SCSyncManager {
     deinit {
         syncTimer?.invalidate()
     }
-
 }

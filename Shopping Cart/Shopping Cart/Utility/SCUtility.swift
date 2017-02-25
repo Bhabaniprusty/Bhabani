@@ -35,7 +35,7 @@ class SCUtility{
     // updatedAfterDate : Last local ProductCatalog.updatedAt, nil if no record available
     private class func fetchProductCatalogs(updatedAfterDate: Date?,
                                             pageIndex: Int,
-                                            progress: @escaping PageProgress){
+                                            progress: @escaping PageProgress) {
         progress(pageIndex, .Started)
         SCUtility.fetchBatchProductCatalogs(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreCatalogsAvailable) in
@@ -59,7 +59,7 @@ class SCUtility{
                                                                 pageSize: Static.pageSize) { (jsonArr, error) in
                                                                     
                                                                     // dump jsonArr in DB
-                                                                    if let catalogs = jsonArr{
+                                                                    if let catalogs = jsonArr {
                                                                         SCDBManager.sharedInstance.saveProductCatalogs(catalogs: catalogs)
                                                                     }
                                                                     completion((jsonArr?.count == Static.pageSize))
@@ -75,7 +75,7 @@ class SCUtility{
     
     private class func fetchProductStorages(updatedAfterDate: Date?,
                                             pageIndex: Int,
-                                            progress: @escaping PageProgress){
+                                            progress: @escaping PageProgress) {
         progress(pageIndex, .Started)
         SCUtility.fetchBatchProductStorages(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreStoragesAvailable) in
@@ -86,7 +86,7 @@ class SCUtility{
                                                     SCUtility.fetchProductStorages(updatedAfterDate: updatedAfterDate,
                                                                                    pageIndex: pageIndex + 1,
                                                                                    progress: progress)
-                                                }else{
+                                                } else {
                                                     progress(pageIndex, .Completed)
                                                 }
         }
@@ -98,21 +98,21 @@ class SCUtility{
                                                  completion: @escaping (_ recoerdAvailable: Bool) -> Void) -> Void {
         _ = SCNetworkMager.sharedInstancer.fetchProductStorages(updatedAfterDate: updatedAfterDate,
                                                                 pageIndex: pageIndex,
-                                                                pageSize: Static.pageSize,
-                                                                completion: { (jsonArr, error) in
+                                                                pageSize: Static.pageSize) { (jsonArr, error) in
                                                                     
                                                                     //Dump to DB
-                                                                    if let storages = jsonArr{
+                                                                    if let storages = jsonArr {
                                                                         SCDBManager.sharedInstance.saveProductCatalogsStorage(catalogStorages: storages)
                                                                     }
                                                                     
                                                                     completion((jsonArr?.count == Static.pageSize))
-        })
+        }
     }
     
-    class func prepareError(domain: String, localisedString: String) -> Error{
-        return NSError(domain: domain, code: 0, userInfo: [
-            NSLocalizedDescriptionKey: localisedString])
+    class func prepareError(domain: String, localisedString: String) -> Error {
+        return NSError(domain: domain,
+                       code: 0,
+                       userInfo: [NSLocalizedDescriptionKey: localisedString])
     }
     
     class func invalidateStorage() {

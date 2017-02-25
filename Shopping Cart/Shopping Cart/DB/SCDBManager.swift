@@ -27,11 +27,11 @@ class SCDBManager: NSObject{
         let container = NSPersistentContainer(name: "Shopping_Cart")
         container.viewContext.automaticallyMergesChangesFromParent = true
 
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores() { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         return container
     }()
     
