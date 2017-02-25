@@ -51,6 +51,11 @@ class SCCartViewController: UIViewController {
                     splitViewController.preferredDisplayMode = .allVisible
                 }
             }
+        }else if segue.identifier == "showCartItemDetail" {
+            if let indexPath = cartTableView.indexPathForSelectedRow,
+                let controller = segue.destination as? SCProductDetailViewController{
+                controller.catalog = cartFetchResultController.object(at: indexPath).product
+            }
         }
     }
 }

@@ -131,6 +131,7 @@
                                             <outlet property="quantityLabel" destination="Aet-oe-jhp" id="Ud6-wx-wKP"/>
                                             <outlet property="subTitleLabel" destination="hqP-PI-9p8" id="upe-ip-Tkz"/>
                                             <outlet property="titleLabel" destination="Lr3-tq-WsL" id="ovW-cs-jCZ"/>
+                                            <segue destination="aFl-j4-ZEj" kind="show" identifier="showCartItemDetail" id="rhG-ef-o7o"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1322" y="-1813"/>
+            <point key="canvasLocation" x="-1442" y="-864"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dw5-Bj-h33">
@@ -184,7 +185,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ow3-DH-Vwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2132" y="-1813"/>
+            <point key="canvasLocation" x="-2251" y="-864"/>
         </scene>
         <!--Catalogs-->
         <scene sceneID="50f-EI-SIs">
@@ -383,10 +384,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndW-2C-J0c" sceneMemberID="firstResponder"/>
                 <exit id="2gl-4e-1mJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="-1394"/>
+            <point key="canvasLocation" x="1258" y="-864"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W9W-PU-bW6"/>
+        <segue reference="rhG-ef-o7o"/>
+        <segue reference="gqH-D3-RPm"/>
     </inferredMetricsTieBreakers>
 </document>
