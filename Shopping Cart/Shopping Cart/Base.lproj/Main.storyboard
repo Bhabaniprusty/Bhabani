@@ -237,7 +237,6 @@
                                     <outlet property="catalogImageView" destination="FMs-9C-uCg" id="GYU-Wi-5oD"/>
                                     <outlet property="subTitleLabel" destination="z04-br-EDm" id="Ubz-ZC-Nui"/>
                                     <outlet property="titleLabel" destination="PEU-fg-2mo" id="F13-vW-St7"/>
-                                    <segue destination="Gf7-MV-ZRH" kind="showDetail" identifier="showDetail" id="gqH-D3-RPm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -253,6 +252,9 @@
                         </connections>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Gf7-MV-ZRH" kind="show" identifier="showDetail" id="f2s-ZS-rQP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmO-5Y-8yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Cancel" id="0Tk-lT-5gz">
@@ -294,7 +296,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erM-XT-AUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="-1394"/>
+            <point key="canvasLocation" x="2180" y="-2274"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="cAK-yh-ztP">
@@ -322,7 +324,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Kj-jX-C2Z">
-                                <rect key="frame" x="20" y="72" width="374" height="656"/>
+                                <rect key="frame" x="20" y="72" width="374" height="612"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="YfH-XX-D7F">
                                         <rect key="frame" x="2.6666666666666572" y="58" width="369.66666666666663" height="200"/>
@@ -388,7 +390,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rhG-ef-o7o"/>
-        <segue reference="gqH-D3-RPm"/>
+        <segue reference="f2s-ZS-rQP"/>
+        <segue reference="sVH-oc-ZbN"/>
     </inferredMetricsTieBreakers>
 </document>
