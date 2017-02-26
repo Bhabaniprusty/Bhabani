@@ -13,6 +13,8 @@ class SCCartViewController: UIViewController {
     
     fileprivate struct Static {
         static let cartCellIdentifier = "CartCell"
+        static let catalogSelelctionIdentifier = "showCatalogSelection"
+        static let catalogDetailIdentifier = "showCartItemDetail"
     }
 
     @IBOutlet weak var cartTableView: UITableView!
@@ -40,7 +42,7 @@ class SCCartViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "showCatalogSelection" {
+        if segue.identifier == Static.catalogSelelctionIdentifier {
             if let splitViewController = segue.destination as? UISplitViewController {
                 let contentVc = splitViewController.viewControllers.last?.contentViewController
                 contentVc?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
@@ -51,15 +53,15 @@ class SCCartViewController: UIViewController {
                     splitViewController.preferredDisplayMode = .allVisible
                 }
             }
-        }else if segue.identifier == "showCartItemDetail" {
+        }else if segue.identifier == Static.catalogDetailIdentifier {
             if let indexPath = cartTableView.indexPathForSelectedRow,
                 let controller = segue.destination as? SCDetailViewController{
                 controller.catalog = cartFetchResultController.object(at: indexPath).product
+                controller.navigationItem.rightBarButtonItem = nil
             }
         }
     }
 }
-
 
 extension SCCartViewController: UITableViewDataSource {
     // MARK: - Table View

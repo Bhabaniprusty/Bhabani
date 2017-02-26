@@ -33,6 +33,7 @@
 		79E54B151E60CCA8005FD5E0 /* SCFloatUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E54B141E60CCA8005FD5E0 /* SCFloatUtility.swift */; };
 		79E54B191E616F2F005FD5E0 /* SCSplitViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E54B181E616F2F005FD5E0 /* SCSplitViewSupport.swift */; };
 		79E54B1B1E61AD99005FD5E0 /* SCUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E54B1A1E61AD99005FD5E0 /* SCUIViewController.swift */; };
+		79ED7EBD1E62C77E00268F64 /* SCProductCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED7EBC1E62C77E00268F64 /* SCProductCatalog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		79E54B141E60CCA8005FD5E0 /* SCFloatUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCFloatUtility.swift; sourceTree = "<group>"; };
 		79E54B181E616F2F005FD5E0 /* SCSplitViewSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSplitViewSupport.swift; sourceTree = "<group>"; };
 		79E54B1A1E61AD99005FD5E0 /* SCUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCUIViewController.swift; sourceTree = "<group>"; };
+		79ED7EBC1E62C77E00268F64 /* SCProductCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCProductCatalog.swift; sourceTree = "<group>"; };
 		9736FD65B3A43457D5CE8490 /* Pods_Shopping_CartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopping_CartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91B22DF65007B6379D38EE /* Pods-Shopping Cart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping Cart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping Cart/Pods-Shopping Cart.release.xcconfig"; sourceTree = "<group>"; };
 		B5FB33DE9BE2E502A817ACD8 /* Pods-Shopping CartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping CartUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping CartUITests/Pods-Shopping CartUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		7928B6131E5E09E800F27C4B /* Shopping Cart */ = {
 			isa = PBXGroup;
 			children = (
+				79ED7EBB1E62C76200268F64 /* Model */,
 				79E54AFE1E5EDD68005FD5E0 /* ViewController */,
 				79E54AFB1E5EDD68005FD5E0 /* View */,
 				79E54AF41E5EDD68005FD5E0 /* DB */,
@@ -236,6 +239,14 @@
 				7928B6231E5E09E800F27C4B /* Info.plist */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		79ED7EBB1E62C76200268F64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79ED7EBC1E62C77E00268F64 /* SCProductCatalog.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A6BFAE160D8076D6B3E3F71E /* Pods */ = {
@@ -549,6 +560,7 @@
 				79E54B041E5EDD68005FD5E0 /* SCNetworkMager.swift in Sources */,
 				79E54B031E5EDD68005FD5E0 /* SCSyncManager.swift in Sources */,
 				79E54B0C1E5EFE14005FD5E0 /* SCSplitViewController.swift in Sources */,
+				79ED7EBD1E62C77E00268F64 /* SCProductCatalog.swift in Sources */,
 				79E54B071E5EDD68005FD5E0 /* SCCatalogTableViewCell.swift in Sources */,
 				7928B61D1E5E09E800F27C4B /* Shopping_Cart.xcdatamodeld in Sources */,
 				79E54B101E601149005FD5E0 /* SCAlertController.swift in Sources */,

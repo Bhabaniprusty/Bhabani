@@ -10,6 +10,12 @@ import UIKit
 
 class SCProductDetailViewController: SCDetailViewController {
     
+    private struct Static {
+        static let cartQuantityKeyPathIdentifier = "cart.quantity"
+        static let availableQuantityKeyPathIdentifier = "storage.availableQuantity"
+    }
+
+    
     @IBOutlet weak var addtoCartButton: UIButton!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var catalogImageView: UIImageView!
@@ -19,10 +25,14 @@ class SCProductDetailViewController: SCDetailViewController {
     
     override var catalog: ProductCatalog? {
         willSet{
-            catalog?.removeObserver(self, forKeyPath: "cart.quantity")
-            catalog?.removeObserver(self, forKeyPath: "storage.availableQuantity")
-            newValue?.addObserver(self, forKeyPath: "cart.quantity", options: .new, context: nil)
-            newValue?.addObserver(self, forKeyPath: "storage.availableQuantity", options: .new, context: nil)
+            catalog?.removeObserver(self, forKeyPath: Static.cartQuantityKeyPathIdentifier)
+            catalog?.removeObserver(self, forKeyPath: Static.availableQuantityKeyPathIdentifier)
+            newValue?.addObserver(self, forKeyPath: Static.cartQuantityKeyPathIdentifier,
+                                  options: .new,
+                                  context: nil)
+            newValue?.addObserver(self, forKeyPath: Static.availableQuantityKeyPathIdentifier,
+                                  options: .new,
+                                  context: nil)
         }
         didSet {
             detailContentAvailable = (catalog != nil)
@@ -32,10 +42,10 @@ class SCProductDetailViewController: SCDetailViewController {
     
     private func configureView() {
         if let catalog = catalog {
-            addtoCartButton?.isHidden = false
-            detailDescriptionLabel?.text = catalog.productDescription
             title = catalog.productName
-            
+            addtoCartButton?.isHidden = false
+            removeFromCartButton?.isHidden = false
+            detailDescriptionLabel?.text = catalog.productDescription
             itemsCoutInCartLabel?.text = String(catalog.cart?.quantity ?? 0)
             itemsStockLabel?.text = String(catalog.storage?.availableQuantity ?? 0)
             
@@ -44,7 +54,10 @@ class SCProductDetailViewController: SCDetailViewController {
             }
         }else {
             addtoCartButton?.isHidden = true
+            removeFromCartButton?.isHidden = true
         }
+        
+        validateButtonPresence()
     }
     
     @IBAction func AddToCart(_ sender: UIButton) {
@@ -64,17 +77,40 @@ class SCProductDetailViewController: SCDetailViewController {
         configureView()
     }
     
+    func validateButtonPresence(){
+        self.addtoCartButton?.isEnabled = catalog?.canAddMoreItemtoCart() ?? false
+        self.removeFromCartButton?.isEnabled = catalog?.canRemoveItemFromCart() ?? false
+    }
+    
+    private func animateValueChange(label: UILabel?, value: String) {
+        if let animatableLabel = label {
+            DispatchQueue.main.async {
+                self.addtoCartButton?.isEnabled = false
+                self.removeFromCartButton?.isEnabled = false
+                
+                UIView.transition(with: animatableLabel,
+                                  duration: 0.5,
+                                  options: [.transitionCrossDissolve],
+                                  animations: {
+                                    animatableLabel.text = value
+                                    
+                }, completion: { (completed) in
+                    self.validateButtonPresence()
+                })
+            }
+        }
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "cart.quantity"{
-            itemsCoutInCartLabel?.text = String(change?[NSKeyValueChangeKey.newKey] as? Double ?? 0)
-
-        }else if keyPath == "storage.availableQuantity"{
-            itemsStockLabel?.text = String(change?[NSKeyValueChangeKey.newKey] as? Double ?? 0)
+        if keyPath == Static.cartQuantityKeyPathIdentifier{
+            animateValueChange(label: itemsCoutInCartLabel, value: String(change?[NSKeyValueChangeKey.newKey] as? Double ?? 0))
+        }else if keyPath == Static.availableQuantityKeyPathIdentifier{
+            animateValueChange(label: itemsStockLabel, value: String(change?[NSKeyValueChangeKey.newKey] as? Double ?? 0))
         }
     }
     
     deinit {
-        catalog?.removeObserver(self, forKeyPath: "cart.quantity")
-        catalog?.removeObserver(self, forKeyPath: "storage.availableQuantity")
+        catalog?.removeObserver(self, forKeyPath: Static.cartQuantityKeyPathIdentifier)
+        catalog?.removeObserver(self, forKeyPath: Static.availableQuantityKeyPathIdentifier)
     }
 }
