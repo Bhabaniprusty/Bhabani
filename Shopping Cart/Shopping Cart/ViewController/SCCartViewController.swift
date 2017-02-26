@@ -53,7 +53,7 @@ class SCCartViewController: UIViewController {
             }
         }else if segue.identifier == "showCartItemDetail" {
             if let indexPath = cartTableView.indexPathForSelectedRow,
-                let controller = segue.destination as? SCProductDetailViewController{
+                let controller = segue.destination as? SCDetailViewController{
                 controller.catalog = cartFetchResultController.object(at: indexPath).product
             }
         }

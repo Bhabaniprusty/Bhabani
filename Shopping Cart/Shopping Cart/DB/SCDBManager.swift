@@ -180,9 +180,9 @@ class SCDBManager: NSObject{
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         
-        persistentContainer.performBackgroundTask { (moc) in
+        persistentContainer.performBackgroundTask {[weak self] (moc) in
             do {
-                try self.persistentContainer.persistentStoreCoordinator.execute(deleteRequest,
+                try self?.persistentContainer.persistentStoreCoordinator.execute(deleteRequest,
                                                                                 with: moc)
             } catch let error as NSError {
                 // TODO: handle the error

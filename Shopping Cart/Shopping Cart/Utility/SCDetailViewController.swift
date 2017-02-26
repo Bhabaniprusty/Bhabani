@@ -8,6 +8,13 @@
 
 import UIKit
 
-class SCDetailViewController: UIViewController {
+class SCDetailViewController: UIViewController, SCDetail {
+    var catalog: ProductCatalog?
     var detailContentAvailable = false
+}
+
+
+protocol SCDetail{
+    var detailContentAvailable: Bool {get}
+    var catalog: ProductCatalog? {get set}
 }

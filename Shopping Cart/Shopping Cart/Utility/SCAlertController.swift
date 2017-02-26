@@ -10,10 +10,6 @@ import UIKit
 
 extension UIAlertController {
     convenience init(message: String?) {
-        
-        
-        
-        
         self.init(title: NSLocalizedString("Auto Sync",
                                            comment: "Auto Sync functionality title"),
                   message: NSLocalizedString("Application will check avaibility of cart Items",

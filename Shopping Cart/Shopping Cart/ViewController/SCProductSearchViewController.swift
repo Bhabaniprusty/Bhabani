@@ -105,7 +105,7 @@ class SCProductSearchViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let controller = splitViewController?.viewControllers.last?.contentViewController as? SCProductDetailViewController{
+        if let controller = splitViewController?.viewControllers.last?.contentViewController as? SCDetailViewController{
             updateDetail(controller: controller, selectedIndexPath: indexPath)
         } else {
             performSegue(withIdentifier: Static.detailSegIdentifier, sender: tableView.cellForRow(at: indexPath)!)
@@ -116,13 +116,13 @@ class SCProductSearchViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Static.detailSegIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let controller = segue.destination.contentViewController as! SCProductDetailViewController
+                let controller = segue.destination.contentViewController as! SCDetailViewController
                 updateDetail(controller: controller, selectedIndexPath: indexPath)
             }
         }
     }
     
-    private func updateDetail(controller: SCProductDetailViewController, selectedIndexPath: IndexPath){
+    private func updateDetail(controller: SCDetailViewController, selectedIndexPath: IndexPath){
         controller.catalog = fetchResultController.object(at: selectedIndexPath)
         controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         controller.navigationItem.leftItemsSupplementBackButton = true
