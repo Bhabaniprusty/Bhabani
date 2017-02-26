@@ -127,9 +127,12 @@ extension SCCartViewController: NSFetchedResultsControllerDelegate{
         case .delete:
             cartTableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            configureCell(cartTableView.cellForRow(at: indexPath!)!,
-                               withCartItem: anObject as! ShoppingCart,
-                               indexPath: indexPath!)
+            if let cell = cartTableView.cellForRow(at: indexPath!){
+                configureCell(cell,
+                              withCartItem: anObject as! ShoppingCart,
+                              indexPath: indexPath!)
+            }
+
         case .move:
             cartTableView.moveRow(at: indexPath!, to: newIndexPath!)
         }

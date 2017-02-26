@@ -173,9 +173,11 @@ extension SCProductSearchViewController: NSFetchedResultsControllerDelegate{
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            configureCell(tableView.cellForRow(at: indexPath!)!,
-                               withCataLog: anObject as! ProductCatalog,
-                               indexPath: indexPath!)
+            if let cell = tableView.cellForRow(at: indexPath!){
+                configureCell(cell,
+                              withCataLog: anObject as! ProductCatalog,
+                              indexPath: indexPath!)
+            }
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
