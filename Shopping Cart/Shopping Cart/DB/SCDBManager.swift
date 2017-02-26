@@ -156,6 +156,24 @@ class SCDBManager: NSObject{
         }
     }
     
+    func removeFromCart(productId: String) {
+        persistentContainer.performBackgroundTask { (moc) in
+            
+            let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+            catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
+            
+            //Will update if catalog is locally available
+            if let  product = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
+                if let cart = product.cart{
+                    moc.delete(cart)
+                    product.storage?.cartOrderQuantity = 0
+                }
+                
+                try? moc.save()
+            }
+        }
+    }
+    
     func fetchLastStorageUpdatedDate() -> Date? {
         let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityStorage)
         catalogFetchRequest.fetchLimit = 1
