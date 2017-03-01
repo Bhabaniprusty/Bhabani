@@ -93,6 +93,10 @@ class SCProductSearchViewController: UITableViewController {
                 let url =  URL(string: imageUrl){
                 catalogCell.catalogImageView.sd_setImage(with: url, placeholderImage: nil)
             }
+            
+            //add code for UI automation
+            catalogCell.accessibilityIdentifier = catalog.productName
+            catalogCell.accessibilityLabel = catalog.productName
         }
     }
     

@@ -28,6 +28,24 @@ class Shopping_CartUITests: XCTestCase {
         super.tearDown()
     }
     
+    func testAddToCart() {
+        
+        let app = XCUIApplication()
+        app.navigationBars["Shopping_Cart.SCCartView"].buttons["Add"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["name is mobile1"].tap()
+        
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["addToCart"].tap()
+        
+        let nameIsMobile1NavigationBar = app.navigationBars["name is mobile1"]
+        nameIsMobile1NavigationBar.buttons["Cancel"].tap()
+        tablesQuery.cells.containing(.staticText, identifier:"name is mobile1").children(matching: .staticText).matching(identifier: "name is mobile1").element(boundBy: 1).tap()
+        elementsQuery.buttons["removeFromCart"].tap()
+        nameIsMobile1NavigationBar.children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
+    }
+
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

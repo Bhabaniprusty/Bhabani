@@ -233,6 +233,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="catalogImageView" destination="FMs-9C-uCg" id="GYU-Wi-5oD"/>
                                     <outlet property="subTitleLabel" destination="z04-br-EDm" id="Ubz-ZC-Nui"/>
@@ -324,7 +327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Kj-jX-C2Z">
-                                <rect key="frame" x="20" y="64" width="696" height="306"/>
+                                <rect key="frame" x="20" y="64" width="696" height="350"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyV-zX-gZT">
                                         <rect key="frame" x="0.0" y="0.0" width="696" height="496.33333333333337"/>
@@ -334,6 +337,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dup-LH-iX1">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="removeFromCart" label="Remove From Cart"/>
                                                         <state key="normal" title="Remove from Cart"/>
                                                         <connections>
                                                             <action selector="removeFromCart:" destination="aFl-j4-ZEj" eventType="touchUpInside" id="Ic6-DY-vtE"/>
@@ -341,6 +345,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l13-CH-jn8">
                                                         <rect key="frame" x="577" y="0.0" width="79" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="addToCart" label="Add to Cart"/>
                                                         <state key="normal" title="Add to Cart"/>
                                                         <connections>
                                                             <action selector="AddToCart:" destination="aFl-j4-ZEj" eventType="touchUpInside" id="SZV-r8-ZCo"/>
@@ -520,7 +525,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="rhG-ef-o7o"/>
         <segue reference="f2s-ZS-rQP"/>
-        <segue reference="sVH-oc-ZbN"/>
     </inferredMetricsTieBreakers>
 </document>
