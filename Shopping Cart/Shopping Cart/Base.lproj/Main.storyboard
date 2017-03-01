@@ -210,7 +210,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z04-br-EDm">
-                                            <rect key="frame" x="68" y="22.666666666666664" width="49.666666666666671" height="15.999999999999993"/>
+                                            <rect key="frame" x="68" y="22.666666666666664" width="326" height="15.999999999999993"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -227,6 +227,7 @@
                                         <constraint firstItem="PEU-fg-2mo" firstAttribute="centerY" secondItem="ii8-JM-DEe" secondAttribute="centerY" constant="-10" id="4ie-dz-tS7"/>
                                         <constraint firstItem="FMs-9C-uCg" firstAttribute="centerY" secondItem="ii8-JM-DEe" secondAttribute="centerY" id="NNf-nn-Lld"/>
                                         <constraint firstItem="FMs-9C-uCg" firstAttribute="leading" secondItem="ii8-JM-DEe" secondAttribute="leading" constant="20" symbolic="YES" id="P9w-dp-VW0"/>
+                                        <constraint firstAttribute="trailing" secondItem="z04-br-EDm" secondAttribute="trailing" constant="20" symbolic="YES" id="TrK-UQ-xVm"/>
                                         <constraint firstItem="z04-br-EDm" firstAttribute="leading" secondItem="FMs-9C-uCg" secondAttribute="trailing" constant="8" symbolic="YES" id="Z5I-66-HUZ"/>
                                         <constraint firstItem="z04-br-EDm" firstAttribute="top" secondItem="PEU-fg-2mo" secondAttribute="bottom" id="qfg-LN-vr7"/>
                                         <constraint firstItem="PEU-fg-2mo" firstAttribute="leading" secondItem="FMs-9C-uCg" secondAttribute="trailing" constant="8" symbolic="YES" id="y1Z-ue-tpN"/>
@@ -422,10 +423,10 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text=" " textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8or-Ht-d9q">
+                                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text=" " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8or-Ht-d9q">
                                                 <rect key="frame" x="20" y="452.33333333333337" width="656" height="24"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
