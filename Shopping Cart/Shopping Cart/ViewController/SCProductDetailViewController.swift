@@ -22,6 +22,10 @@ class SCProductDetailViewController: SCDetailViewController {
     @IBOutlet weak var removeFromCartButton: UIButton!
     @IBOutlet weak var itemsCoutInCartLabel: UILabel!
     @IBOutlet weak var itemsStockLabel: UILabel!
+    @IBOutlet weak var inCartTextLabel: UILabel!
+    @IBOutlet weak var inCartCountLabel: UILabel!
+    @IBOutlet weak var inStockTextLabel: UILabel!
+    @IBOutlet weak var inStockAmountLabel: UILabel!
     
     override var catalog: ProductCatalog? {
         willSet{
@@ -45,6 +49,11 @@ class SCProductDetailViewController: SCDetailViewController {
             title = catalog.productName
             addtoCartButton?.isHidden = false
             removeFromCartButton?.isHidden = false
+            inCartTextLabel?.isHidden = false
+            inCartCountLabel?.isHidden = false
+            inStockTextLabel?.isHidden = false
+            inStockAmountLabel?.isHidden = false
+
             detailDescriptionLabel?.text = catalog.productDescription
             itemsCoutInCartLabel?.text = String(catalog.cart?.quantity ?? 0)
             itemsStockLabel?.text = String(catalog.storage?.availableQuantity ?? 0)
@@ -55,6 +64,10 @@ class SCProductDetailViewController: SCDetailViewController {
         }else {
             addtoCartButton?.isHidden = true
             removeFromCartButton?.isHidden = true
+            inCartTextLabel?.isHidden = true
+            inCartCountLabel?.isHidden = true
+            inStockTextLabel?.isHidden = true
+            inStockAmountLabel?.isHidden = true
         }
         
         validateButtonPresence()

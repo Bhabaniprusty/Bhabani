@@ -70,7 +70,9 @@ class SCDBManager: NSObject{
                     productCatalog.productImageUrl = catalog["productImageUrl"].string
                     productCatalog.productName = catalog["productName"].string
                     productCatalog.unit = catalog["unit"].string
-                    productCatalog.updatedAt = catalog["updatedAt"].string?.dateValue()
+                    if let updatedDate = catalog["updatedAt"].string?.dateValue(), updatedDate != productCatalog.updatedAt{
+                        productCatalog.updatedAt = updatedDate
+                    }
                     
                     var category: ProductCategory!
                     if let productCategoryName = catalog["productCategory"].string{
@@ -117,7 +119,10 @@ class SCDBManager: NSObject{
                         
                         // If product added to cart, then update cart and storage
                         if let cartItem = existingCatalog.cart{
-                            cartItem.isAvailable = cartItem.quantity <= storage.availableQuantity
+                            let isItemAvailable = cartItem.quantity <= storage.availableQuantity
+                            if isItemAvailable != cartItem.isAvailable{
+                                cartItem.isAvailable = isItemAvailable
+                            }
                             storage.cartOrderQuantity = cartItem.quantity
                         }
                     }

@@ -12,7 +12,7 @@ extension String{
     
     func dateValue() -> NSDate? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        dateFormatter.dateFormat = "dd-MM-yyyy-HH:mm:ss"
         return dateFormatter.date(from: self) as NSDate?
     }
 }

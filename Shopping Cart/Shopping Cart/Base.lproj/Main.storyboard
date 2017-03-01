@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cdk-BV-Z9o" id="dKC-8W-kaa">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lr3-tq-WsL">
@@ -200,7 +200,7 @@
                                 <rect key="frame" x="0.0" y="22" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NTY-1P-aAK" id="ii8-JM-DEe">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEU-fg-2mo">
@@ -446,29 +446,29 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="1Ky-c4-6XH"/>
                                                 <exclude reference="U1a-B9-Xuo"/>
                                                 <exclude reference="YP0-0w-YSs"/>
+                                                <exclude reference="1Ky-c4-6XH"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=compact">
                                             <mask key="constraints">
+                                                <exclude reference="ij3-WD-w9e"/>
+                                                <exclude reference="Wa0-JZ-CYa"/>
                                                 <include reference="1Ky-c4-6XH"/>
                                                 <exclude reference="Ltf-vk-gla"/>
                                                 <exclude reference="Mhq-hL-b11"/>
-                                                <exclude reference="ij3-WD-w9e"/>
-                                                <exclude reference="Wa0-JZ-CYa"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <mask key="constraints">
-                                                <include reference="1Ky-c4-6XH"/>
-                                                <exclude reference="Ltf-vk-gla"/>
-                                                <exclude reference="Mhq-hL-b11"/>
                                                 <include reference="U1a-B9-Xuo"/>
                                                 <exclude reference="ij3-WD-w9e"/>
                                                 <exclude reference="Wa0-JZ-CYa"/>
                                                 <include reference="YP0-0w-YSs"/>
+                                                <include reference="1Ky-c4-6XH"/>
+                                                <exclude reference="Ltf-vk-gla"/>
+                                                <exclude reference="Mhq-hL-b11"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -504,6 +504,10 @@
                         <outlet property="addtoCartButton" destination="l13-CH-jn8" id="z2n-9b-C9N"/>
                         <outlet property="catalogImageView" destination="YfH-XX-D7F" id="Hyf-lr-qAb"/>
                         <outlet property="detailDescriptionLabel" destination="8or-Ht-d9q" id="Vk3-dk-77d"/>
+                        <outlet property="inCartCountLabel" destination="StC-ei-NyL" id="MCa-kd-MzI"/>
+                        <outlet property="inCartTextLabel" destination="Ao5-TC-452" id="0Ms-9p-a6p"/>
+                        <outlet property="inStockAmountLabel" destination="gsf-CQ-rIy" id="Z7O-JL-trN"/>
+                        <outlet property="inStockTextLabel" destination="ich-ih-Qq6" id="67F-gF-Nj5"/>
                         <outlet property="itemsCoutInCartLabel" destination="StC-ei-NyL" id="zNn-Dd-Xd6"/>
                         <outlet property="itemsStockLabel" destination="gsf-CQ-rIy" id="DHg-RQ-2k3"/>
                         <outlet property="removeFromCartButton" destination="Dup-LH-iX1" id="CUG-aP-KX6"/>
