@@ -146,7 +146,6 @@ class SCDBManager: NSObject{
                 if product.cart == nil{
                     cartItem = ShoppingCart(context: moc)
                     cartItem.product = product
-                    //                product.cart = cartItem
                 }else{
                     cartItem = product.cart
                 }
@@ -223,9 +222,11 @@ class SCDBManager: NSObject{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
         
         // Added Sort Descriptors
-        let sortDescriptor = NSSortDescriptor(key: "updatedAt",
+        let updatedsortDescriptor = NSSortDescriptor(key: "updatedAt",
                                               ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let prodsortDescriptor = NSSortDescriptor(key: "productId",
+                                              ascending: true)
+        fetchRequest.sortDescriptors = [updatedsortDescriptor, prodsortDescriptor]
         fetchRequest.fetchBatchSize = 20
         
         if let searchText = searchText, !searchText.isEmpty{
