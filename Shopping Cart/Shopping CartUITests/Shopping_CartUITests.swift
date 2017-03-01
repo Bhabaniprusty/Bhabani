@@ -45,6 +45,17 @@ class Shopping_CartUITests: XCTestCase {
         elementsQuery.buttons["removeFromCart"].tap()
         nameIsMobile1NavigationBar.children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
     }
+    
+    func testChangeSyncStorage() {
+        let app = XCUIApplication()
+        let organizeButton = app.navigationBars["Shopping_Cart.SCCartView"].buttons["Organize"]
+        organizeButton.tap()
+        
+        let autoSyncSheet = app.sheets["Auto Sync"]
+        autoSyncSheet.buttons["Do not Sync"].tap()
+        organizeButton.tap()
+        autoSyncSheet.buttons["Frequently"].tap()
+    }
 
     func testExample() {
         // Use recording to get started writing UI tests.
