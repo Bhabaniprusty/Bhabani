@@ -18,6 +18,7 @@ class SCSyncManager {
     }
     
     private var syncTimer: Timer?
+    private var currentSessionTask: URLSessionDataTask?
     static let sharedInstance = SCSyncManager()
     
     private init() {
@@ -66,12 +67,22 @@ class SCSyncManager {
     
     func stopSync() {
         syncTimer?.invalidate()
+        syncTimer = nil
+        currentSessionTask?.cancel()
+        currentSessionTask = nil
     }
     
     @objc private func syncStorage() {
-        print("syncStorage process started")
-        SCUtility.fetchUpdatedProductStorages { (pageIndex, state) in
-            print("syncStorage process page index = \(pageIndex) state = \(state)")
+        Log.DLog("syncStorage process started")
+        SCUtility.fetchUpdatedProductStorages { (currentTask, pageIndex, state) in
+            switch state{
+            case .Started:
+                self.currentSessionTask = currentTask
+            default:
+                self.currentSessionTask = nil
+            }
+            
+            Log.DLog("syncStorage process task = \(currentTask) page index = \(pageIndex) state = \(state)")
         }
     }
     

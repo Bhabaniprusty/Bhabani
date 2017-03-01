@@ -52,15 +52,15 @@ class SCProductSearchViewController: UITableViewController {
     
     func refreshContent(){
         refreshControl?.beginRefreshing()
-        print("refreshContent catalog process started")
-
-        SCUtility.fetchUpdatedProductCatalogs {(pageIndex, state) in
+        Log.DLog("refreshContent catalog process started")
+        SCUtility.fetchUpdatedProductCatalogs {(_, pageIndex, state) in
             if state == .Completed {
                 DispatchQueue.main.async {
                     self.refreshControl?.endRefreshing()
                 }
             }
-            print("refreshContent process page index = \(pageIndex) state = \(state)")
+            
+            Log.DLog("refreshContent process page index = \(pageIndex) state = \(state)")
         }
     }
     

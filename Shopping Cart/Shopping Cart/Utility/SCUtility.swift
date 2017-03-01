@@ -15,7 +15,7 @@ enum SCPageFetchState {
     case Completed
 }
 
-typealias PageProgress = (_ currentPage: Int,_ state: SCPageFetchState)->Void
+typealias PageProgress = (_ currentTask: URLSessionDataTask?, _ currentPage: Int,_ state: SCPageFetchState)->Void
 
 
 class SCUtility{
@@ -36,19 +36,20 @@ class SCUtility{
     private class func fetchProductCatalogs(updatedAfterDate: Date?,
                                             pageIndex: Int,
                                             progress: @escaping PageProgress) {
-        progress(pageIndex, .Started)
         SCUtility.fetchBatchProductCatalogs(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreCatalogsAvailable) in
                                                 
-                                                progress(pageIndex, .Stoped)
+                                                progress(nil, pageIndex, .Stoped)
                                                 if moreCatalogsAvailable {  // fetch the next page
                                                     SCUtility.fetchProductCatalogs(updatedAfterDate: updatedAfterDate,
                                                                                    pageIndex: pageIndex + 1,
                                                                                    progress: progress)
                                                 }else{
-                                                    progress(pageIndex, .Completed)
+                                                    progress(nil, pageIndex, .Completed)
                                                 }
         }
+        
+        progress(nil, pageIndex, .Started)
     }
     
     private class func fetchBatchProductCatalogs(updatedAfterDate: Date?,
@@ -76,27 +77,30 @@ class SCUtility{
     private class func fetchProductStorages(updatedAfterDate: Date?,
                                             pageIndex: Int,
                                             progress: @escaping PageProgress) {
-        progress(pageIndex, .Started)
-        SCUtility.fetchBatchProductStorages(updatedAfterDate: updatedAfterDate,
+        
+        var task: URLSessionDataTask?
+        task = SCUtility.fetchBatchProductStorages(updatedAfterDate: updatedAfterDate,
                                             pageIndex: pageIndex) { (moreStoragesAvailable) in
                                                 
-                                                progress(pageIndex, .Stoped)
+                                                progress(task, pageIndex, .Stoped)
 
                                                 if moreStoragesAvailable {   // fetch the next page
                                                     SCUtility.fetchProductStorages(updatedAfterDate: updatedAfterDate,
                                                                                    pageIndex: pageIndex + 1,
                                                                                    progress: progress)
                                                 } else {
-                                                    progress(pageIndex, .Completed)
+                                                    progress(task, pageIndex, .Completed)
                                                 }
         }
+        
+        progress(task, pageIndex, .Started)
     }
     
     
     private class func fetchBatchProductStorages(updatedAfterDate: Date?,
                                                  pageIndex: Int,
-                                                 completion: @escaping (_ recoerdAvailable: Bool) -> Void) -> Void {
-        _ = SCNetworkMager.sharedInstancer.fetchProductStorages(updatedAfterDate: updatedAfterDate,
+                                                 completion: @escaping (_ recoerdAvailable: Bool) -> Void) -> URLSessionDataTask? {
+        return SCNetworkMager.sharedInstancer.fetchProductStorages(updatedAfterDate: updatedAfterDate,
                                                                 pageIndex: pageIndex,
                                                                 pageSize: Static.pageSize) { (jsonArr, error) in
                                                                     
