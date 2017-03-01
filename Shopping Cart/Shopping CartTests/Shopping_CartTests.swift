@@ -21,6 +21,46 @@ class Shopping_CartTests: XCTestCase {
         super.tearDown()
     }
     
+    func testFetchCatalog() {
+        let cretaeContactExpectation = expectation(description: "fetch catalog")
+        
+        
+        let task = SCNetworkMager.sharedInstancer.fetchProductCatalogs(updatedAfterDate: nil,
+                                                            pageIndex: 0,
+                                                            pageSize: 10) { (jsonArr, error) in
+                                                                
+                                                                XCTAssertNil(error, "error should be nil")
+                                                                cretaeContactExpectation.fulfill()
+        }
+
+        waitForExpectations(timeout: (task?.originalRequest!.timeoutInterval)!) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            task?.cancel()
+        }
+    }
+
+    func testFetchStorage() {
+        let cretaeContactExpectation = expectation(description: "fetch storage")
+        
+        
+        let task = SCNetworkMager.sharedInstancer.fetchProductStorages(updatedAfterDate: nil,
+                                                                       pageIndex: 0,
+                                                                       pageSize: 10) { (jsonArr, error) in
+                                                                        
+                                                                        XCTAssertNil(error, "error should be nil")
+                                                                        cretaeContactExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: (task?.originalRequest!.timeoutInterval)!) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            task?.cancel()
+        }
+    }
+
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
