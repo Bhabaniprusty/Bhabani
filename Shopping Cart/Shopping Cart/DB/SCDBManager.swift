@@ -55,10 +55,10 @@ class SCDBManager: NSObject{
                 if let productId = catalog["productId"].string{
                     var productCatalog: ProductCatalog!
                     
-                    let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+                    let catalogFetchRequest: NSFetchRequest<ProductCatalog> = ProductCatalog.fetchRequest()
                     catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
                     
-                    if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog {
+                    if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first {
                         productCatalog = existingCatalog
                     }else{
                         productCatalog = ProductCatalog(context: moc)
@@ -78,9 +78,10 @@ class SCDBManager: NSObject{
                     if let productCategoryName = catalog["productCategory"].string{
                         //Product catalog's category can be changed. update every time is good option
                         if productCatalog.productCategory?.categoryName != productCategoryName {
-                            let categoryFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCategory)
+                            let categoryFetchRequest: NSFetchRequest<ProductCategory> = ProductCategory.fetchRequest()
+
                             catalogFetchRequest.predicate = NSPredicate(format: "categoryName == %@",productCategoryName)
-                            if let  existingCategory = (try? moc.fetch(categoryFetchRequest))?.first as? ProductCategory{
+                            if let  existingCategory = (try? moc.fetch(categoryFetchRequest))?.first {
                                 category = existingCategory
                             }else{
                                 category = ProductCategory(context: moc)
@@ -101,11 +102,11 @@ class SCDBManager: NSObject{
         persistentContainer.performBackgroundTask { (moc) in
             for catalogStorage in catalogStorages{
                 if let productId = catalogStorage["productId"].string{
-                    let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+                    let catalogFetchRequest: NSFetchRequest<ProductCatalog> = ProductCatalog.fetchRequest()
                     catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
                     
                     //Will update if catalog is locally available
-                    if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
+                    if let  existingCatalog = (try? moc.fetch(catalogFetchRequest))?.first {
                         var storage: Storage!
                         if let existingStorage = existingCatalog.storage{
                             storage = existingStorage
@@ -136,11 +137,11 @@ class SCDBManager: NSObject{
     func addToCart(productId: String, quantity: Double) {
         persistentContainer.performBackgroundTask { (moc) in
             
-            let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+            let catalogFetchRequest: NSFetchRequest<ProductCatalog> = ProductCatalog.fetchRequest()
             catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
             
             //Will update if catalog is locally available
-            if let  product = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
+            if let  product = (try? moc.fetch(catalogFetchRequest))?.first {
                 var cartItem: ShoppingCart!
                 
                 if product.cart == nil{
@@ -163,11 +164,11 @@ class SCDBManager: NSObject{
     func removeFromCart(productId: String) {
         persistentContainer.performBackgroundTask { (moc) in
             
-            let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+            let catalogFetchRequest: NSFetchRequest<ProductCatalog> = ProductCatalog.fetchRequest()
             catalogFetchRequest.predicate = NSPredicate(format: "productId == %@",productId)
             
             //Will update if catalog is locally available
-            if let  product = (try? moc.fetch(catalogFetchRequest))?.first as? ProductCatalog{
+            if let  product = (try? moc.fetch(catalogFetchRequest))?.first {
                 if let cart = product.cart{
                     moc.delete(cart)
                     product.storage?.cartOrderQuantity = 0
@@ -179,22 +180,22 @@ class SCDBManager: NSObject{
     }
     
     func fetchLastStorageUpdatedDate() -> Date? {
-        let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityStorage)
+        let catalogFetchRequest: NSFetchRequest<Storage> = Storage.fetchRequest()
         catalogFetchRequest.fetchLimit = 1
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: true)
         catalogFetchRequest.sortDescriptors = [sortDescriptor]
         
-        return ((try? persistentContainer.viewContext.fetch(catalogFetchRequest))?.first as? ProductCatalog)?.updatedAt as Date?
+        return (try? persistentContainer.viewContext.fetch(catalogFetchRequest))?.first?.updatedAt as Date?
     }
     
     func fetchLastCatalogUpdatedDate() -> Date? {
-        let catalogFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
+        let catalogFetchRequest: NSFetchRequest<ProductCatalog> = ProductCatalog.fetchRequest()
         catalogFetchRequest.fetchLimit = 1
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: true)
         catalogFetchRequest.sortDescriptors = [sortDescriptor]
         
         
-        return ((try? persistentContainer.viewContext.fetch(catalogFetchRequest))?.first as? ProductCatalog)?.updatedAt as Date?
+        return (try? persistentContainer.viewContext.fetch(catalogFetchRequest))?.first?.updatedAt as Date?
     }
     
     private func removeAllEnityData(entityName: String) {
@@ -219,8 +220,7 @@ class SCDBManager: NSObject{
     
     func catalogFetchResultController(searchText: String?,
                                       scope: String?) -> NSFetchedResultsController<ProductCatalog> {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityProductCatalog)
-        
+        let fetchRequest: NSFetchRequest<ProductCatalog> = ProductCatalog.fetchRequest()
         // Added Sort Descriptors
         let updatedsortDescriptor = NSSortDescriptor(key: "updatedAt",
                                               ascending: true)
@@ -235,7 +235,7 @@ class SCDBManager: NSObject{
             fetchRequest.predicate = predicate
         }
         
-        let storageFRC = NSFetchedResultsController(fetchRequest: fetchRequest as! NSFetchRequest<ProductCatalog>,
+        let storageFRC = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                     managedObjectContext: persistentContainer.viewContext,
                                                     sectionNameKeyPath: nil,
                                                     cacheName: nil)
@@ -251,15 +251,14 @@ class SCDBManager: NSObject{
     }
     
     func cartFetchResultController() -> NSFetchedResultsController<ShoppingCart> {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Static.entityShoppingCart)
-        
+        let fetchRequest: NSFetchRequest<ShoppingCart> = ShoppingCart.fetchRequest()
         // Added Sort Descriptors
         let sortDescriptor = NSSortDescriptor(key: "isAvailable",
                                               ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20
         
-        let catalogFRC = NSFetchedResultsController(fetchRequest: fetchRequest as! NSFetchRequest<ShoppingCart>,
+        let catalogFRC = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                     managedObjectContext: persistentContainer.viewContext,
                                                     sectionNameKeyPath: nil,
                                                     cacheName: nil)
