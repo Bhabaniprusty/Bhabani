@@ -28,6 +28,7 @@ class SCNetworkMager{
     }
     
     // Login, Signup, session management is not in this scope
+    @discardableResult
     func fetchProductCatalogs(updatedAfterDate updatedAfter: Date?,
                               pageIndex: Int,
                               pageSize: Int,

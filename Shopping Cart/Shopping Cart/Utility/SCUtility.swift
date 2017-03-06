@@ -55,7 +55,7 @@ class SCUtility{
     private class func fetchBatchProductCatalogs(updatedAfterDate: Date?,
                                                  pageIndex: Int,
                                                  completion: @escaping (_ recoerdAvailable: Bool) -> Void) -> Void {
-        _ = SCNetworkMager.sharedInstancer.fetchProductCatalogs(updatedAfterDate: updatedAfterDate,
+        SCNetworkMager.sharedInstancer.fetchProductCatalogs(updatedAfterDate: updatedAfterDate,
                                                                 pageIndex: pageIndex,
                                                                 pageSize: Static.pageSize) { (jsonArr, error) in
                                                                     
