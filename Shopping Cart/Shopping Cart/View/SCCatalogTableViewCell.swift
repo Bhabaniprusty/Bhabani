@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SCCatalogTableViewCell: UITableViewCell {
+final class SCCatalogTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var catalogImageView: UIImageView!

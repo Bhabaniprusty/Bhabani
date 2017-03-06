@@ -11,7 +11,7 @@ import Foundation
 
 typealias evalFunc = ()->TimeInterval
 
-class SCSyncManager {
+final class SCSyncManager {
     
     private struct Static {
         static let syncIntervalKey = "syncIntervalKey"

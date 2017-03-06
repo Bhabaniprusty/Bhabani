@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class SCNetworkMager{
+final class SCNetworkMager{
     
     struct Static {
         static let networkErrorDomain = "com.sc.error"

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SCCartViewController: UIViewController {
+final class SCCartViewController: UIViewController {
     
     fileprivate struct Static {
         static let cartCellIdentifier = "CartCell"

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SCSplitViewController: UISplitViewController {
+final class SCSplitViewController: UISplitViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

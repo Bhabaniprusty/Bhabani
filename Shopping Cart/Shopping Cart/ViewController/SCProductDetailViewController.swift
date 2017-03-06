@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SCProductDetailViewController: SCDetailViewController {
+final class SCProductDetailViewController: SCDetailViewController {
     
     private struct Static {
         static let cartQuantityKeyPathIdentifier = "cart.quantity"

@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import SwiftyJSON
 
-class SCDBManager: NSObject{
+final class SCDBManager: NSObject{
     
     struct Static {
         static let entityShoppingCart = "ShoppingCart"

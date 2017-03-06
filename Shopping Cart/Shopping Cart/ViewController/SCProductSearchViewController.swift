@@ -11,7 +11,7 @@ import CoreData
 import SDWebImage
 
 
-class SCProductSearchViewController: UITableViewController {
+final class SCProductSearchViewController: UITableViewController {
     
     private struct Static {
         static let catalogCellIdentifier = "CatalogCell"
