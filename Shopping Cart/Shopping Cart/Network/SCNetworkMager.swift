@@ -13,7 +13,7 @@ final class SCNetworkMager{
     
     struct Static {
         static let networkErrorDomain = "com.sc.error"
-        static let shoppingCartUrl = "http://shoppingcart.getsandbox.com/"
+        static let shoppingCartUrl = "shoppingcart.getsandbox.com/"
         static let invalidUrl = "Invalid url"
         static let invalidJSON = "error trying to convert data to JSON"
         static let invalidParameters = "Parameters are not available as specified"
@@ -23,8 +23,13 @@ final class SCNetworkMager{
     
     static let sharedInstancer = SCNetworkMager()
     fileprivate let session: URLSession
+    fileprivate let urlTemplate: URLComponents
     private init() {
         session = URLSession(configuration: URLSessionConfiguration.default)
+        var template = URLComponents()
+        template.scheme = "http"
+        template.host = Static.shoppingCartUrl
+        urlTemplate = template
     }
     
     // Login, Signup, session management is not in this scope
@@ -35,9 +40,11 @@ final class SCNetworkMager{
                               completion: @escaping (_ catalogs: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
-        let catalogsEndpoint = Static.shoppingCartUrl + "catalogs?start=\(pageIndex*pageSize)&end=\(pageIndex*pageSize + pageSize)"
-
-        guard let url = URL(string: catalogsEndpoint) else {
+        var template = urlTemplate
+        template.path = "/catalogs"
+        template.queryItems = [URLQueryItem(name: "start", value: "\(pageIndex*pageSize)"), URLQueryItem(name: "end", value: "\(pageIndex*pageSize + pageSize)")]
+        
+        guard let url = template.url else {
             let error = SCUtility.prepareError(domain: Static.networkErrorDomain, localisedString: Static.invalidUrl)
             completion(nil, error)
             
@@ -71,14 +78,17 @@ final class SCNetworkMager{
                               completion: @escaping (_ storages: [JSON]?, _ error: Error?) -> Void)  -> URLSessionDataTask? {
         
         //Prepare proper url string with provided paramaters
-        let storagesEndpoint = Static.shoppingCartUrl + "storages?start=\(pageIndex*pageSize)&end=\(pageIndex*pageSize + pageSize)"
-        guard let url = URL(string: storagesEndpoint) else {
+        var template = urlTemplate
+        template.path = "/storages"
+        template.queryItems = [URLQueryItem(name: "start", value: "\(pageIndex*pageSize)"), URLQueryItem(name: "end", value: "\(pageIndex*pageSize + pageSize)")]
+        
+        guard let url = template.url else {
             let error = SCUtility.prepareError(domain: Static.networkErrorDomain, localisedString: Static.invalidUrl)
             completion(nil, error)
             
             return nil
         }
-        
+
         //Prepare proper URLRequest with provided paramaters
         let urlRequest = URLRequest(url: url)
         
