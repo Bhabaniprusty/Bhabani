@@ -16,7 +16,7 @@ final class SCCartViewController: UIViewController {
         static let catalogSelelctionIdentifier = "showCatalogSelection"
         static let catalogDetailIdentifier = "showCartItemDetail"
     }
-
+    
     @IBOutlet weak var cartTableView: UITableView!
     var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController()
     
@@ -26,7 +26,7 @@ final class SCCartViewController: UIViewController {
         //Initiate sync operation from last settings
         SCSyncManager.sharedInstance.startSync()
     }
-        
+    
     @IBAction func closeSearchScreen(sender: UIStoryboardSegue){
         
     }
@@ -55,7 +55,11 @@ final class SCCartViewController: UIViewController {
             }
         }else if segue.identifier == Static.catalogDetailIdentifier {
             if let indexPath = cartTableView.indexPathForSelectedRow,
-                let controller = segue.destination as? SCDetailViewController{
+                let controller = segue.destination as? SCDetailViewController {
+                if let poc = controller.popoverPresentationController {
+                    poc.sourceView = sender as! UIView?
+                    poc.delegate = self
+                }
                 controller.catalog = cartFetchResultController.object(at: indexPath).product
                 controller.navigationItem.rightBarButtonItem = nil
             }
@@ -132,7 +136,7 @@ extension SCCartViewController: NSFetchedResultsControllerDelegate{
                               withCartItem: anObject as! ShoppingCart,
                               indexPath: indexPath!)
             }
-
+            
         case .move:
             cartTableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
@@ -140,5 +144,16 @@ extension SCCartViewController: NSFetchedResultsControllerDelegate{
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         cartTableView.endUpdates()
+    }
+}
+
+extension SCCartViewController: UIPopoverPresentationControllerDelegate {
+    func presentationController(_ controller: UIPresentationController,
+                                viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        if style == .fullScreen || style == .overFullScreen {
+            return UINavigationController(rootViewController: controller.presentedViewController)
+        }else {
+            return nil
+        }
     }
 }

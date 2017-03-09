@@ -14,7 +14,7 @@ final class SCProductDetailViewController: SCDetailViewController {
         static let cartQuantityKeyPathIdentifier = "cart.quantity"
         static let availableQuantityKeyPathIdentifier = "storage.availableQuantity"
     }
-
+    
     
     @IBOutlet weak var addtoCartButton: UIButton!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
@@ -53,7 +53,7 @@ final class SCProductDetailViewController: SCDetailViewController {
             inCartCountLabel?.isHidden = false
             inStockTextLabel?.isHidden = false
             inStockAmountLabel?.isHidden = false
-
+            
             detailDescriptionLabel?.text = catalog.productDescription
             itemsCoutInCartLabel?.text = String(catalog.cart?.quantity ?? 0)
             itemsStockLabel?.text = String(catalog.storage?.availableQuantity ?? 0)
@@ -73,6 +73,11 @@ final class SCProductDetailViewController: SCDetailViewController {
         validateButtonPresence()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        preferredContentSize = view.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+    }
+    
     @IBAction func AddToCart(_ sender: UIButton) {
         if let productId = catalog?.productId {
             SCDBManager.sharedInstance.addToCart(productId: productId, quantity: 1)
@@ -90,7 +95,7 @@ final class SCProductDetailViewController: SCDetailViewController {
         configureView()
     }
     
-    func validateButtonPresence(){
+    private func validateButtonPresence(){
         self.addtoCartButton?.isEnabled = catalog?.canAddMoreItemtoCart() ?? false
         self.removeFromCartButton?.isEnabled = catalog?.canRemoveItemFromCart() ?? false
     }
