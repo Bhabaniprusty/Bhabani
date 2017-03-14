@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7963002C1E7786E100BA81B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963002B1E7786E100BA81B4 /* AppDelegate.swift */; };
+		7963002E1E7786E100BA81B4 /* VContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963002D1E7786E100BA81B4 /* VContactViewController.swift */; };
+		796300311E7786E100BA81B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7963002F1E7786E100BA81B4 /* Main.storyboard */; };
+		796300331E7786E100BA81B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796300321E7786E100BA81B4 /* Assets.xcassets */; };
+		796300361E7786E100BA81B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796300341E7786E100BA81B4 /* LaunchScreen.storyboard */; };
+		796300411E7786E100BA81B4 /* VokalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300401E7786E100BA81B4 /* VokalTests.swift */; };
+		7963004C1E7786E100BA81B4 /* VokalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963004B1E7786E100BA81B4 /* VokalUITests.swift */; };
+		7963005A1E77879100BA81B4 /* VContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300591E77879100BA81B4 /* VContactService.swift */; };
+		7963005C1E7787B600BA81B4 /* VContactCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963005B1E7787B600BA81B4 /* VContactCellModel.swift */; };
+		796300601E77884100BA81B4 /* VAudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963005F1E77884100BA81B4 /* VAudioService.swift */; };
+		796300621E7788B400BA81B4 /* VContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300611E7788B400BA81B4 /* VContactTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7963003D1E7786E100BA81B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 796300201E7786E100BA81B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 796300271E7786E100BA81B4;
+			remoteInfo = Vokal;
+		};
+		796300481E7786E100BA81B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 796300201E7786E100BA81B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 796300271E7786E100BA81B4;
+			remoteInfo = Vokal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		796300281E7786E100BA81B4 /* Vokal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vokal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7963002B1E7786E100BA81B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7963002D1E7786E100BA81B4 /* VContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VContactViewController.swift; sourceTree = "<group>"; };
+		796300301E7786E100BA81B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		796300321E7786E100BA81B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		796300351E7786E100BA81B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		796300371E7786E100BA81B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7963003C1E7786E100BA81B4 /* VokalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VokalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		796300401E7786E100BA81B4 /* VokalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VokalTests.swift; sourceTree = "<group>"; };
+		796300421E7786E100BA81B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796300471E7786E100BA81B4 /* VokalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VokalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7963004B1E7786E100BA81B4 /* VokalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VokalUITests.swift; sourceTree = "<group>"; };
+		7963004D1E7786E100BA81B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796300591E77879100BA81B4 /* VContactService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactService.swift; sourceTree = "<group>"; };
+		7963005B1E7787B600BA81B4 /* VContactCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactCellModel.swift; sourceTree = "<group>"; };
+		7963005F1E77884100BA81B4 /* VAudioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAudioService.swift; sourceTree = "<group>"; };
+		796300611E7788B400BA81B4 /* VContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		796300251E7786E100BA81B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796300391E7786E100BA81B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796300441E7786E100BA81B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7963001F1E7786E100BA81B4 = {
+			isa = PBXGroup;
+			children = (
+				7963002A1E7786E100BA81B4 /* Vokal */,
+				7963003F1E7786E100BA81B4 /* VokalTests */,
+				7963004A1E7786E100BA81B4 /* VokalUITests */,
+				796300291E7786E100BA81B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		796300291E7786E100BA81B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				796300281E7786E100BA81B4 /* Vokal.app */,
+				7963003C1E7786E100BA81B4 /* VokalTests.xctest */,
+				796300471E7786E100BA81B4 /* VokalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7963002A1E7786E100BA81B4 /* Vokal */ = {
+			isa = PBXGroup;
+			children = (
+				7963002B1E7786E100BA81B4 /* AppDelegate.swift */,
+				7963002D1E7786E100BA81B4 /* VContactViewController.swift */,
+				796300591E77879100BA81B4 /* VContactService.swift */,
+				7963002F1E7786E100BA81B4 /* Main.storyboard */,
+				796300321E7786E100BA81B4 /* Assets.xcassets */,
+				796300341E7786E100BA81B4 /* LaunchScreen.storyboard */,
+				796300371E7786E100BA81B4 /* Info.plist */,
+				7963005B1E7787B600BA81B4 /* VContactCellModel.swift */,
+				7963005F1E77884100BA81B4 /* VAudioService.swift */,
+				796300611E7788B400BA81B4 /* VContactTableViewCell.swift */,
+			);
+			path = Vokal;
+			sourceTree = "<group>";
+		};
+		7963003F1E7786E100BA81B4 /* VokalTests */ = {
+			isa = PBXGroup;
+			children = (
+				796300401E7786E100BA81B4 /* VokalTests.swift */,
+				796300421E7786E100BA81B4 /* Info.plist */,
+			);
+			path = VokalTests;
+			sourceTree = "<group>";
+		};
+		7963004A1E7786E100BA81B4 /* VokalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7963004B1E7786E100BA81B4 /* VokalUITests.swift */,
+				7963004D1E7786E100BA81B4 /* Info.plist */,
+			);
+			path = VokalUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		796300271E7786E100BA81B4 /* Vokal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 796300501E7786E100BA81B4 /* Build configuration list for PBXNativeTarget "Vokal" */;
+			buildPhases = (
+				796300241E7786E100BA81B4 /* Sources */,
+				796300251E7786E100BA81B4 /* Frameworks */,
+				796300261E7786E100BA81B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vokal;
+			productName = Vokal;
+			productReference = 796300281E7786E100BA81B4 /* Vokal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7963003B1E7786E100BA81B4 /* VokalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 796300531E7786E100BA81B4 /* Build configuration list for PBXNativeTarget "VokalTests" */;
+			buildPhases = (
+				796300381E7786E100BA81B4 /* Sources */,
+				796300391E7786E100BA81B4 /* Frameworks */,
+				7963003A1E7786E100BA81B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7963003E1E7786E100BA81B4 /* PBXTargetDependency */,
+			);
+			name = VokalTests;
+			productName = VokalTests;
+			productReference = 7963003C1E7786E100BA81B4 /* VokalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		796300461E7786E100BA81B4 /* VokalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 796300561E7786E100BA81B4 /* Build configuration list for PBXNativeTarget "VokalUITests" */;
+			buildPhases = (
+				796300431E7786E100BA81B4 /* Sources */,
+				796300441E7786E100BA81B4 /* Frameworks */,
+				796300451E7786E100BA81B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				796300491E7786E100BA81B4 /* PBXTargetDependency */,
+			);
+			name = VokalUITests;
+			productName = VokalUITests;
+			productReference = 796300471E7786E100BA81B4 /* VokalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		796300201E7786E100BA81B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Bhabani;
+				TargetAttributes = {
+					796300271E7786E100BA81B4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+					};
+					7963003B1E7786E100BA81B4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 796300271E7786E100BA81B4;
+					};
+					796300461E7786E100BA81B4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 796300271E7786E100BA81B4;
+					};
+				};
+			};
+			buildConfigurationList = 796300231E7786E100BA81B4 /* Build configuration list for PBXProject "Vokal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7963001F1E7786E100BA81B4;
+			productRefGroup = 796300291E7786E100BA81B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				796300271E7786E100BA81B4 /* Vokal */,
+				7963003B1E7786E100BA81B4 /* VokalTests */,
+				796300461E7786E100BA81B4 /* VokalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		796300261E7786E100BA81B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				796300361E7786E100BA81B4 /* LaunchScreen.storyboard in Resources */,
+				796300331E7786E100BA81B4 /* Assets.xcassets in Resources */,
+				796300311E7786E100BA81B4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7963003A1E7786E100BA81B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796300451E7786E100BA81B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		796300241E7786E100BA81B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7963002E1E7786E100BA81B4 /* VContactViewController.swift in Sources */,
+				7963005C1E7787B600BA81B4 /* VContactCellModel.swift in Sources */,
+				7963002C1E7786E100BA81B4 /* AppDelegate.swift in Sources */,
+				7963005A1E77879100BA81B4 /* VContactService.swift in Sources */,
+				796300601E77884100BA81B4 /* VAudioService.swift in Sources */,
+				796300621E7788B400BA81B4 /* VContactTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796300381E7786E100BA81B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				796300411E7786E100BA81B4 /* VokalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796300431E7786E100BA81B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7963004C1E7786E100BA81B4 /* VokalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7963003E1E7786E100BA81B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 796300271E7786E100BA81B4 /* Vokal */;
+			targetProxy = 7963003D1E7786E100BA81B4 /* PBXContainerItemProxy */;
+		};
+		796300491E7786E100BA81B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 796300271E7786E100BA81B4 /* Vokal */;
+			targetProxy = 796300481E7786E100BA81B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7963002F1E7786E100BA81B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				796300301E7786E100BA81B4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		796300341E7786E100BA81B4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				796300351E7786E100BA81B4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7963004E1E7786E100BA81B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7963004F1E7786E100BA81B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		796300511E7786E100BA81B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = Vokal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.Vokal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		796300521E7786E100BA81B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = Vokal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.Vokal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		796300541E7786E100BA81B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = VokalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.VokalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vokal.app/Vokal";
+			};
+			name = Debug;
+		};
+		796300551E7786E100BA81B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = VokalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.VokalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vokal.app/Vokal";
+			};
+			name = Release;
+		};
+		796300571E7786E100BA81B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = VokalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.VokalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Vokal;
+			};
+			name = Debug;
+		};
+		796300581E7786E100BA81B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = VokalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.VokalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Vokal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		796300231E7786E100BA81B4 /* Build configuration list for PBXProject "Vokal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7963004E1E7786E100BA81B4 /* Debug */,
+				7963004F1E7786E100BA81B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		796300501E7786E100BA81B4 /* Build configuration list for PBXNativeTarget "Vokal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				796300511E7786E100BA81B4 /* Debug */,
+				796300521E7786E100BA81B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		796300531E7786E100BA81B4 /* Build configuration list for PBXNativeTarget "VokalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				796300541E7786E100BA81B4 /* Debug */,
+				796300551E7786E100BA81B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		796300561E7786E100BA81B4 /* Build configuration list for PBXNativeTarget "VokalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				796300571E7786E100BA81B4 /* Debug */,
+				796300581E7786E100BA81B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 796300201E7786E100BA81B4 /* Project object */;
+}
