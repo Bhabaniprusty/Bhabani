@@ -26,8 +26,6 @@ class VContactViewController: UIViewController {
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -93,5 +91,4 @@ extension VContactViewController: UISearchResultsUpdating {
         }
     }
 }
-
 

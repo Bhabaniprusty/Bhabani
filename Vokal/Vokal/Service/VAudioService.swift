@@ -16,6 +16,7 @@ class VAudioService: NSObject {
     
     dynamic private(set) var isRecordingAllowed = false
     dynamic private(set) var isRecording = false
+    dynamic fileprivate(set) var isPlaying = false
     private(set) var currentAudioId: String?
     
     static let sharedInstance = VAudioService()
@@ -31,15 +32,21 @@ class VAudioService: NSObject {
         }
     }
     
-    
     func playAudio(withIdentifier identifier: String) {
-        if (!isRecording){
-            currentAudioId = identifier
-            let name =  identifier + ".m4a"
-            let audioFilename = getDocumentsDirectory().appendingPathComponent(name)
-            audioPayler = try? AVAudioPlayer(contentsOf: audioFilename)
-            audioPayler?.delegate = self
-            audioPayler?.play()
+        if (!isRecording) {
+            
+            if let audioPayler = audioPayler,  audioPayler.isPlaying{
+                audioPayler.stop()
+                isPlaying = false
+            }else{
+                currentAudioId = identifier
+                let name =  identifier + ".m4a"
+                let audioFilename = getDocumentsDirectory().appendingPathComponent(name)
+                audioPayler = try? AVAudioPlayer(contentsOf: audioFilename)
+                audioPayler?.delegate = self
+                audioPayler?.play()
+                isPlaying =  true
+            }
         }
     }
     
@@ -99,17 +106,15 @@ class VAudioService: NSObject {
     }
 }
 
-
 extension VAudioService: AVAudioRecorderDelegate {
     internal func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         finishRecording(success: flag)
     }
 }
 
-
 extension VAudioService: AVAudioPlayerDelegate {
     
     internal func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        // show alert
+        isPlaying =  false
     }
 }

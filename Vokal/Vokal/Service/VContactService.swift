@@ -67,9 +67,8 @@ class VContactService {
                     catch {
                         message = "Unable to fetch contacts."
                     }
-                    
-                    
                 }
+                
                 completionHandler(contacts, message)
             }
         }
