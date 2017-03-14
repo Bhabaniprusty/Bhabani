@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		7963002C1E7786E100BA81B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963002B1E7786E100BA81B4 /* AppDelegate.swift */; };
-		7963002E1E7786E100BA81B4 /* VContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963002D1E7786E100BA81B4 /* VContactViewController.swift */; };
 		796300311E7786E100BA81B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7963002F1E7786E100BA81B4 /* Main.storyboard */; };
 		796300331E7786E100BA81B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796300321E7786E100BA81B4 /* Assets.xcassets */; };
 		796300361E7786E100BA81B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796300341E7786E100BA81B4 /* LaunchScreen.storyboard */; };
 		796300411E7786E100BA81B4 /* VokalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300401E7786E100BA81B4 /* VokalTests.swift */; };
 		7963004C1E7786E100BA81B4 /* VokalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963004B1E7786E100BA81B4 /* VokalUITests.swift */; };
-		7963005A1E77879100BA81B4 /* VContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300591E77879100BA81B4 /* VContactService.swift */; };
-		7963005C1E7787B600BA81B4 /* VContactCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963005B1E7787B600BA81B4 /* VContactCellModel.swift */; };
-		796300601E77884100BA81B4 /* VAudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963005F1E77884100BA81B4 /* VAudioService.swift */; };
-		796300621E7788B400BA81B4 /* VContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300611E7788B400BA81B4 /* VContactTableViewCell.swift */; };
+		7963006C1E778C3700BA81B4 /* VContactCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300641E778C3700BA81B4 /* VContactCellModel.swift */; };
+		7963006D1E778C3700BA81B4 /* VContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300661E778C3700BA81B4 /* VContactViewController.swift */; };
+		7963006E1E778C3700BA81B4 /* VAudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300681E778C3700BA81B4 /* VAudioService.swift */; };
+		7963006F1E778C3700BA81B4 /* VContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796300691E778C3700BA81B4 /* VContactService.swift */; };
+		796300701E778C3700BA81B4 /* VContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963006B1E778C3700BA81B4 /* VContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		796300281E7786E100BA81B4 /* Vokal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vokal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7963002B1E7786E100BA81B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7963002D1E7786E100BA81B4 /* VContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VContactViewController.swift; sourceTree = "<group>"; };
 		796300301E7786E100BA81B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		796300321E7786E100BA81B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		796300351E7786E100BA81B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,10 +50,11 @@
 		796300471E7786E100BA81B4 /* VokalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VokalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7963004B1E7786E100BA81B4 /* VokalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VokalUITests.swift; sourceTree = "<group>"; };
 		7963004D1E7786E100BA81B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		796300591E77879100BA81B4 /* VContactService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactService.swift; sourceTree = "<group>"; };
-		7963005B1E7787B600BA81B4 /* VContactCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactCellModel.swift; sourceTree = "<group>"; };
-		7963005F1E77884100BA81B4 /* VAudioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAudioService.swift; sourceTree = "<group>"; };
-		796300611E7788B400BA81B4 /* VContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactTableViewCell.swift; sourceTree = "<group>"; };
+		796300641E778C3700BA81B4 /* VContactCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactCellModel.swift; sourceTree = "<group>"; };
+		796300661E778C3700BA81B4 /* VContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactViewController.swift; sourceTree = "<group>"; };
+		796300681E778C3700BA81B4 /* VAudioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAudioService.swift; sourceTree = "<group>"; };
+		796300691E778C3700BA81B4 /* VContactService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactService.swift; sourceTree = "<group>"; };
+		7963006B1E778C3700BA81B4 /* VContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,16 +105,11 @@
 		7963002A1E7786E100BA81B4 /* Vokal */ = {
 			isa = PBXGroup;
 			children = (
-				7963002B1E7786E100BA81B4 /* AppDelegate.swift */,
-				7963002D1E7786E100BA81B4 /* VContactViewController.swift */,
-				796300591E77879100BA81B4 /* VContactService.swift */,
-				7963002F1E7786E100BA81B4 /* Main.storyboard */,
-				796300321E7786E100BA81B4 /* Assets.xcassets */,
-				796300341E7786E100BA81B4 /* LaunchScreen.storyboard */,
-				796300371E7786E100BA81B4 /* Info.plist */,
-				7963005B1E7787B600BA81B4 /* VContactCellModel.swift */,
-				7963005F1E77884100BA81B4 /* VAudioService.swift */,
-				796300611E7788B400BA81B4 /* VContactTableViewCell.swift */,
+				796300631E778C3700BA81B4 /* Model */,
+				796300651E778C3700BA81B4 /* Presenter */,
+				796300671E778C3700BA81B4 /* Service */,
+				7963006A1E778C3700BA81B4 /* View */,
+				796300711E778C4600BA81B4 /* Common */,
 			);
 			path = Vokal;
 			sourceTree = "<group>";
@@ -135,6 +130,51 @@
 				7963004D1E7786E100BA81B4 /* Info.plist */,
 			);
 			path = VokalUITests;
+			sourceTree = "<group>";
+		};
+		796300631E778C3700BA81B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				796300641E778C3700BA81B4 /* VContactCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		796300651E778C3700BA81B4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				796300661E778C3700BA81B4 /* VContactViewController.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		796300671E778C3700BA81B4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				796300681E778C3700BA81B4 /* VAudioService.swift */,
+				796300691E778C3700BA81B4 /* VContactService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7963006A1E778C3700BA81B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7963006B1E778C3700BA81B4 /* VContactTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		796300711E778C4600BA81B4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7963002B1E7786E100BA81B4 /* AppDelegate.swift */,
+				7963002F1E7786E100BA81B4 /* Main.storyboard */,
+				796300321E7786E100BA81B4 /* Assets.xcassets */,
+				796300341E7786E100BA81B4 /* LaunchScreen.storyboard */,
+				796300371E7786E100BA81B4 /* Info.plist */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7963002E1E7786E100BA81B4 /* VContactViewController.swift in Sources */,
-				7963005C1E7787B600BA81B4 /* VContactCellModel.swift in Sources */,
+				7963006D1E778C3700BA81B4 /* VContactViewController.swift in Sources */,
 				7963002C1E7786E100BA81B4 /* AppDelegate.swift in Sources */,
-				7963005A1E77879100BA81B4 /* VContactService.swift in Sources */,
-				796300601E77884100BA81B4 /* VAudioService.swift in Sources */,
-				796300621E7788B400BA81B4 /* VContactTableViewCell.swift in Sources */,
+				7963006F1E778C3700BA81B4 /* VContactService.swift in Sources */,
+				7963006C1E778C3700BA81B4 /* VContactCellModel.swift in Sources */,
+				7963006E1E778C3700BA81B4 /* VAudioService.swift in Sources */,
+				796300701E778C3700BA81B4 /* VContactTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
