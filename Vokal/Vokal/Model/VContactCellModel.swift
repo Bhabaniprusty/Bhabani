@@ -22,6 +22,24 @@ struct VContactCellModel {
         }
     }
     
+    private var phoneNumbers: [String] {
+        get {
+            var phnNumbers = [String]()
+            for phoneNumber in contact.phoneNumbers {
+                phnNumbers.append(phoneNumber.value.stringValue)
+            }
+            
+            return phnNumbers
+        }
+    }
+    
+     var detail: String {
+        get {
+            return phoneNumbers.joined(separator: ", ")
+        }
+    }
+
+    
     var image: UIImage? {
         get {
             guard let imageData = contact.imageData, let image =  UIImage(data: imageData) else {

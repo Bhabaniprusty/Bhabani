@@ -19,6 +19,7 @@ class VContactTableViewCell: UITableViewCell {
     var cellModel: VContactCellModel? {
         didSet{
             contactNameLabel.text = cellModel?.name
+            contactDescriptionLabel.text = cellModel?.detail
             contactImageView.image = cellModel?.image
             
             recordButtonButton.isEnabled = VAudioService.sharedInstance.isRecordingAllowed &&
