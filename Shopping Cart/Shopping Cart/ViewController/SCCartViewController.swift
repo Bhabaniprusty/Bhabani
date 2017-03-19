@@ -13,12 +13,15 @@ final class SCCartViewController: UIViewController {
     
     fileprivate struct Static {
         static let cartCellIdentifier = "CartCell"
-        static let catalogSelelctionIdentifier = "showCatalogSelection"
-        static let catalogDetailIdentifier = "showCartItemDetail"
+    }
+    
+    private enum SegueIdentifier: String{
+        case catalogSelelctionIdentifier = "showCatalogSelection"
+        case catalogDetailIdentifier = "showCartItemDetail"
     }
     
     @IBOutlet weak var cartTableView: UITableView!
-    var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController()
+    fileprivate var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +44,12 @@ final class SCCartViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segId =  segue.identifier, let identifier = SegueIdentifier(rawValue:segId) else{
+            fatalError("Invalid segue identifier")
+        }
         
-        if segue.identifier == Static.catalogSelelctionIdentifier {
+        switch identifier {
+        case .catalogSelelctionIdentifier:
             if let splitViewController = segue.destination as? UISplitViewController {
                 let contentVc = splitViewController.viewControllers.last?.contentViewController
                 contentVc?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
@@ -53,7 +60,8 @@ final class SCCartViewController: UIViewController {
                     splitViewController.preferredDisplayMode = .allVisible
                 }
             }
-        }else if segue.identifier == Static.catalogDetailIdentifier {
+            
+        case .catalogDetailIdentifier:
             if let indexPath = cartTableView.indexPathForSelectedRow,
                 let controller = segue.destination as? SCDetailViewController {
                 if let poc = controller.popoverPresentationController {
