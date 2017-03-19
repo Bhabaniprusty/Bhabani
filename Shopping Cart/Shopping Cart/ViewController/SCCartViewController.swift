@@ -15,10 +15,6 @@ final class SCCartViewController: UIViewController {
         static let cartCellIdentifier = "CartCell"
     }
     
-    private enum SegueIdentifier: String{
-        case catalogSelelctionIdentifier = "showCatalogSelection"
-        case catalogDetailIdentifier = "showCartItemDetail"
-    }
     
     @IBOutlet weak var cartTableView: UITableView!
     fileprivate var cartFetchResultController = SCDBManager.sharedInstance.cartFetchResultController()
@@ -44,11 +40,7 @@ final class SCCartViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segId =  segue.identifier, let identifier = SegueIdentifier(rawValue:segId) else{
-            fatalError("Invalid segue identifier")
-        }
-        
-        switch identifier {
+        switch segueIdentifier(forSegue: segue) {
         case .catalogSelelctionIdentifier:
             if let splitViewController = segue.destination as? UISplitViewController {
                 let contentVc = splitViewController.viewControllers.last?.contentViewController
@@ -72,6 +64,13 @@ final class SCCartViewController: UIViewController {
                 controller.navigationItem.rightBarButtonItem = nil
             }
         }
+    }
+}
+
+extension SCCartViewController: SegueHandlerType {
+    internal enum SegueIdentifier: String{
+        case catalogSelelctionIdentifier = "showCatalogSelection"
+        case catalogDetailIdentifier = "showCartItemDetail"
     }
 }
 

@@ -15,7 +15,6 @@ final class SCProductSearchViewController: UITableViewController {
     
     private struct Static {
         static let catalogCellIdentifier = "CatalogCell"
-        static let detailSegIdentifier = "showDetail"
     }
 
     var fetchResultController = SCDBManager.sharedInstance.catalogFetchResultController(searchText:
@@ -112,13 +111,14 @@ final class SCProductSearchViewController: UITableViewController {
         if let controller = splitViewController?.viewControllers.last?.contentViewController as? SCDetailViewController{
             updateDetail(controller: controller, selectedIndexPath: indexPath)
         } else {
-            performSegue(withIdentifier: Static.detailSegIdentifier, sender: tableView.cellForRow(at: indexPath)!)
+            performSegueWithIdentifier(segueIdentifier: .detailSegIdentifier, sender: tableView.cellForRow(at: indexPath)!)
         }
     }
     
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Static.detailSegIdentifier {
+        switch segueIdentifier(forSegue: segue) {
+        case .detailSegIdentifier:
             if let indexPath = tableView.indexPathForSelectedRow {
                 let controller = segue.destination.contentViewController as! SCDetailViewController
                 updateDetail(controller: controller, selectedIndexPath: indexPath)
@@ -130,6 +130,12 @@ final class SCProductSearchViewController: UITableViewController {
         controller.catalog = fetchResultController.object(at: selectedIndexPath)
         controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         controller.navigationItem.leftItemsSupplementBackButton = true
+    }
+}
+
+extension SCProductSearchViewController: SegueHandlerType {
+    internal enum SegueIdentifier: String{
+        case detailSegIdentifier = "detailSegIdentifier"
     }
 }
 

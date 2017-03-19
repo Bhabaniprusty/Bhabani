@@ -17,6 +17,7 @@
 		7928B6221E5E09E800F27C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7928B6201E5E09E800F27C4B /* LaunchScreen.storyboard */; };
 		7928B62D1E5E09E800F27C4B /* Shopping_CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928B62C1E5E09E800F27C4B /* Shopping_CartTests.swift */; };
 		7928B6381E5E09E800F27C4B /* Shopping_CartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928B6371E5E09E800F27C4B /* Shopping_CartUITests.swift */; };
+		79A596BF1E7EB71700144E5A /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A596BE1E7EB71700144E5A /* SegueHandlerType.swift */; };
 		79E54B021E5EDD68005FD5E0 /* SCDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E54AF51E5EDD68005FD5E0 /* SCDBManager.swift */; };
 		79E54B031E5EDD68005FD5E0 /* SCSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E54AF61E5EDD68005FD5E0 /* SCSyncManager.swift */; };
 		79E54B041E5EDD68005FD5E0 /* SCNetworkMager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E54AF81E5EDD68005FD5E0 /* SCNetworkMager.swift */; };
@@ -71,6 +72,7 @@
 		7928B6331E5E09E800F27C4B /* Shopping CartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopping CartUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7928B6371E5E09E800F27C4B /* Shopping_CartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_CartUITests.swift; sourceTree = "<group>"; };
 		7928B6391E5E09E800F27C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79A596BE1E7EB71700144E5A /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		79E54AF51E5EDD68005FD5E0 /* SCDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCDBManager.swift; sourceTree = "<group>"; };
 		79E54AF61E5EDD68005FD5E0 /* SCSyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSyncManager.swift; sourceTree = "<group>"; };
 		79E54AF81E5EDD68005FD5E0 /* SCNetworkMager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNetworkMager.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				79E54B111E601FA0005FD5E0 /* SCDetailViewController.swift */,
 				79E54B1A1E61AD99005FD5E0 /* SCUIViewController.swift */,
 				79ED7EBE1E66818B00268F64 /* DLog.swift */,
+				79A596BE1E7EB71700144E5A /* SegueHandlerType.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				79E54B0E1E5EFE63005FD5E0 /* SCStringUtility.swift in Sources */,
 				79E54B021E5EDD68005FD5E0 /* SCDBManager.swift in Sources */,
 				79E54B061E5EDD68005FD5E0 /* SCCartCell.swift in Sources */,
+				79A596BF1E7EB71700144E5A /* SegueHandlerType.swift in Sources */,
 				79E54B081E5EDD68005FD5E0 /* SCCartViewController.swift in Sources */,
 				79E54B191E616F2F005FD5E0 /* SCSplitViewSupport.swift in Sources */,
 				79ED7EBF1E66818B00268F64 /* DLog.swift in Sources */,
