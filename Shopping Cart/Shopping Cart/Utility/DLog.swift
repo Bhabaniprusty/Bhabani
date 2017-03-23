@@ -9,7 +9,6 @@
 import Foundation
 struct Log {
     
-    
     static func DLog(_ message: String, function: String = #function) {
         #if DEBUG
             print("\(function): \(message)")

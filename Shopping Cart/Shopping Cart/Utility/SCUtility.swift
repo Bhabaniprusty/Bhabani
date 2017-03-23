@@ -18,14 +18,14 @@ enum SCPageFetchState {
 typealias PageProgress = (_ currentTask: URLSessionDataTask?, _ currentPage: Int,_ state: SCPageFetchState)->Void
 
 
-class SCUtility{
+struct SCUtility{
     
     struct Static {
         static let pageSize = 10
         static let invalidedDuratopn = 5.0
     }
     
-    class func fetchUpdatedProductCatalogs(progress: @escaping PageProgress) {
+    static func fetchUpdatedProductCatalogs(progress: @escaping PageProgress) {
         let lastUpdatedDate = SCDBManager.sharedInstance.fetchLastCatalogUpdatedDate()
         fetchProductCatalogs(updatedAfterDate: lastUpdatedDate,
                              pageIndex: 0,
@@ -33,7 +33,7 @@ class SCUtility{
     }
     
     // updatedAfterDate : Last local ProductCatalog.updatedAt, nil if no record available
-    private class func fetchProductCatalogs(updatedAfterDate: Date?,
+    private static func fetchProductCatalogs(updatedAfterDate: Date?,
                                             pageIndex: Int,
                                             progress: @escaping PageProgress) {
         SCUtility.fetchBatchProductCatalogs(updatedAfterDate: updatedAfterDate,
@@ -52,7 +52,7 @@ class SCUtility{
         progress(nil, pageIndex, .Started)
     }
     
-    private class func fetchBatchProductCatalogs(updatedAfterDate: Date?,
+    private static func fetchBatchProductCatalogs(updatedAfterDate: Date?,
                                                  pageIndex: Int,
                                                  completion: @escaping (_ recoerdAvailable: Bool) -> Void) -> Void {
         SCNetworkMager.sharedInstancer.fetchProductCatalogs(updatedAfterDate: updatedAfterDate,
@@ -68,13 +68,13 @@ class SCUtility{
     }
     
     
-    class func fetchUpdatedProductStorages(progress: @escaping PageProgress) {
+    static func fetchUpdatedProductStorages(progress: @escaping PageProgress) {
         let lastUpdatedDate = SCDBManager.sharedInstance.fetchLastStorageUpdatedDate()
         fetchProductStorages(updatedAfterDate: lastUpdatedDate,
                              pageIndex: 0, progress: progress)
     }
     
-    private class func fetchProductStorages(updatedAfterDate: Date?,
+    private static func fetchProductStorages(updatedAfterDate: Date?,
                                             pageIndex: Int,
                                             progress: @escaping PageProgress) {
         
@@ -97,7 +97,7 @@ class SCUtility{
     }
     
     
-    private class func fetchBatchProductStorages(updatedAfterDate: Date?,
+    private static func fetchBatchProductStorages(updatedAfterDate: Date?,
                                                  pageIndex: Int,
                                                  completion: @escaping (_ recoerdAvailable: Bool) -> Void) -> URLSessionDataTask? {
         return SCNetworkMager.sharedInstancer.fetchProductStorages(updatedAfterDate: updatedAfterDate,
@@ -112,8 +112,8 @@ class SCUtility{
                                                                     completion((jsonArr?.count == Static.pageSize))
         }
     }
-        
-    class func invalidateStorage() {
+    
+    static func invalidateStorage() {
         SCSyncManager.sharedInstance.stopSync()
         SCDBManager.sharedInstance.invalidStorageData()
         DispatchQueue.main.asyncAfter(deadline: .now() + Static.invalidedDuratopn) {
