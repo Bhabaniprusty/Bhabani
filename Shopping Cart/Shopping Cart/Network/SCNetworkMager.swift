@@ -12,13 +12,15 @@ import SwiftyJSON
 final class  SCNetworkMager{
     
     struct Static {
-        static let networkErrorDomain = "com.sc.error"
         static let shoppingCartUrl = "shoppingcart.getsandbox.com/"
-        static let invalidUrl = "Invalid url"
-        static let invalidJSON = "error trying to convert data to JSON"
-        static let invalidParameters = "Parameters are not available as specified"
         static let kayPathForStorage = "storages"
         static let keyPathForCatalog = ["catalogs"]
+    }
+    
+    enum NetworkError: Error {
+        case unknownError
+        case inValidUrl
+        case invalidParameters
     }
     
     static let sharedInstancer = SCNetworkMager()
@@ -45,9 +47,7 @@ final class  SCNetworkMager{
         template.queryItems = [URLQueryItem(name: "start", value: "\(pageIndex*pageSize)"), URLQueryItem(name: "end", value: "\(pageIndex*pageSize + pageSize)")]
         
         guard let url = template.url else {
-            let error = SCUtility.prepareError(domain: Static.networkErrorDomain, localisedString: Static.invalidUrl)
-            completion(nil, error)
-            
+            completion(nil, NetworkError.inValidUrl)
             return nil
         }
         
@@ -83,9 +83,7 @@ final class  SCNetworkMager{
         template.queryItems = [URLQueryItem(name: "start", value: "\(pageIndex*pageSize)"), URLQueryItem(name: "end", value: "\(pageIndex*pageSize + pageSize)")]
         
         guard let url = template.url else {
-            let error = SCUtility.prepareError(domain: Static.networkErrorDomain, localisedString: Static.invalidUrl)
-            completion(nil, error)
-            
+            completion(nil, NetworkError.inValidUrl)
             return nil
         }
 

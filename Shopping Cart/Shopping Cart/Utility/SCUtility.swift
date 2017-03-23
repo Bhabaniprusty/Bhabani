@@ -112,13 +112,7 @@ class SCUtility{
                                                                     completion((jsonArr?.count == Static.pageSize))
         }
     }
-    
-    class func prepareError(domain: String, localisedString: String) -> Error {
-        return NSError(domain: domain,
-                       code: 0,
-                       userInfo: [NSLocalizedDescriptionKey: localisedString])
-    }
-    
+        
     class func invalidateStorage() {
         SCSyncManager.sharedInstance.stopSync()
         SCDBManager.sharedInstance.invalidStorageData()
