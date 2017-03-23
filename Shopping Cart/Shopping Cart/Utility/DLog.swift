@@ -7,10 +7,10 @@
 //
 
 import Foundation
-class Log {
+struct Log {
     
     
-    class func DLog(_ message: String, function: String = #function) {
+    static func DLog(_ message: String, function: String = #function) {
         #if DEBUG
             print("\(function): \(message)")
         #endif
