@@ -1,0 +1,789 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7959A6B21EAE774800E274E1 /* SPItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7959A6AA1EAE774800E274E1 /* SPItemsViewController.swift */; };
+		7959A6B31EAE774800E274E1 /* SPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7959A6AC1EAE774800E274E1 /* SPItem.swift */; };
+		7959A6B41EAE774800E274E1 /* SPNetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7959A6AE1EAE774800E274E1 /* SPNetworkEngine.swift */; };
+		7959A6B51EAE774800E274E1 /* SPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7959A6AF1EAE774800E274E1 /* SPRouter.swift */; };
+		7959A6B61EAE774800E274E1 /* SPItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7959A6B11EAE774800E274E1 /* SPItemCollectionViewCell.swift */; };
+		79AC1ED31EAE325300521E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC1ED21EAE325300521E06 /* AppDelegate.swift */; };
+		79AC1ED81EAE325300521E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AC1ED61EAE325300521E06 /* Main.storyboard */; };
+		79AC1EDA1EAE325300521E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79AC1ED91EAE325300521E06 /* Assets.xcassets */; };
+		79AC1EDD1EAE325300521E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AC1EDB1EAE325300521E06 /* LaunchScreen.storyboard */; };
+		79AC1EE81EAE325300521E06 /* SamsungPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC1EE71EAE325300521E06 /* SamsungPOCTests.swift */; };
+		79AC1EF31EAE325300521E06 /* SamsungPOCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC1EF21EAE325300521E06 /* SamsungPOCUITests.swift */; };
+		7DE4A5DE99C6D0EB2675D0D8 /* Pods_SamsungPOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493FDD5A6C18BCB26DDEB7B2 /* Pods_SamsungPOC.framework */; };
+		F98CDCFC2DBCEA91DA123F22 /* Pods_SamsungPOCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BF6B48D9E08BAB8F9EF06B /* Pods_SamsungPOCUITests.framework */; };
+		FB72635CD8A2346467B3ECBB /* Pods_SamsungPOCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CC1F3EB6E35D143166B03B /* Pods_SamsungPOCTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79AC1EE41EAE325300521E06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79AC1EC71EAE325200521E06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79AC1ECE1EAE325200521E06;
+			remoteInfo = SamsungPOC;
+		};
+		79AC1EEF1EAE325300521E06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79AC1EC71EAE325200521E06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79AC1ECE1EAE325200521E06;
+			remoteInfo = SamsungPOC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1166725C3EC696153F718A7A /* Pods-SamsungPOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamsungPOC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamsungPOC/Pods-SamsungPOC.debug.xcconfig"; sourceTree = "<group>"; };
+		28CC1F3EB6E35D143166B03B /* Pods_SamsungPOCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamsungPOCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA0718A9B0E8AA4DD3908D1 /* Pods-SamsungPOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamsungPOC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamsungPOC/Pods-SamsungPOC.release.xcconfig"; sourceTree = "<group>"; };
+		493FDD5A6C18BCB26DDEB7B2 /* Pods_SamsungPOC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamsungPOC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A00F4F5B59E1BB7273485A0 /* Pods-SamsungPOCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamsungPOCUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamsungPOCUITests/Pods-SamsungPOCUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7959A6AA1EAE774800E274E1 /* SPItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPItemsViewController.swift; sourceTree = "<group>"; };
+		7959A6AC1EAE774800E274E1 /* SPItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPItem.swift; sourceTree = "<group>"; };
+		7959A6AE1EAE774800E274E1 /* SPNetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkEngine.swift; sourceTree = "<group>"; };
+		7959A6AF1EAE774800E274E1 /* SPRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRouter.swift; sourceTree = "<group>"; };
+		7959A6B11EAE774800E274E1 /* SPItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		79AC1ECF1EAE325300521E06 /* SamsungPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamsungPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AC1ED21EAE325300521E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79AC1ED71EAE325300521E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		79AC1ED91EAE325300521E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79AC1EDC1EAE325300521E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79AC1EDE1EAE325300521E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79AC1EE31EAE325300521E06 /* SamsungPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamsungPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AC1EE71EAE325300521E06 /* SamsungPOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamsungPOCTests.swift; sourceTree = "<group>"; };
+		79AC1EE91EAE325300521E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79AC1EEE1EAE325300521E06 /* SamsungPOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamsungPOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AC1EF21EAE325300521E06 /* SamsungPOCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamsungPOCUITests.swift; sourceTree = "<group>"; };
+		79AC1EF41EAE325300521E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1BF6B48D9E08BAB8F9EF06B /* Pods_SamsungPOCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamsungPOCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7565513BF5506F6A5B158B4 /* Pods-SamsungPOCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamsungPOCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamsungPOCTests/Pods-SamsungPOCTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE867A714C595D9AA7C7D68F /* Pods-SamsungPOCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamsungPOCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamsungPOCTests/Pods-SamsungPOCTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9B86F0BC6D3B2A9BAAC5F35 /* Pods-SamsungPOCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamsungPOCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamsungPOCUITests/Pods-SamsungPOCUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79AC1ECC1EAE325200521E06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DE4A5DE99C6D0EB2675D0D8 /* Pods_SamsungPOC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AC1EE01EAE325300521E06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB72635CD8A2346467B3ECBB /* Pods_SamsungPOCTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AC1EEB1EAE325300521E06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F98CDCFC2DBCEA91DA123F22 /* Pods_SamsungPOCUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C1D36AFBDB7E97C0F31511A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				493FDD5A6C18BCB26DDEB7B2 /* Pods_SamsungPOC.framework */,
+				28CC1F3EB6E35D143166B03B /* Pods_SamsungPOCTests.framework */,
+				D1BF6B48D9E08BAB8F9EF06B /* Pods_SamsungPOCUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7959A6A91EAE774800E274E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7959A6AA1EAE774800E274E1 /* SPItemsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7959A6AB1EAE774800E274E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7959A6AC1EAE774800E274E1 /* SPItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7959A6AD1EAE774800E274E1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7959A6AE1EAE774800E274E1 /* SPNetworkEngine.swift */,
+				7959A6AF1EAE774800E274E1 /* SPRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7959A6B01EAE774800E274E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7959A6B11EAE774800E274E1 /* SPItemCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7959A6B71EAE775C00E274E1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				79AC1ED21EAE325300521E06 /* AppDelegate.swift */,
+				79AC1ED61EAE325300521E06 /* Main.storyboard */,
+				79AC1ED91EAE325300521E06 /* Assets.xcassets */,
+				79AC1EDB1EAE325300521E06 /* LaunchScreen.storyboard */,
+				79AC1EDE1EAE325300521E06 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		79AC1EC61EAE325200521E06 = {
+			isa = PBXGroup;
+			children = (
+				79AC1ED11EAE325300521E06 /* SamsungPOC */,
+				79AC1EE61EAE325300521E06 /* SamsungPOCTests */,
+				79AC1EF11EAE325300521E06 /* SamsungPOCUITests */,
+				79AC1ED01EAE325300521E06 /* Products */,
+				F3E02040B0C2E8C458BF1691 /* Pods */,
+				4C1D36AFBDB7E97C0F31511A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		79AC1ED01EAE325300521E06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79AC1ECF1EAE325300521E06 /* SamsungPOC.app */,
+				79AC1EE31EAE325300521E06 /* SamsungPOCTests.xctest */,
+				79AC1EEE1EAE325300521E06 /* SamsungPOCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79AC1ED11EAE325300521E06 /* SamsungPOC */ = {
+			isa = PBXGroup;
+			children = (
+				7959A6A91EAE774800E274E1 /* Controller */,
+				7959A6AB1EAE774800E274E1 /* Model */,
+				7959A6AD1EAE774800E274E1 /* Network */,
+				7959A6B01EAE774800E274E1 /* View */,
+				7959A6B71EAE775C00E274E1 /* SupportingFiles */,
+			);
+			path = SamsungPOC;
+			sourceTree = "<group>";
+		};
+		79AC1EE61EAE325300521E06 /* SamsungPOCTests */ = {
+			isa = PBXGroup;
+			children = (
+				79AC1EE71EAE325300521E06 /* SamsungPOCTests.swift */,
+				79AC1EE91EAE325300521E06 /* Info.plist */,
+			);
+			path = SamsungPOCTests;
+			sourceTree = "<group>";
+		};
+		79AC1EF11EAE325300521E06 /* SamsungPOCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				79AC1EF21EAE325300521E06 /* SamsungPOCUITests.swift */,
+				79AC1EF41EAE325300521E06 /* Info.plist */,
+			);
+			path = SamsungPOCUITests;
+			sourceTree = "<group>";
+		};
+		F3E02040B0C2E8C458BF1691 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1166725C3EC696153F718A7A /* Pods-SamsungPOC.debug.xcconfig */,
+				2CA0718A9B0E8AA4DD3908D1 /* Pods-SamsungPOC.release.xcconfig */,
+				D7565513BF5506F6A5B158B4 /* Pods-SamsungPOCTests.debug.xcconfig */,
+				EE867A714C595D9AA7C7D68F /* Pods-SamsungPOCTests.release.xcconfig */,
+				F9B86F0BC6D3B2A9BAAC5F35 /* Pods-SamsungPOCUITests.debug.xcconfig */,
+				6A00F4F5B59E1BB7273485A0 /* Pods-SamsungPOCUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79AC1ECE1EAE325200521E06 /* SamsungPOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79AC1EF71EAE325400521E06 /* Build configuration list for PBXNativeTarget "SamsungPOC" */;
+			buildPhases = (
+				096216F868E15AD730DC6CA9 /* [CP] Check Pods Manifest.lock */,
+				79AC1ECB1EAE325200521E06 /* Sources */,
+				79AC1ECC1EAE325200521E06 /* Frameworks */,
+				79AC1ECD1EAE325200521E06 /* Resources */,
+				265F549FDBECD6DA5D43DD6A /* [CP] Embed Pods Frameworks */,
+				0C2DEB7CC0E435A085555626 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SamsungPOC;
+			productName = SamsungPOC;
+			productReference = 79AC1ECF1EAE325300521E06 /* SamsungPOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79AC1EE21EAE325300521E06 /* SamsungPOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79AC1EFA1EAE325400521E06 /* Build configuration list for PBXNativeTarget "SamsungPOCTests" */;
+			buildPhases = (
+				A70DCE9A996FDBC075C8655A /* [CP] Check Pods Manifest.lock */,
+				79AC1EDF1EAE325300521E06 /* Sources */,
+				79AC1EE01EAE325300521E06 /* Frameworks */,
+				79AC1EE11EAE325300521E06 /* Resources */,
+				D61C5ECA81CCF213C0A3FA1E /* [CP] Embed Pods Frameworks */,
+				EB61057A925704229334A4B5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79AC1EE51EAE325300521E06 /* PBXTargetDependency */,
+			);
+			name = SamsungPOCTests;
+			productName = SamsungPOCTests;
+			productReference = 79AC1EE31EAE325300521E06 /* SamsungPOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		79AC1EED1EAE325300521E06 /* SamsungPOCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79AC1EFD1EAE325400521E06 /* Build configuration list for PBXNativeTarget "SamsungPOCUITests" */;
+			buildPhases = (
+				3560ED2540DE0720518EF06A /* [CP] Check Pods Manifest.lock */,
+				79AC1EEA1EAE325300521E06 /* Sources */,
+				79AC1EEB1EAE325300521E06 /* Frameworks */,
+				79AC1EEC1EAE325300521E06 /* Resources */,
+				EC5ED2B88E2F6FB8FAA34B2F /* [CP] Embed Pods Frameworks */,
+				D7B069AC26041278774DAF99 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79AC1EF01EAE325300521E06 /* PBXTargetDependency */,
+			);
+			name = SamsungPOCUITests;
+			productName = SamsungPOCUITests;
+			productReference = 79AC1EEE1EAE325300521E06 /* SamsungPOCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79AC1EC71EAE325200521E06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Bhabani;
+				TargetAttributes = {
+					79AC1ECE1EAE325200521E06 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+					};
+					79AC1EE21EAE325300521E06 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 79AC1ECE1EAE325200521E06;
+					};
+					79AC1EED1EAE325300521E06 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8W495GPP5L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 79AC1ECE1EAE325200521E06;
+					};
+				};
+			};
+			buildConfigurationList = 79AC1ECA1EAE325200521E06 /* Build configuration list for PBXProject "SamsungPOC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 79AC1EC61EAE325200521E06;
+			productRefGroup = 79AC1ED01EAE325300521E06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79AC1ECE1EAE325200521E06 /* SamsungPOC */,
+				79AC1EE21EAE325300521E06 /* SamsungPOCTests */,
+				79AC1EED1EAE325300521E06 /* SamsungPOCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79AC1ECD1EAE325200521E06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AC1EDD1EAE325300521E06 /* LaunchScreen.storyboard in Resources */,
+				79AC1EDA1EAE325300521E06 /* Assets.xcassets in Resources */,
+				79AC1ED81EAE325300521E06 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AC1EE11EAE325300521E06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AC1EEC1EAE325300521E06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		096216F868E15AD730DC6CA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0C2DEB7CC0E435A085555626 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamsungPOC/Pods-SamsungPOC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		265F549FDBECD6DA5D43DD6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamsungPOC/Pods-SamsungPOC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3560ED2540DE0720518EF06A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A70DCE9A996FDBC075C8655A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D61C5ECA81CCF213C0A3FA1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamsungPOCTests/Pods-SamsungPOCTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7B069AC26041278774DAF99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamsungPOCUITests/Pods-SamsungPOCUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB61057A925704229334A4B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamsungPOCTests/Pods-SamsungPOCTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC5ED2B88E2F6FB8FAA34B2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamsungPOCUITests/Pods-SamsungPOCUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79AC1ECB1EAE325200521E06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7959A6B31EAE774800E274E1 /* SPItem.swift in Sources */,
+				7959A6B41EAE774800E274E1 /* SPNetworkEngine.swift in Sources */,
+				79AC1ED31EAE325300521E06 /* AppDelegate.swift in Sources */,
+				7959A6B61EAE774800E274E1 /* SPItemCollectionViewCell.swift in Sources */,
+				7959A6B51EAE774800E274E1 /* SPRouter.swift in Sources */,
+				7959A6B21EAE774800E274E1 /* SPItemsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AC1EDF1EAE325300521E06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AC1EE81EAE325300521E06 /* SamsungPOCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AC1EEA1EAE325300521E06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AC1EF31EAE325300521E06 /* SamsungPOCUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79AC1EE51EAE325300521E06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79AC1ECE1EAE325200521E06 /* SamsungPOC */;
+			targetProxy = 79AC1EE41EAE325300521E06 /* PBXContainerItemProxy */;
+		};
+		79AC1EF01EAE325300521E06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79AC1ECE1EAE325200521E06 /* SamsungPOC */;
+			targetProxy = 79AC1EEF1EAE325300521E06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		79AC1ED61EAE325300521E06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79AC1ED71EAE325300521E06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		79AC1EDB1EAE325300521E06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79AC1EDC1EAE325300521E06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		79AC1EF51EAE325300521E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79AC1EF61EAE325300521E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79AC1EF81EAE325400521E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1166725C3EC696153F718A7A /* Pods-SamsungPOC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = SamsungPOC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.SamsungPOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		79AC1EF91EAE325400521E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA0718A9B0E8AA4DD3908D1 /* Pods-SamsungPOC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = SamsungPOC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.SamsungPOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		79AC1EFB1EAE325400521E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7565513BF5506F6A5B158B4 /* Pods-SamsungPOCTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = SamsungPOCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.SamsungPOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SamsungPOC.app/SamsungPOC";
+			};
+			name = Debug;
+		};
+		79AC1EFC1EAE325400521E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE867A714C595D9AA7C7D68F /* Pods-SamsungPOCTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = SamsungPOCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.SamsungPOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SamsungPOC.app/SamsungPOC";
+			};
+			name = Release;
+		};
+		79AC1EFE1EAE325400521E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9B86F0BC6D3B2A9BAAC5F35 /* Pods-SamsungPOCUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = SamsungPOCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.SamsungPOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SamsungPOC;
+			};
+			name = Debug;
+		};
+		79AC1EFF1EAE325400521E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A00F4F5B59E1BB7273485A0 /* Pods-SamsungPOCUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8W495GPP5L;
+				INFOPLIST_FILE = SamsungPOCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhabani.SamsungPOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SamsungPOC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79AC1ECA1EAE325200521E06 /* Build configuration list for PBXProject "SamsungPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AC1EF51EAE325300521E06 /* Debug */,
+				79AC1EF61EAE325300521E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79AC1EF71EAE325400521E06 /* Build configuration list for PBXNativeTarget "SamsungPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AC1EF81EAE325400521E06 /* Debug */,
+				79AC1EF91EAE325400521E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79AC1EFA1EAE325400521E06 /* Build configuration list for PBXNativeTarget "SamsungPOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AC1EFB1EAE325400521E06 /* Debug */,
+				79AC1EFC1EAE325400521E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79AC1EFD1EAE325400521E06 /* Build configuration list for PBXNativeTarget "SamsungPOCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AC1EFE1EAE325400521E06 /* Debug */,
+				79AC1EFF1EAE325400521E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79AC1EC71EAE325200521E06 /* Project object */;
+}

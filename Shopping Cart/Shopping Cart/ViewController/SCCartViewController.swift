@@ -40,6 +40,7 @@ final class SCCartViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         switch segueIdentifier(forSegue: segue) {
         case .catalogSelelctionIdentifier:
             if let splitViewController = segue.destination as? UISplitViewController {
